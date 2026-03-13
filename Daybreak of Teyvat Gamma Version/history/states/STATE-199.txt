@@ -1,0 +1,16 @@
+state = {
+	id = 199
+	name = "Fushe_Tomb"
+	resources = {}
+	history = {
+		owner = BRF
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5834 10}
+	}
+	provinces = {1556 5776 5798 5813 5834}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

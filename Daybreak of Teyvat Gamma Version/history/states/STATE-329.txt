@@ -1,0 +1,23 @@
+
+state={
+	id=329
+	name="Electroland_329"
+	resources={	chromium=2}
+
+	history={
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+		buildings = {	infrastructure = 1 
+		2788 = { naval_base = 1 }}
+
+	}
+
+	provinces={
+		829 2788 6642 6647 6649 6654 6656 6659 6797 
+	}
+	manpower=7000
+	buildings_max_level_factor=1.000
+		state_category = pastoral
+local_supplies=0.000
+}

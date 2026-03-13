@@ -1,0 +1,27 @@
+state = {
+	id = 122
+	name = "Yujin_Tower"
+	resources = { }
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4 industrial_complex = 4 dockyard = 2
+			anti_air_building = 2
+			1573 = {naval_base = 10}
+			1153 = {
+				landmark_forbidden_city = {
+					level = 1
+				}
+			}
+		}
+		victory_points = {1153 50}
+		victory_points = {1573 5}
+	}
+	provinces = {1153 1573 5625 5662}
+	manpower = 7200000
+	buildings_max_level_factor = 1.000
+	state_category = metropolis
+	local_supplies = 1.000
+}

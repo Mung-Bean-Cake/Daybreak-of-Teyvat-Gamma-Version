@@ -1,0 +1,25 @@
+
+state={
+	id=309
+	name="Electroland_309"
+	resources={}
+
+	history={
+		owner = INA
+		add_core_of = INA
+		buildings = {	infrastructure = 2
+		1910 = {
+			naval_base = 1
+
+		} }
+
+	}
+
+	provinces={
+		1910 2585 5828 5866 5943 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+		state_category = town
+local_supplies=0.000
+}

@@ -1,0 +1,25 @@
+state = {
+	id = 156
+	name = "Domain_of_Guyun"
+	resources = {tungsten = 6 steel = 12 rubber = 8}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = YLH
+		buildings = {
+			infrastructure = 3 
+			arms_factory = 1 
+			industrial_complex = 1
+			air_base = 5
+			dockyard = 2
+			5463 = {naval_base = 10}
+			5463 = { landmark_statue_of_liberty = { level = 1 } }
+		}
+		victory_points = {5463 20}
+	}
+	provinces = {1497 5424 5459 5463 5502 5504}
+	manpower = 1170000
+	buildings_max_level_factor = 1.000
+	state_category = large_town
+	local_supplies = 1.000
+}

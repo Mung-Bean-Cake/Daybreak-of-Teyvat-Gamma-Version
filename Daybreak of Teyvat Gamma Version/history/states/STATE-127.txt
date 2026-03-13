@@ -1,0 +1,17 @@
+state = {
+	id = 127
+	name = "Domain_of_the_Wayward_Path"
+	resources = {tungsten = 8 steel = 11}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {182 5}
+		victory_points = {1042 5}
+	}
+	provinces = {182 740 1042 1326 2053 2834 5545}
+	manpower = 110000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

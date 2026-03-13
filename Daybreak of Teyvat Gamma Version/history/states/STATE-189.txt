@@ -1,0 +1,21 @@
+state = {
+	id = 189
+	name = "Chihu_Rock"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 4 arms_factory = 3 industrial_complex = 5
+			5602 = {naval_base = 10}
+			5585 = {naval_base = 10}
+		}
+		victory_points = {5618 5}
+		victory_points = {5602 5}
+	}
+	provinces = {5574 5585 5602 5618}
+	manpower = 7740000
+	buildings_max_level_factor = 1.000
+	state_category = large_city
+	local_supplies = 1.000
+}

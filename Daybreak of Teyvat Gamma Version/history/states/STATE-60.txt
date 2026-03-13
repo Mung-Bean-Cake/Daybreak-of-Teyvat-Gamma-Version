@@ -1,0 +1,31 @@
+
+state={
+	id=60
+	name="Stormterror_Lair_North"
+	resources={
+		oil=60.000
+		tungsten=35.000
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			1314 25
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+		}
+
+	}
+
+	provinces={
+		509 1314 2397 2404 4125 4151 4159 4179 4235 11412 11413 11415 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

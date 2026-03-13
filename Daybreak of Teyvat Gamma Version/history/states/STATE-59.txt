@@ -1,0 +1,32 @@
+
+state={
+	id=59
+	name="Brightcrown_Mountains"
+	resources={
+		tungsten=2.000
+		steel=6.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = ANR
+		add_core_of = ANR
+		add_core_of = MOT
+		victory_points = {
+			4334 5
+		}
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces={
+		1719 2222 4259 4277 4334 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,27 @@
+
+state={
+	id=510
+	name="Loch_Urania"
+	resources={
+		tungsten = 49 steel = 14
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		buildings = {
+			infrastructure = 1
+	
+
+		}
+
+	}
+
+	provinces={
+		148 913 1895 2437 3710 3733 3748 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

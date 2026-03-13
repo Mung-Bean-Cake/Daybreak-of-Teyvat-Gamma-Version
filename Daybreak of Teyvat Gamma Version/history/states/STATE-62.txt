@@ -1,0 +1,31 @@
+
+state={
+	id=62
+	name="Breeze_Canyon"
+	resources={
+		tungsten=25.000
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			4195 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		1569 2504 4137 4138 4165 4195 4202 4220 4258 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

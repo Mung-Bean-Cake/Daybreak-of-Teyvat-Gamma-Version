@@ -1,0 +1,28 @@
+
+state={
+	id=114
+	name="GUN_QQ_Land3"
+	resources={
+	}
+
+	history={
+		owner = GUN
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 2151 10 }
+		buildings = {
+			infrastructure = 1
+			2151 = { naval_base = 5 }
+		}
+		victory_points = { 2151 5 }
+
+	}
+
+	provinces={
+		2097 2151 2169 2356 2535 3441 3462 3468 3471 3530 3532 3536 3539 3555 3569 3583 3618 
+	}
+	manpower=20000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

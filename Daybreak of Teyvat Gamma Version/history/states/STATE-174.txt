@@ -1,0 +1,16 @@
+state = {
+	id = 174
+	name = "Qiongji_Field"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5359 10}
+	}
+	provinces = {864 1060 2050 2278 5359 5364 5399 5423}
+	manpower = 187000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

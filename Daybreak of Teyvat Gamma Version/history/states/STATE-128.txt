@@ -1,0 +1,16 @@
+state = {
+	id = 128
+	name = "Lingju_Pass"
+	resources = {steel = 4 tungsten = 6 rubber = 3}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2303 5}
+	}
+	provinces = {1189 2001 2046 2303 5536 5567 5595 5612 5617 5656 11461}
+	manpower = 71000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

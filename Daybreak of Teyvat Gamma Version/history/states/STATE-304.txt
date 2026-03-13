@@ -1,0 +1,23 @@
+
+state={
+	id=304
+	name="Goro_Barracks"
+	resources={}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 
+	}
+
+	}
+
+	provinces={
+		714 1336 2049 6470 6480 6510 6515 6530 6542 6549 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+		state_category = pastoral
+local_supplies=0.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 242
+	name = "Hood_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1158 2407 4557 4565 4589 4596 4611}
+	manpower = 95000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

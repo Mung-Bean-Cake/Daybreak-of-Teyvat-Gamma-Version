@@ -1,0 +1,20 @@
+state = {
+	id = 251
+	name = "Foreseen_Reformation"
+	resources = {
+		tungsten = 17
+		chromium = 1.000
+		steel = 3
+	}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = YLH
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1213 2007 5430}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 1.000
+}

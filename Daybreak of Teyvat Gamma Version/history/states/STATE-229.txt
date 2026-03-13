@@ -1,0 +1,15 @@
+state = {
+	id = 229
+	name = "Dubhe_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {697 975 1645 4382 4448 4460 4461}
+	manpower = 140000
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 1.000
+}

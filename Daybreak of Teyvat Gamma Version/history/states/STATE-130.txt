@@ -1,0 +1,20 @@
+state = {
+	id = 130
+	name = "Fuao_Vale"
+	resources = {oil = 34
+		tungsten = 15.000 steel = 14}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 1
+			air_base = 5
+		}
+		victory_points = {5472 5}
+	}
+	provinces = {187 2840 5453 5472}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

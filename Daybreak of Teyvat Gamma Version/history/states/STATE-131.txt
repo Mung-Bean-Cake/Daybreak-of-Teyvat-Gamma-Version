@@ -1,0 +1,16 @@
+state = {
+	id = 131
+	name = "Glaze_Peak"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5669 5}
+	}
+	provinces = {2630 5626 5668 5669 5715 5750 5756}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

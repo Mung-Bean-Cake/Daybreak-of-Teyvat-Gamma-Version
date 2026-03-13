@@ -1,0 +1,25 @@
+
+state={
+	id=288
+	name="Amakumo_East"
+	resources={}
+
+	history={
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+	buildings = {	infrastructure = 1 
+		6667 = { naval_base = 1 }
+		6678 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		2452 6660 6666 6667 6672 6676 6678 6681 6683 
+	}
+	manpower=42000
+	buildings_max_level_factor=1.000
+	state_category = rural
+	local_supplies=0.000
+}

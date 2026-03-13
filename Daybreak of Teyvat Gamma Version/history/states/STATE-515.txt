@@ -1,0 +1,28 @@
+
+state={
+	id=515
+	name="Mont_Automnequi"
+	resources={oil=98 tungsten = 2 steel = 1
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4222 5
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		831 1431 4191 4216 4222 4257 
+	}
+	manpower=17000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

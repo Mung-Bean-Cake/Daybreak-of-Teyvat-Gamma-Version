@@ -1,0 +1,27 @@
+
+state={
+	id=273
+	name="Kanazuka"
+	resources={ steel=53
+}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 2
+	arms_factory = 2
+ }
+ victory_points = {
+	6541 5
+}
+
+	}
+
+	provinces={
+		225 2603 2884 6455 6485 6486 6531 6541 6550 
+	}
+	manpower=1720000
+	buildings_max_level_factor=1.000
+	state_category = large_city
+	local_supplies=0.000
+}

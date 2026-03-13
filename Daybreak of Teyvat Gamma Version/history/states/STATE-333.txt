@@ -1,0 +1,23 @@
+
+state={
+	id=333
+	name="Electroland_333"
+	resources={chromium=16
+	steel=4}
+
+	history={
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		688 757 1493 2115 6707 6708 6712 
+	}
+	manpower=36000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+local_supplies=0.000
+}

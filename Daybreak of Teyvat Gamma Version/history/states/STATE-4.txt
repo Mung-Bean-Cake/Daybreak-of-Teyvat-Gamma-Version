@@ -1,0 +1,28 @@
+
+state={
+	id=4
+	name="Windrise"
+	resources={
+		aluminium=40.000
+	}
+
+	history={
+		owner = MOT
+		add_core_of = MOT
+		victory_points = { 4540 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+			air_base = 5
+		}
+
+	}
+
+	provinces={
+		1207 2848 4473 4483 4507 4540 
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

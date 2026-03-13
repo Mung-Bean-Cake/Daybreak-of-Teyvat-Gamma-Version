@@ -1,0 +1,31 @@
+
+state={
+	id=43
+	name="Entombed_City_Outskirts"
+	resources={
+	}
+
+	history={
+		owner = DRA
+		add_core_of = DRA
+		add_core_of = MOT
+		victory_points = {
+			2652 5
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 2
+
+		}
+
+	}
+
+	provinces={
+		955 2103 2624 2652 4862 4868 4936 4971 
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

@@ -1,0 +1,30 @@
+
+state={
+	id=28
+	name="Ranke_Town"
+	resources={
+	}
+
+	history={
+		owner = GUN # MHL SDS
+		add_core_of = SDS
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 2628 5 }
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = { 1018 5 }
+
+	}
+
+	provinces={
+		132 899 1018 1470 1519 2628 2720 2890 3372 3375 3389 3398 3401 3417 3433 3438 3439 3454 
+	}
+	manpower=500000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

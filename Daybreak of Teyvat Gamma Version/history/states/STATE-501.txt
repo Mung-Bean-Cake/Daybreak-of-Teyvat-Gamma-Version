@@ -1,0 +1,42 @@
+
+state={
+	id=501
+	name="Palais_Mermonia"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			392 25
+		}
+		victory_points = {
+			3864 50
+		}
+		victory_points = {
+			3829 5
+		}
+		victory_points = {
+			3840 5
+		}
+		victory_points = {
+			3815 5
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 8
+
+		}
+
+	}
+
+	provinces={
+		392 3815 3829 3840 3864 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=1.000
+}

@@ -1,0 +1,21 @@
+
+state={
+	id=312
+	name="Electroland_312"
+	resources={aluminium=1}
+
+	history={
+		owner = INA
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		1301 6403 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+		state_category = pastoral
+local_supplies=0.000
+}

@@ -1,0 +1,39 @@
+
+state={
+	id=624
+	name="Quartier_Narbonnais"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3910 10
+		}
+		victory_points = {
+			880 5
+		}
+		victory_points = {
+			244 5
+		}
+		victory_points = {
+			3944 10
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 4
+
+		}
+
+	}
+
+	provinces={
+		244 880 1424 3910 3944 6767 
+	}
+	manpower=3676700
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=1.000
+}

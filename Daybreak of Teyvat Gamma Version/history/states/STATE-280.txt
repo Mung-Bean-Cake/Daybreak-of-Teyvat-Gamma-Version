@@ -1,0 +1,23 @@
+
+state={
+	id=280
+	name="Serpent_Mine"
+	resources={chromium=16}
+
+	history={
+		owner = SAN
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+	victory_points = {
+		6630 5
+	}
+	}
+
+	provinces={
+		2275 6604 6610 6614 6619 6622 6630 6631 6637 
+	}
+	manpower=670000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

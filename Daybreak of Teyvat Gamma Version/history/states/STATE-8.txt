@@ -1,0 +1,31 @@
+
+state={
+	id=8
+	name="Temple_of_North_Wind_Wolf"
+	resources={
+		oil=4
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			2816 15
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		1412 2816 4420 4456 11420 
+	}
+	manpower=6000000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

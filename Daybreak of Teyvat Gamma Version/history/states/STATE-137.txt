@@ -1,0 +1,16 @@
+state = {
+	id = 137
+	name = "Dunyu_Ruins"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2889 5}
+	}
+	provinces = {1107 2889 5378 5414 11457}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

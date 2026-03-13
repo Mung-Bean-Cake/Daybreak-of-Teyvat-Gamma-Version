@@ -1,0 +1,29 @@
+
+state={
+	id=83
+	name="West_Wind_Mountain_East"
+	resources={
+		rubber=10.000
+		oil=10.000
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+
+		}
+
+	}
+
+	provinces={
+		639 2795 4006 4012 4015 4031 4032 4039 4055 4070 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

@@ -1,0 +1,32 @@
+
+state={
+	id=530
+	name="Clementine_Line"
+	resources={ tungsten = 4 steel = 2
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4052 5
+		}
+		victory_points = {
+			4079 15
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		2449 4046 4052 4079 6768 
+	}
+	manpower=244900
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

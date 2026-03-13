@@ -1,0 +1,21 @@
+
+state={
+	id=270
+	name="Bonsai_Palace"
+	resources={		chromium=12}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 2 }
+
+	}
+
+	provinces={
+		1510 2201 6577 6585 6594 6597 6608 
+	}
+	manpower=2740000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

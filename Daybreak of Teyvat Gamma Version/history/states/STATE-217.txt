@@ -1,0 +1,18 @@
+state = {
+	id = 217
+	name = "Yanfei_Town"
+	resources = {rubber = 17}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = { 
+			infrastructure = 1
+			101 = {naval_base = 10}
+		}
+	}
+	provinces = {101 1982 5016 5027 5081 5107}
+	manpower = 142000
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 1.000
+}

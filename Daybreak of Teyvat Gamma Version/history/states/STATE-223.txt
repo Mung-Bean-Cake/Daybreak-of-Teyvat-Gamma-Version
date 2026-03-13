@@ -1,0 +1,15 @@
+state = {
+	id = 223
+	name = "Baizhu_Town"
+	resources = {aluminium = 1}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1215 1893 2515 4987 5024 5136 5138}
+	manpower = 12000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

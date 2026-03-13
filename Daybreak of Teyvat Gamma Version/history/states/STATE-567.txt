@@ -1,0 +1,32 @@
+
+state={
+	id=567
+	name="Institute_of_Clockwork_Applications"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			652 5
+		}
+		victory_points = {
+			2791 5
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		652 1175 2022 2791 3270 3290 3305 3322 3344 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

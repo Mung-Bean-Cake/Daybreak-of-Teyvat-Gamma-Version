@@ -1,0 +1,32 @@
+
+state={
+	id=80
+	name="Storm_Island"
+	resources={
+		#
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			1716 10
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			dockyard = 1
+			4069 = { naval_base = 3 }
+		}
+
+	}
+
+	provinces={
+		567 904 1716 2903 3982 3999 4018 4029 4048 4053 4060 4069 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

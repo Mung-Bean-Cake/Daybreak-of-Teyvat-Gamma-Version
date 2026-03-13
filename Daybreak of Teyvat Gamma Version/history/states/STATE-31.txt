@@ -1,0 +1,31 @@
+
+state={
+	id=31
+	name="Eagle_Gate"
+	resources={
+		oil=2
+		aluminium=5.000
+	}
+
+	history={
+		owner = LAW
+		add_core_of = LAW
+		add_core_of = MOT
+		victory_points = {
+			4784 15
+		}
+		buildings = {
+			infrastructure = 2
+			dockyard = 2
+		}
+
+	}
+
+	provinces={
+		1330 1902 4761 4784 
+	}
+	manpower=3000000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

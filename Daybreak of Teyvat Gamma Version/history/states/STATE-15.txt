@@ -1,0 +1,34 @@
+
+state={
+	id=15
+	name="Stormbearer_Mountains"
+	resources={
+		steel=24.000
+		oil=14.000
+		rubber=1.000
+		aluminium=4.000
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			4197 5
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			4211 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		1142 1596 4180 4184 4197 4211 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

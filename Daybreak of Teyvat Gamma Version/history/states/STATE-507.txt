@@ -1,0 +1,29 @@
+
+state={
+	id=507
+	name="Marcotte_Station"
+	resources={
+		tungsten = 2
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+
+		}
+		victory_points = {
+			1913 1 
+		}
+	}
+
+	provinces={
+		1077 1913 2006 3760 3850 3872 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

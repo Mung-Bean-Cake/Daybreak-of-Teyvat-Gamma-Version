@@ -1,0 +1,30 @@
+
+state={
+	id=99
+	name="GUN_Rank_Port"
+	resources={
+		steel = 20
+	}
+
+	history={
+		owner = GUN # MHL SDS
+		add_core_of = SDS
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 3283 9 }
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			3283 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		1280 1502 1714 1958 2060 3277 3279 3283 3297 3298 3307 3325 3332 3340 3347 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

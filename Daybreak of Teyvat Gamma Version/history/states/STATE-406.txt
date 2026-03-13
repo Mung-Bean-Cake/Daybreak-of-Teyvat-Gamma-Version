@@ -1,0 +1,39 @@
+
+state={
+	id=406
+	name="Old_Vanarana"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = VAN
+		add_core_of = VAN
+		victory_points = {
+			5562 5
+		} # 重建后增加胜利点
+		victory_points = {
+			93 5
+		} # 重建后增加胜利点
+		buildings = {
+			infrastructure = 0
+			arms_factory = 0
+			industrial_complex = 0
+
+		}
+
+	}
+
+	provinces={
+		93 224 788 2333 2614 5462 5494 5495 5516 5523 5533 5534 5549 5553 5562 5571 5580 5583 5616 
+	}
+	manpower=5000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=1.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 147
+	name = "Mt._Hulao"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 2}
+        victory_points = {2505 10}
+	}
+	provinces = {1305 2505 2898 5007 5060 5100 11445}
+	manpower = 1450000
+	buildings_max_level_factor = 1.000
+	state_category = large_town
+	local_supplies = 1.000
+}

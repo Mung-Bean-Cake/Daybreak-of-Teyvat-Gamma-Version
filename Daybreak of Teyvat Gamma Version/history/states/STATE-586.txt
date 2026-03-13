@@ -1,0 +1,32 @@
+
+state={
+	id=586
+	name="Charybdis_Island"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			2226 25
+		}
+		victory_points = {
+			4047 5
+		}
+		buildings = {
+			infrastructure = 1
+
+			4047 = { naval_base = 3 }
+		}
+
+	}
+
+	provinces={
+		2226 4024 4047 
+	}
+	manpower=140240
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

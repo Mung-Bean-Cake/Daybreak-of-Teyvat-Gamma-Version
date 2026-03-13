@@ -1,0 +1,26 @@
+
+state={
+	id=306
+	name="Moshiri_Kara"
+	resources={}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+		buildings = {	infrastructure = 1 
+		1756 = {
+			naval_base = 1
+
+		}}
+
+	}
+
+	provinces={
+		1756 6716 6720 6800 6801 6802 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+		state_category = pastoral
+local_supplies=0.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 139
+	name = "Hidden_Palace_of_Guizang_Formula"
+	resources = {tungsten = 10 chromium = 10}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 3}
+		victory_points = {5293 10}
+	}
+	provinces = {5293 11453}
+	manpower = 8410
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 1.000
+}

@@ -1,0 +1,29 @@
+
+state={
+	id=9
+	name="Thousand_Winds_Temple"
+	resources={
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = { 4340 50 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+			4323 = { naval_base = 4 }
+			air_base = 5
+		}
+
+	}
+
+	provinces={
+		2065 4323 4340 4360 4407 4437 
+	}
+	manpower=8000000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=1.000
+}

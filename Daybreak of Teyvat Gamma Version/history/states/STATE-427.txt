@@ -1,0 +1,37 @@
+
+state={
+	id=427
+	name="Hills_of_Barsom"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = SGS
+		add_core_of = SGS
+		buildings = {
+			infrastructure = 1
+			arms_factory = 0
+			industrial_complex = 0
+		}
+		victory_points = {
+			861 15
+		}
+		victory_points = {
+			4759 15
+		}
+	}
+
+	provinces={
+		642 854 1867 2158 2638 4690 4702 4720 4721 4729 4759 4789 4798 4799
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

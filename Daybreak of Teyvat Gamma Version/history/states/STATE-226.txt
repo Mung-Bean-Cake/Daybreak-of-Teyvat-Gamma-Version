@@ -1,0 +1,22 @@
+state = {
+	id = 226
+	name = "Xianyun_Town"
+	resources = {aluminium = 11
+	tungsten = 7
+	steel = 4
+}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 2
+			air_base = 5
+		}
+		victory_points = {4693 5}
+	}
+	provinces = {1833 2479 4652 4662 4680 4693 4694 4726}
+	manpower = 170000
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 1.000
+}

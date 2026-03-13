@@ -1,0 +1,35 @@
+
+state={
+	id=18
+	name="Cider_Lake"
+	resources={
+		rubber=1.000
+		aluminium=2.000
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			4152 20
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			1983 = { naval_base = 2 }
+			4081 = { naval_base = 2 }
+			4152 = { naval_base = 2 }
+		}
+
+	}
+
+	provinces={
+		1345 1571 1983 4081 4084 4110 4118 4144 4145 4152 4176 
+	}
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

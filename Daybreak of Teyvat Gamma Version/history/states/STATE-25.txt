@@ -1,0 +1,29 @@
+
+state={
+	id=25
+	name="Page_Castle"
+	resources={
+	}
+
+	history={
+		owner = GUN # MHL SDS
+		add_core_of = SDS
+		add_core_of = GUN
+		add_core_of = MOT
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = { 1944 5 }
+
+	}
+
+	provinces={
+		1547 1944 1968 2800 3436 3467 3482 3486 3494 3495 3512 3528 3567 
+	}
+	manpower=500000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

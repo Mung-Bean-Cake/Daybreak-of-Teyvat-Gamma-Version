@@ -1,0 +1,16 @@
+state = {
+	id = 235
+	name = "Mizar_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1200 2301 4427 4440 4455 4459 4471 4486}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

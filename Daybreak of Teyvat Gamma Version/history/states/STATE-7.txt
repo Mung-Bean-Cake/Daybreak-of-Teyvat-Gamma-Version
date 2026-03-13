@@ -1,0 +1,27 @@
+
+state={
+	id=7
+	name="Temple_of_Zephyr_Eagle"
+	resources={
+		oil=8.000
+	}
+
+	history={
+		owner = MOT
+		add_core_of = MOT
+		victory_points = { 63 15 }
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+
+	}
+
+	provinces={
+		63 2389 2508 4417 
+	}
+	manpower=1000000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

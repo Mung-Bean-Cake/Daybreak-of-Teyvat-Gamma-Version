@@ -1,0 +1,23 @@
+
+state={
+	id=294
+	name="Moshiri_Ceremonial_Site"
+	resources={	tungsten=3}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+	buildings = {	infrastructure = 1
+	industrial_complex = 1 }
+
+	}
+
+	provinces={
+		1198 1554 6743 6749 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category = town
+	local_supplies=0.000
+}

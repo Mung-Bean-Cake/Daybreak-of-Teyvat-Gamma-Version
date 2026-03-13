@@ -1,0 +1,24 @@
+
+state={
+	id=346
+	name="Electroland_346"
+	resources={
+		 oil=2
+}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		1551 6518 6537 6538 6554 6575 
+	}
+	manpower=72000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

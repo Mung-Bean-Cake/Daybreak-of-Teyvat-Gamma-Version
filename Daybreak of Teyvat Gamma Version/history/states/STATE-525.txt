@@ -1,0 +1,25 @@
+
+state={
+	id=525
+	name="Elynas_Southeast"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		196 2324 2647 2661 4354 4438 4447 4464 
+	}
+	manpower=196000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

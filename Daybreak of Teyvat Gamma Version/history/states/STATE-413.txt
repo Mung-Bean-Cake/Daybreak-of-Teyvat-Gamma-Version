@@ -1,0 +1,36 @@
+
+state={
+	id=413
+	name="Dasha_Ridge"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = VAN
+		add_core_of = VAN
+		victory_points = {
+			5099 10
+		}
+		buildings = {
+			infrastructure = 0
+			arms_factory = 0
+			industrial_complex = 0
+
+		}
+
+	}
+
+	provinces={
+		576 1881 1948 2260 2566 5003 5004 5031 5039 5066 5099 5121 5134 5156 5160 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

@@ -1,0 +1,24 @@
+state = {
+	id = 191
+	name = "Left_Tianmen_Mountain"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 1
+			1876 = {
+				landmark_great_wall_section = { level = 1 }
+			}
+			5379 = {
+				landmark_great_wall_section = { level = 1 }
+			}
+		}
+		victory_points = {1876 5}
+	}
+	provinces = {1876 5379 5398 5429 5436 5474}
+	manpower = 420000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

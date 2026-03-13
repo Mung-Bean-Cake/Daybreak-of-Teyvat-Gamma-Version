@@ -1,0 +1,29 @@
+
+state={
+	id=582
+	name="Hydroland_582"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			1105 5
+		}
+		buildings = {
+			infrastructure = 3
+			dockyard = 3
+			1105 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		845 1013 1105 2684 3734 3798 3817 
+	}
+	manpower=3817000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

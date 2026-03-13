@@ -1,0 +1,12 @@
+﻿l_english:
+
+DOT_Caputure_Event.1.t:0 "Does the AI enable the Captive General function"
+DOT_Caputure_Event.1.d:0 "Does the AI enable the Captive Generals feature"
+DOT_Caputure_Event.2.t:0 "The evil enemy nation has been defeated by us!"   #[FROM.GetName]
+DOT_Caputure_Event.2.d:0 "The enemy army has been defeated by the generals. Under the coercion of the internal affairs department, the enemy's generals have also given up their resistance and wish to give up the ghost, are you willing to accept this group of defeated generals?"
+DOT_Caputure_Event.2.a:0 "A good man chooses a tree of integrity, and a wise minister should choose a master to serve!"
+DOT_Caputure_Event.2.b:0 "How can one govern a country well in the company of a bunch of bugs and insects!"
+DOT_Caputure_Event.2.a.a: "All commanders of the enemy nation have joined us."
+DOT_Caputure_Event.2.b.b: "Execute all enemy commanders."
+
+ 

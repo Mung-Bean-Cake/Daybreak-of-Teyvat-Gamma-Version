@@ -1,0 +1,25 @@
+
+state={
+	id=285
+	name="Fort_Hiraumi"
+	resources={	oil=17
+		chromium=14
+
+}
+
+	history={
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		670 802 871 1392 2832 6640 6641 6644 6645 6652 6653 
+	}
+	manpower=170000
+	buildings_max_level_factor=1.000
+	state_category = town
+	local_supplies=0.000
+}

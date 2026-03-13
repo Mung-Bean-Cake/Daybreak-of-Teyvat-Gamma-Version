@@ -1,0 +1,25 @@
+
+state={
+	id=263
+	name="Kanjou_Commission"
+	resources={}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 3
+	       arms_factory = 1
+			industrial_complex = 2 }
+			victory_points = {
+				6052 5
+			}
+	}
+
+	provinces={
+		1894 2083 6027 6052 6057 
+	}
+	manpower= 1723000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

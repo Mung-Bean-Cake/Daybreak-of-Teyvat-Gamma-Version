@@ -1,0 +1,16 @@
+state = {
+	id = 230
+	name = "Merak_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2205 10}
+	}
+	provinces = {666 1472 1801 2152 2205 5272 5298 5320 5333 5422 5443}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

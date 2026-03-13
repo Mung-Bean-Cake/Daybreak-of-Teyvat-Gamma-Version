@@ -1,0 +1,16 @@
+state = {
+	id = 140
+	name = "Tianqiu_Valley"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5306 5}
+	}
+	provinces = {174 2310 5291 5306 5309 5345 11454}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

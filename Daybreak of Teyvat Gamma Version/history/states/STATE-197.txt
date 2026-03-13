@@ -1,0 +1,15 @@
+state = {
+	id = 197
+	name = "Sea_Gazer_Mount"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {2015 2825 5728 5743 5764}
+	manpower = 172000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

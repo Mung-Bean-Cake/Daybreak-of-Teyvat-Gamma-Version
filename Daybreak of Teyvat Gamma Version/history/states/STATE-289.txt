@@ -1,0 +1,23 @@
+
+state={
+	id=289
+	name="Amakumo_West"
+	resources={		chromium=8}
+
+	history={
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+	buildings = {	infrastructure = 1 
+		1663 = { naval_base = 1 }}
+
+	}
+
+	provinces={
+		622 734 1575 1663 6703 6710 6714 
+	}
+	manpower=61000
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

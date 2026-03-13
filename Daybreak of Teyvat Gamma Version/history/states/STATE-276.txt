@@ -1,0 +1,28 @@
+
+state={
+	id=276
+	name="Fort_Fujitou"
+	resources={		chromium=3.000}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+	buildings = {	infrastructure = 1 
+	6472 = {
+		naval_base = 1
+
+	}}
+	victory_points = {
+		1783 3
+	}
+	}
+
+	provinces={
+		1783 1866 6472 6512 6526 6535 
+	}
+	manpower=1400000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

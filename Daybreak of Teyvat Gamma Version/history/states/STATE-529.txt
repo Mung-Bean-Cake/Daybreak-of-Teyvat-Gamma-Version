@@ -1,0 +1,25 @@
+
+state={
+	id=529
+	name="North_Slopes_of_Mont_Automnequi"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		518 2493 4105 4106 4134 4135 4169 4188 
+	}
+	manpower=518000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

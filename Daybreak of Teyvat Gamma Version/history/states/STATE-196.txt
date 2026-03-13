@@ -1,0 +1,15 @@
+state = {
+	id = 196
+	name = "Cloud_Retainer_Valley"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1751 2080 2783 5449 5489 5528}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

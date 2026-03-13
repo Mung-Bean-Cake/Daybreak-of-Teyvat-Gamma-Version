@@ -1,0 +1,32 @@
+
+state={
+	id=115
+	name="GUN_Lion_Town3"
+	resources={
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = GUN # MHL SDS
+		add_core_of = SDS
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 752 25 }
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		752 1452 2501 2509 3520 3552 3574 3575 3581 3589 3635 3666 3672 3706 3722 3755 3780 
+	}
+	manpower=1200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

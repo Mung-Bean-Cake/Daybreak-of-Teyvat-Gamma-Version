@@ -1,0 +1,32 @@
+
+state={
+	id=79
+	name="Breeze_Land"
+	resources={
+		oil=10.000
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			4096 15
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		1382 1799 4096 4117 4147 4166 4178 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

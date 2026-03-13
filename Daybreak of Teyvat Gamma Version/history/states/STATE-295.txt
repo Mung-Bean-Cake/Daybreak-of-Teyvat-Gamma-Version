@@ -1,0 +1,26 @@
+
+state={
+	id=295
+	name="Mt._Kanna"
+	resources={	tungsten=1
+	steel=1
+	chromium=1}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+	victory_points = {
+		6744 5
+	}
+	}
+
+	provinces={
+		2726 6744 6748 6750 
+	}
+	manpower=95000
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

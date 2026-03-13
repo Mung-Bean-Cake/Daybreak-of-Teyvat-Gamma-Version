@@ -1,0 +1,27 @@
+
+state={
+	id=283
+	name="Asase_Shrine"
+	resources={}
+
+	history={
+		owner = ASA
+		add_core_of = ASA
+		add_core_of = INA
+	buildings = {
+		infrastructure = 3
+		2830 = { naval_base = 1 }
+	}
+	victory_points = {
+		2830 25
+	}
+	}
+
+	provinces={
+		2262 2830 6689 6690 6691 6694 6696 6699 
+	}
+	manpower=6510000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=0.000
+}

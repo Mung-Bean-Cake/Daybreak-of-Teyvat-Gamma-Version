@@ -1,0 +1,21 @@
+state={
+	id=341 provinces={ 1933  }
+	name="Electroland_341" #"Tsurumi"
+	history={ 
+		owner = SAN
+		add_core_of = SAN
+	    # victory_points = { 3825 20 } # 胜利点
+	    buildings={ 
+		    infrastructure=1
+		    # air_base = 5 # 机场
+		    # dockyard = 1 # 船坞
+		    # 5412 = { naval_base = 10 } # 海港
+		}
+	}
+	manpower=12000  
+	state_category = pastoral  
+	resources={ }
+	buildings_max_level_factor=1.000  
+local_supplies=0.000 
+	#
+}

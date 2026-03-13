@@ -1,0 +1,19 @@
+state = {
+	id = 194
+	name = "Water_Scenery_Valley"
+	resources = {rubber = 34}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 1
+			5415 = {naval_base = 10}
+		}
+		victory_points = {5418 20}
+	}
+	provinces = {421 580 702 2539 5380 5383 5415 5418 5467}
+	manpower = 720000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

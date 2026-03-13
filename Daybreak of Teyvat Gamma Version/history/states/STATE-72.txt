@@ -1,0 +1,33 @@
+
+state={
+	id=72
+	name="Sleepy_Tribe"
+	resources={
+	}
+
+	history={
+		owner = LAW
+		add_core_of = LAW
+		add_core_of = MOT
+		victory_points = {
+			133 5
+		}
+		victory_points = {
+			329 50
+		}
+		buildings = {
+			infrastructure = 5
+			industrial_complex = 2
+			air_base = 5
+		}
+
+	}
+
+	provinces={
+		133 329 1234 2184 4846 4879 4883 
+	}
+	manpower=514
+	buildings_max_level_factor=0.000
+	state_category=rural
+	local_supplies=1.000
+}

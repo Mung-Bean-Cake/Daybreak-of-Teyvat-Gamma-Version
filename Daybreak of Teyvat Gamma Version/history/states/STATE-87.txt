@@ -1,0 +1,36 @@
+
+state={
+	id=87
+	name="FAV_Wine_Bay"
+	resources={
+		rubber=1.000
+		aluminium=2.000
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			2605 5
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			dockyard = 1
+			4056 = { naval_base = 2 }
+			2605 = { naval_base = 2 }
+			3978 = { naval_base = 2 }
+			air_base = 5
+		}
+
+	}
+
+	provinces={
+		668 1063 1711 1715 2605 2875 3978 4009 4022 4026 4034 4041 4049 4056 
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

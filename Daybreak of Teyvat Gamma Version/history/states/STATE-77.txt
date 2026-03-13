@@ -1,0 +1,32 @@
+
+state={
+	id=77
+	name="Tower_Surburbs"
+	resources={
+		#
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			2893 15
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		674 1369 2690 2893 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

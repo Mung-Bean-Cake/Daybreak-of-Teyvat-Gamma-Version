@@ -1,0 +1,29 @@
+
+state={
+	id=600
+	name="Hydrologic_Station_Channel"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			1561 10
+		}
+		buildings = {
+			infrastructure = 2
+
+
+		}
+
+	}
+
+	provinces={
+		336 1262 1561 3238 3243 3246 3247 3253 3259 3260 3266 3274 3284 3288 3311 3312 
+	}
+	manpower=132380
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

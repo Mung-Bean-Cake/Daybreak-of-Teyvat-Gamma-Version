@@ -1,0 +1,29 @@
+
+state={
+	id=578
+	name="Dryas_Wood"
+	resources={ aluminium=30
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3653 5
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		551 995 1202 1461 1973 3603 3616 3626 3653 3687 
+	}
+	manpower=360300
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

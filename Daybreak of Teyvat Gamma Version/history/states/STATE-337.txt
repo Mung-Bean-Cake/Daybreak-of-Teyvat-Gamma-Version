@@ -1,0 +1,22 @@
+
+state={
+	id=337
+	name="Electroland_337"
+	resources={}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		1365 1795 6751 
+	}
+	manpower=6681
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+local_supplies=0.000
+}

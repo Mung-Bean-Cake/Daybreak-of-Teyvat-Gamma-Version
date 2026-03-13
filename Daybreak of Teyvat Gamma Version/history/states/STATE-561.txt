@@ -1,0 +1,25 @@
+
+state={
+	id=561
+	name="Cryoland"
+	resources={
+	}
+
+	history={
+		owner = SNE
+		add_core_of = SNE
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		6758 
+	}
+	manpower = 675801
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

@@ -1,0 +1,31 @@
+
+state={
+	id=12
+	name="Stormbearer_Coast"
+	resources={
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			236 5
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+		}
+
+	}
+
+	provinces={
+		236 1287 2129 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

@@ -1,0 +1,27 @@
+
+state={
+	id=76
+	name="Stormterror_Lair_South"
+	resources={
+		tungsten=10.000
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+		}
+
+	}
+
+	provinces={
+		1243 1887 4171 4229 4236 4273 4274 4294 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

@@ -1,0 +1,24 @@
+
+state={
+	id=258
+	name="Byakko_Plain"
+	resources={
+		steel=6.000
+		chromium=2.000
+	}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	   buildings = {	infrastructure = 2 }
+
+	}
+
+	provinces={
+		608 1109 6221 6233 6245 6249 6268 
+	}
+	manpower=1680101
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

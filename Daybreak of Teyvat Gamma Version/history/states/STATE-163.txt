@@ -1,0 +1,15 @@
+state = {
+	id = 163
+	name = "Wuwang_Hill"
+	resources = {aluminium = 28}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {2221 2282 4698 4731 4739 4803}
+	manpower = 2000
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 1.000
+}

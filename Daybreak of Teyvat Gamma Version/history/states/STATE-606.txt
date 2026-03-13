@@ -1,0 +1,35 @@
+
+state={
+	id=606
+	name="Quartier_Lyonnais"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3856 5
+		}
+		victory_points = {
+			1126 5
+		}
+		victory_points = {
+			3825 15
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+
+		}
+
+	}
+
+	provinces={
+		28 1126 1771 2438 3796 3825 3856 
+	}
+	manpower=3385600
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

@@ -1,0 +1,25 @@
+
+state={
+	id=281
+	name="Cherry_Dye_of_the_Court"
+	resources={	oil=184.000
+	chromium=3.000
+	steel=14.000}
+
+	history={
+		owner = SAN
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+	victory_points = {
+		6561 15
+	}
+	}
+
+	provinces={
+		2179 2517 2814 2847 6525 6544 6556 6561 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category = rural
+	local_supplies=0.000
+}

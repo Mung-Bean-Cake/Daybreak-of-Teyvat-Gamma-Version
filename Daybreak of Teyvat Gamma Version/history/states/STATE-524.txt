@@ -1,0 +1,28 @@
+
+state={
+	id=524
+	name="Elynas_Southwest"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			1003 5
+		}
+		buildings = {
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		3 399 1003 1229 4387 4408 4422 4452 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

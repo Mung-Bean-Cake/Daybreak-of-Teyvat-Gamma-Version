@@ -1,0 +1,29 @@
+
+state={
+	id=105
+	name="GUN_Crazy_Wind2"
+	resources={
+		aluminium=20.000
+	}
+
+	history={
+		owner = GUN
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 172 10 }
+		buildings = {
+			infrastructure = 1
+			3938 = { naval_base = 3 }
+		}
+		victory_points = { 3938 5 }
+
+	}
+
+	provinces={
+		172 1238 1258 1266 1504 1521 1981 2048 2713 2813 3903 3920 3921 3931 3938 3939 3955 3961 3983 3987 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

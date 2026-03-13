@@ -1,0 +1,32 @@
+
+state={
+	id=81
+	name="Stormterror_Harbor"
+	resources={
+		#
+	}
+
+	history={
+		owner = DVA
+		add_core_of = DVA
+		add_core_of = MOT
+		victory_points = {
+			1131 20
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 2
+			dockyard = 3
+			1131 = { naval_base = 3 }
+		}
+
+	}
+
+	provinces={
+		749 1131 2287 4005 4030 4054 4078 4082 4100 4107 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

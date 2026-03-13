@@ -1,0 +1,36 @@
+
+state={
+	id=500
+	name="Court_of_Fontaine"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3914 10
+		}
+		victory_points = {
+			3926 50
+		}
+		victory_points = {
+			3906 5
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 5
+			FON_Palace = 1
+			3926 = { FON_Palace = 1 }
+		}
+	}
+
+	provinces={
+		2773 3895 3906 3914 3926 3935 
+	}
+	manpower=43895000
+	buildings_max_level_factor=1.000
+	state_category = metropolis
+	local_supplies=1.000
+}

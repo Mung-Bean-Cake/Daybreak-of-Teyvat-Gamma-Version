@@ -1,0 +1,16 @@
+state = {
+	id = 218
+	name = "Xingqiu_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5008 10}
+	}
+	provinces = {341 1048 1454 4940 4999 5008 5023 5042}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

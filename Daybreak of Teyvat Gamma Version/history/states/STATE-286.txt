@@ -1,0 +1,26 @@
+
+state={
+	id=286
+	name="Koseki_Village"
+	resources={ steel=7
+}
+
+	history={	
+		owner = ASA
+	    add_core_of = ASA
+		add_core_of = INA
+	buildings = {	infrastructure = 2
+	industrial_complex = 2 }
+	victory_points = {
+		1612 10
+	}
+	}
+
+	provinces={
+		1273 1329 1612 6650 6655 6657 6664 
+	}
+	manpower=7660000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=0.000
+}

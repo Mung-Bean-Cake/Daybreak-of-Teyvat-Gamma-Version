@@ -1,0 +1,24 @@
+state = {
+	id = 186
+	name = "ST_LYY_09"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {
+		    infrastructure = 1
+		    arms_factory = 5
+		    industrial_complex = 5
+		    # air_base = 5 # 机场
+		    # dockyard = 1 # 船坞
+		    # 5412 = {naval_base = 10} # 海港
+		}
+		victory_points = {2220 5}
+	}
+	provinces = {414 1689 2220 4625 4668 4705}
+	manpower = 240000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

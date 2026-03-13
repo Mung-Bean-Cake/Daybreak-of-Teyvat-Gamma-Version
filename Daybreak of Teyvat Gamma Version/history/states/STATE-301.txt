@@ -1,0 +1,24 @@
+
+state={
+	id=301
+	name="Suigetsu_Pool"
+	resources={}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+		victory_points = {
+			6471 1
+		}
+	}
+
+	provinces={
+		6454 6457 6471 6481 6489 6511 6519 6527 
+	}
+	manpower=42000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+local_supplies=0.000
+}

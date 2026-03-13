@@ -1,0 +1,16 @@
+state = {
+	id = 215
+	name = "Yunjin_Town"
+	resources = {tungsten = 12.000 steel = 23}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {1622 5}
+	}
+	provinces = {1622 2738 5080 5089 5116 5149}
+	manpower = 320000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

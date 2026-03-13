@@ -1,0 +1,27 @@
+
+state={
+	id=514
+	name="Fort_Charybdis_Ruins"
+	resources={tungsten =41 steel = 23
+	}
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			823 5
+		}
+		buildings = {
+			infrastructure = 3
+
+		}
+
+	}
+
+	provinces={
+		823 1518 4095 4123 4131 4155 4162 4163 
+	}
+	manpower=720000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=1.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 152
+	name = "Ningguang_Village"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2697 5}
+	}
+	provinces = {2217 2697 4911 4966 4980}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 1.000
+}

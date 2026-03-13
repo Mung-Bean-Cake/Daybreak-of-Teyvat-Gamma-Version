@@ -1,0 +1,35 @@
+
+state={
+	id=615
+	name="Vasari_Passage"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3962 5
+		}
+		victory_points = {
+			3981 5
+		}
+		victory_points = {
+			3950 10
+		}
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 5
+
+		}
+
+	}
+
+	provinces={
+		2392 3950 3959 3962 3976 3981 3997 11410 
+	}
+	manpower=3959010
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

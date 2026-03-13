@@ -1,0 +1,19 @@
+state = {
+	id = 162
+	name = "Qingce_Village"
+	resources = {tungsten = 1.000}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 4  industrial_complex = 6 arms_factory = 2
+			4614 = {naval_base = 10}
+		}
+		victory_points = {4614 15}
+	}
+	provinces = {1635 4612 4614 4640 11429}
+	manpower = 5200000
+	buildings_max_level_factor = 1.000
+	state_category = large_city
+	local_supplies = 1.000
+}

@@ -1,0 +1,32 @@
+
+state={
+	id=262
+	name="Ritou"
+	resources={
+			aluminium=2
+}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 4 
+	industrial_complex = 3
+			dockyard = 3
+			6092 = {
+				naval_base = 5
+
+			}}
+			victory_points = {
+				6092 10
+			}
+
+	}
+
+	provinces={
+		1828 6092 6093 6115 6129 6143 6156 
+	}
+	manpower=2323000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

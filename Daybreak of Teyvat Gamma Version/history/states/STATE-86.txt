@@ -1,0 +1,32 @@
+
+state={
+	id=86
+	name="FAV_Wind_Bay"
+	resources={
+		rubber=1.000
+		aluminium=2.000
+	}
+
+	history={
+		owner = FAV
+		add_core_of = FAV
+		add_core_of = MOT
+		victory_points = {
+			4129 10
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			4129 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		1536 2134 2415 2580 2660 4064 4088 4102 4111 4129 4153 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

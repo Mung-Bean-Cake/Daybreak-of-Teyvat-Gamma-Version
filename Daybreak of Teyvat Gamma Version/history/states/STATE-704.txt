@@ -1,0 +1,29 @@
+
+state={
+	id=704
+	name="Snezhnaya_Palace" 
+	resources={ tungsten=1.000 steel=4.000 chromium=1.000 oil=4.000 rubber=1.000 aluminium=1.000}
+
+	history={
+		owner = SNE
+		add_core_of = SNE
+		victory_points = { 220 100 }
+		buildings = {
+			infrastructure = 5
+			arms_factory = 5
+			industrial_complex = 5
+			air_base = 5
+			SNE_Palace = 1
+			220 = { SNE_Palace = 1 }
+		}
+
+	}
+
+	provinces={
+		220 597 612 934 1516 1798 2408 
+	}
+	manpower=8000000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

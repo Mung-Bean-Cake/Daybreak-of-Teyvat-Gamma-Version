@@ -1,0 +1,28 @@
+
+state={
+	id=267
+	name="Violet_Palace"
+	resources={	
+		oil=4.000
+}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 2
+	dockyard = 3
+ }		
+ victory_points = {
+	6350 1
+}
+
+	}
+
+	provinces={
+		6327 6347 6350 6367 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

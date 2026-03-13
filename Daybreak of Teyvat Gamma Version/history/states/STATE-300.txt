@@ -1,0 +1,31 @@
+
+state={
+	id=300
+	name="Sangonomiya_Shrine"
+	resources={	steel=8.000
+	chromium=3.000
+	tungsten=2.000
+}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+	buildings = {	infrastructure = 4
+	industrial_complex = 4
+			air_base = 1
+			arms_factory = 3
+		 }
+	victory_points = {
+		6573 25
+	}
+	}
+
+	provinces={
+		1704 2072 6552 6558 6573 11485 11486 
+	}
+	manpower=4200000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=0.000
+}

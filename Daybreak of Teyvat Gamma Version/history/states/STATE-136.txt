@@ -1,0 +1,16 @@
+state = {
+	id = 136
+	name = "Black_Rock_Village"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5797 5}
+	}
+	provinces = {1349 5788 5797 5801 5823 5853}
+	manpower = 1740000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

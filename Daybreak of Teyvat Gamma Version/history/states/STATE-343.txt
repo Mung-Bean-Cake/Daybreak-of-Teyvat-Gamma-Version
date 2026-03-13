@@ -1,0 +1,25 @@
+
+state={
+	id=343
+	name="Electroland_343"
+	resources={steel=4.000
+	chromium=4}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+		victory_points = {
+			6571 10
+		}
+	}
+
+	provinces={
+		520 1767 6571 
+	}
+	manpower=120000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

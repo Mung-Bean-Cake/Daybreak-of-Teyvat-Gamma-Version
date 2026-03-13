@@ -1,0 +1,25 @@
+
+state={
+	id=264
+	name="Konda_Village"
+	resources={	steel=6.000
+	chromium=2.000}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 3
+	industrial_complex = 4 }
+	victory_points = {
+		905 1
+	}
+	}
+
+	provinces={
+		905 2633 6140 6172 6195 6202 6216 
+	}
+	manpower=8200000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=0.000
+}

@@ -1,0 +1,21 @@
+
+state={
+	id=260
+	name="Mt._Yougou"
+	resources={	chromium=2.000}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 4 }
+
+	}
+
+	provinces={
+		1421 2170 6094 6105 6124 6132 6146 
+	}
+	manpower=1780000
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

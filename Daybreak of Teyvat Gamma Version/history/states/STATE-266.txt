@@ -1,0 +1,23 @@
+
+state={
+	id=266
+	name="Wild_Sea"
+	resources={}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+	victory_points = {
+		825 1
+	}
+	}
+
+	provinces={
+		820 825 1847 5906 5910 6784 6786 
+	}
+	manpower=5600
+	buildings_max_level_factor=1.000
+	state_category = rural
+	local_supplies=0.000
+}

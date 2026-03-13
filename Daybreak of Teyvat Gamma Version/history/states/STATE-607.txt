@@ -1,0 +1,32 @@
+
+state={
+	id=607
+	name="Hydroland_607"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4089 5
+		}
+		victory_points = {
+			4051 5
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		877 1181 1281 2863 4050 4051 4089 
+	}
+	manpower=286314
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

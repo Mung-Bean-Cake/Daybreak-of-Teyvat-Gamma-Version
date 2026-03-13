@@ -1,0 +1,22 @@
+
+state={
+	id=342
+	name="Electroland_342"
+	resources={}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		418 2013 2354 6563 6581 6589 
+	}
+	manpower=620000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

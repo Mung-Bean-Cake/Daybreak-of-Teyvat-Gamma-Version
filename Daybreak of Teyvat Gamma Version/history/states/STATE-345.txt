@@ -1,0 +1,27 @@
+
+state={
+	id=345
+	name="Electroland_345"
+	resources={}
+
+	history={
+		owner = INA
+		add_core_of = INA
+		buildings = {	infrastructure = 2 
+		arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			6282 5
+		}
+
+	}
+
+	provinces={
+		6257 6264 6280 6282 6295 6316 
+	}
+	manpower=3300000
+	buildings_max_level_factor=1.000
+	state_category = city
+	local_supplies=1.000
+}

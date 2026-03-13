@@ -1,0 +1,35 @@
+
+state={
+	id=29
+	name="Galesong_Hill"
+	resources={
+		steel=20.000
+		tungsten=1.000
+		rubber=1.000
+		aluminium=5.000
+	}
+
+	history={
+		owner = LAW
+		add_core_of = LAW
+		add_core_of = MOT
+		victory_points = {
+			2649 15
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		2212 2623 2649 4733 4767 4779 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 170
+	name = "Domain_of_Forsaken_Ruins"
+	resources = {rubber = 1.000 aluminium = 2}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {444 5}
+	}
+	provinces = {444 2197 5150 5210}
+	manpower = 180000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

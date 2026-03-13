@@ -1,0 +1,16 @@
+state = {
+	id = 146
+	name = "Beneath_the_Dragon-Queller"
+	resources = {rubber = 4 aluminium = 13 oil = 3}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5086 15}
+	}
+	provinces = {645 5048 5086 5123 5128 11448}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

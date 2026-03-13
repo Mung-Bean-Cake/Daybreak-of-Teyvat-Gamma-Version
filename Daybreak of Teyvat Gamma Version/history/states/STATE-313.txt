@@ -1,0 +1,23 @@
+
+state={
+	id=313
+	name="Electroland_313"
+	resources={		oil=4
+	steel=4
+		chromium=8}
+
+	history={
+		owner = INA
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		2851 5951 5962 5983 5988 5995 6013 
+	}
+	manpower=888200
+	buildings_max_level_factor=1.000
+		state_category = rural
+local_supplies=0.000
+}

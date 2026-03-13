@@ -1,0 +1,29 @@
+
+state={
+	id=340
+	name="Electroland_340"
+	resources={chromium=12}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1
+		dockyard = 1
+		6609 = {
+			naval_base = 1
+
+		} }
+		victory_points = {
+			6609 1
+		}
+	}
+
+	provinces={
+		1653 2664 6598 6603 6609 6617 6620 6627 6628 6636 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category= town
+local_supplies=0.000
+}

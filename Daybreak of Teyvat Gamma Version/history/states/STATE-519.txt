@@ -1,0 +1,30 @@
+
+state={
+	id=519
+	name="Denouement_of_Sin"
+	resources={
+		tungsten = 8 oil = 2
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4492 15
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		4489 4492 4512 4519 4524 4556 4568 
+	}
+	manpower=448000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

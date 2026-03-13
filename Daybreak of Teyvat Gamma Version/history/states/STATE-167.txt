@@ -1,0 +1,19 @@
+state = {
+	id = 167
+	name = "Wangshu_Inn"
+	resources = {aluminium = 1 steel = 14}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 3 arms_factory = 4 industrial_complex = 2 
+			1920 = {naval_base = 10}
+		}
+		victory_points = {4930 20}
+	}
+	provinces = {1920 4872 4899 4904 4930 4941 6778}
+	manpower = 2730000
+	buildings_max_level_factor = 1.000
+	state_category = large_city
+	local_supplies = 1.000
+}

@@ -1,0 +1,32 @@
+
+state={
+	id=574
+	name="Academic_Assembly_Hall"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3580 20
+		}
+		victory_points = {
+			3565 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		454 1852 2031 2296 2311 3542 3565 3580 3663 
+	}
+	manpower=454000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

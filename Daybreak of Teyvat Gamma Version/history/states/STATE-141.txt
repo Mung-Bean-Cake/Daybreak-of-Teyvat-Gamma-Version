@@ -1,0 +1,16 @@
+state = {
+	id = 141
+	name = "Cuijue_Slope"
+	resources = {steel = 14 rubber = 21}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2368 5}
+	}
+	provinces = {650 1625 1789 2368 2461 5157 5184 5192 5216 5269}
+	manpower = 71000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

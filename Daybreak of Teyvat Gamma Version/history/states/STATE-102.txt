@@ -1,0 +1,26 @@
+
+state={
+	id=102
+	name="Prison_Land"
+	resources={
+	}
+
+	history={
+		owner = DRA
+		add_core_of = DRA
+		add_core_of = MOT
+		victory_points = { 1946 5 }
+		buildings = {
+			infrastructure = 1
+		}
+
+	}
+
+	provinces={
+		1946 5009 5018 5037 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

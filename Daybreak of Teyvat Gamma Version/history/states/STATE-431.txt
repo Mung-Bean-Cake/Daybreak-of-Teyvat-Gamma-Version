@@ -1,0 +1,31 @@
+
+state={
+	id=431
+	name="The_Colony_of_Pari"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = SGS
+		add_core_of = SGS
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 0
+		}
+	}
+
+	provinces={
+		11487 11488 11489 11490 11494 11495 11496 11497 11498 11499 11500 11501 11502 11503 11504 11505
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

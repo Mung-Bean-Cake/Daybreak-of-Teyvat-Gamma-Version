@@ -1,0 +1,15 @@
+state = {
+	id = 210
+	name = "Ganyu_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {903 1835 5433 5466 5511 5532}
+	manpower = 270000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

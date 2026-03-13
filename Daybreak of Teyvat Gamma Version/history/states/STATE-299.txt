@@ -1,0 +1,22 @@
+
+state={
+	id=299
+	name="Golden_Wolflord"
+	resources={		oil=4}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		1853 1965 6754 6755 6756 6757 
+	}
+	manpower=1500
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

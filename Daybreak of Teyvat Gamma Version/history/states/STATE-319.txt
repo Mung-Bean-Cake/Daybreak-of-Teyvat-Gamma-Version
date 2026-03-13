@@ -1,0 +1,21 @@
+
+state={
+	id=319
+	name="Electroland_319"
+	resources={}
+
+	history={
+		owner = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		815 1507 2010 6545 6565 6579 6582 6591 6592 
+	}
+	manpower=91000
+	buildings_max_level_factor=1.000
+		state_category = rural
+local_supplies=0.000
+}

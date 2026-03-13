@@ -1,0 +1,17 @@
+state = {
+	id = 153
+	name = "Nine_Pillars_of_Peace"
+	resources = {tungsten = 11 steel = 24}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {5118 5}
+		victory_points = {5186 20} 
+	}
+	provinces = {12 268 1176 1494 5118 5170 5185 5186 5217}
+	manpower = 70000
+	buildings_max_level_factor = 1.000
+	state_category = rural
+	local_supplies = 1.000
+}

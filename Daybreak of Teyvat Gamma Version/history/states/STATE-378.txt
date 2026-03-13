@@ -1,0 +1,36 @@
+
+state={
+	id=378
+	name="Roofed_Tower"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = SUM
+		add_core_of = SUM
+		victory_points = {
+			6007 5
+		}
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		1840 1932 2105 6007 6017 6047 6056 6135 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

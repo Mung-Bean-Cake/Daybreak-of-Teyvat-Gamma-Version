@@ -1,0 +1,29 @@
+
+state={
+	id=261
+	name="Grand_Narukami_Shrine"
+	resources={		
+		oil=2.000
+		steel=4.000
+	chromium=11.000
+ }
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 4
+	industrial_complex = 4
+     }
+	victory_points = {
+		6062 40 
+	}
+	}
+
+	provinces={
+		1570 6029 6062 6071 
+	}
+	manpower=1400800
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

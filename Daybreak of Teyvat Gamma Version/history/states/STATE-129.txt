@@ -1,0 +1,15 @@
+state = {
+	id = 129
+	name = "Lumberpick_Valley"
+	resources = {tungsten = 4}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1583 1880 2023 5371 5413 5448 5473}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

@@ -1,0 +1,22 @@
+
+state={
+	id=657
+	name="Frost_Moon_Factory"
+	resources={ tungsten=1.000 steel=4.000 chromium=1.000 oil=4.000 rubber=1.000 aluminium=1.000}
+
+	history={
+		owner = NDK
+		add_core_of = NDK
+		buildings = { infrastructure = 5 arms_factory = 5 industrial_complex = 5 air_base = 5
+		}
+		victory_points = { 100 20 }
+	}
+
+	provinces={
+		100 335 371 876 928 1394 1974 2073 2752 4251 
+	}
+	manpower=40000000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

@@ -1,0 +1,17 @@
+state = {
+	id = 238
+	name = "Jagged_Peaks"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {infrastructure = 1}
+		victory_points = {4403 5}
+	}
+	provinces = {1577 2668 4333 4375 4381 4403 4445}
+	manpower = 147200
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

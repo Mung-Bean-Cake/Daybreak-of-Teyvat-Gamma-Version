@@ -1,0 +1,19 @@
+state = {
+	id = 239
+	name = "Creviced_Cliff"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {
+			infrastructure = 1
+		    4150 = {naval_base = 10}
+		}
+	}
+	provinces = {2204 4132 4142 4150 4170 4177 4194 4199 4209 4210 4227}
+	manpower = 220400
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

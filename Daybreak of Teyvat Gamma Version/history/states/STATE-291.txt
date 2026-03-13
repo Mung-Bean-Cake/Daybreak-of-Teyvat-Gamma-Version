@@ -1,0 +1,22 @@
+
+state={
+	id=291
+	name="Tsurumi"
+	resources={		steel=2}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		6735 6736 6740 6746 
+	}
+	manpower=12000
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

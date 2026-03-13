@@ -1,0 +1,28 @@
+
+state={
+	id=554
+	name="Annapausis"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			710 10
+		}
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+
+	provinces={
+		710 1037 1347 1684 2348 2762 2853 3766 3803 3836 
+	}
+	manpower= 17100
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

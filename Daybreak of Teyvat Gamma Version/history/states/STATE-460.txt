@@ -1,0 +1,33 @@
+
+state={
+	id=460
+	name="Eternal_Oasis"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = SDH
+		add_core_of = SDH
+		buildings = {
+			infrastructure = 1
+			arms_factory = 1
+			industrial_complex = 1
+
+		}
+
+	}
+
+	provinces={
+		223 311 1526 1990 2386 2562 2728 5487 5509 5515 5548 5551 5552 5578 5579 5597 5598 5615 5619 5631 5673 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

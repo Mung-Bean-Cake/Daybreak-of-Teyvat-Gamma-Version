@@ -1,0 +1,26 @@
+
+state={
+	id=596
+	name="Hydroland"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		1316 2338 4164 4243 4244 4262 4264 
+	}
+	manpower=416401
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

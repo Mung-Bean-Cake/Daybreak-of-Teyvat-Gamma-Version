@@ -1,0 +1,10 @@
+﻿l_english:
+
+VAN_Marana_dynamic_modifier:0 "Marana Disaster"
+VAN_Marana_dynamic_modifier_desc:0 "Marana within Vanarana's borders seriously impacts our livelihoods. If left untreated, Marana will continue to spread and cause irreparable damage."
+
+VAN_Marana_state_dynamic_modifier:0 "Marana-infested"
+VAN_Marana_state_dynamic_modifier_desc:0 "This state suffers from Marana's adverse effects."
+
+VAN_Marana_worsen_tooltip:0 "§YMarana Disaster§! additional effects：\n$MODIFIER_STABILITY_WEEKLY$：§R-0.1%§!\nFactory Output：§R-0.5%§!\nProduction Efficiency Growth：§R-0.5%§!\nProduction Efficiency Cap：§R-0.5%§!\nCost of cleansing Marana from a state：§R+5§!，Time to cleanse Marana from a state：§R+5 days§!"
+VAN_Marana_ease_tooltip:0 "§YMarana Disaster§! additional effects：\n$MODIFIER_STABILITY_WEEKLY$：§G+0.1%§!\nFactory Output：§G+0.5%§!\nProduction Efficiency Growth：§G+0.5%§!\nProduction Efficiency Cap：§G+0.5%§!\nCost of cleansing Marana from a state：§G-5§!，Time to cleanse Marana from a state：§G-5 days§!"

@@ -1,0 +1,15 @@
+state = {
+	id = 171
+	name = "Guili_Bay"
+	resources = {steel = 8}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {1760 2683 5198 5227 5256 5315 5328 5347 5348}
+	manpower = 20000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

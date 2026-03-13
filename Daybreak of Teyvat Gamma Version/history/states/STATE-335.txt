@@ -1,0 +1,26 @@
+
+state={
+	id=335
+	name="Electroland_335"
+	resources={}
+
+	history={owner = TSU
+	add_core_of = TSU
+		add_core_of = INA
+		buildings = {	infrastructure = 1 
+		dockyard = 1
+		6734 = {
+				naval_base = 1
+
+			}}
+
+	}
+
+	provinces={
+		887 2905 6731 6734 6739 6745 
+	}
+	manpower=5000
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+local_supplies=0.000
+}

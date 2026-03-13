@@ -1,0 +1,17 @@
+state = {
+	id = 135
+	name = "Qingxu_Pool"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 3}
+		victory_points = {5736 5}
+		victory_points = {5650 15}
+	}
+	provinces = {1762 5650 5685 5690 5722 5736 11466}
+	manpower = 186000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

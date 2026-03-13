@@ -1,0 +1,24 @@
+
+state={
+	id=292
+	name="Autake_Plains"
+	resources={		steel = 2}
+
+	history={
+		owner = TSU
+		add_core_of = TSU
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+	victory_points = {
+		6741 3
+	}
+	}
+
+	provinces={
+		2160 6741 6742 6747 6804 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+	local_supplies=0.000
+}

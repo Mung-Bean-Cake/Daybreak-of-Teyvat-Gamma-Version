@@ -1,0 +1,15 @@
+state = {
+	id = 151
+	name = "Thieves_Stone_Forest"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {890 2769 4839 4860 4870 4893}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

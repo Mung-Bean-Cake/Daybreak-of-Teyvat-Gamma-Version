@@ -1,0 +1,15 @@
+state = {
+	id = 213
+	name = "Hutao_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {5241 5250 5262 5265 5287 5299 5326 11451}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

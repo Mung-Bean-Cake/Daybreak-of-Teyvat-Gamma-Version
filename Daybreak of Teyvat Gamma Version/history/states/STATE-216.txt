@@ -1,0 +1,15 @@
+state = {
+	id = 216
+	name = "Guoba_Town"
+	resources = {rubber = 1 aluminium = 1}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+	}
+	provinces = {867 1244 1608 1752 2293 5180 5245}
+	manpower = 11000
+	buildings_max_level_factor = 1.000
+	state_category = city
+	local_supplies = 1.000
+}

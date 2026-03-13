@@ -1,0 +1,16 @@
+state = {
+	id = 208
+	name = "Morax_Town"
+	resources = {}
+	history = {
+		owner = BRF
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {2828 5}
+	}
+	provinces = {242 1800 2199 2663 2828 5838 5872 5886 5942}
+	manpower = 744000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

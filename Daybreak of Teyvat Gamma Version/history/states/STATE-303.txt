@@ -1,0 +1,26 @@
+
+state={
+	id=303
+	name="Mouun_Shrine"
+	resources={	tungsten=1
+	aluminium=2
+	}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+		victory_points = {
+			743 10
+		}
+	}
+
+	provinces={
+		591 743 2112 2135 2165 2768 6562 6600 6615 6794 
+	}
+	manpower=1900000
+	buildings_max_level_factor=1.000
+		state_category = city
+    local_supplies=0.000
+}

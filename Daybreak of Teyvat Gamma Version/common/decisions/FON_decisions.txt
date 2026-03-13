@@ -1,0 +1,430 @@
+#胚胎海危机决议组
+FON_Primordial_Sea_decision_categories = {
+
+		category_effect = {
+			visible = {
+				always = no
+			}
+		set_variable = { FON_Percent_of_Preparation = 0 }
+		set_variable = { FON_Neuvillette_repulse_Primordial_Sea_cost = 10 }
+		}
+	
+	#胎海水危机
+	FON_watercrisis_mission = {
+
+		#icon = 
+		activation = {
+			has_completed_focus = FON_search
+		}
+
+		allowed = {
+			tag = FON
+		}
+		
+		available = {
+			FON_final_date_trigger = yes
+			check_variable = { FON_Percent_of_Preparation > 80 }
+		}
+		visible = {
+			has_completed_focus = FON_search
+		}
+
+		days_mission_timeout = 220
+
+		is_good = no
+
+		timeout_effect = {
+			if = {
+			    limit = {check_variable = { FON_Percent_of_Preparation < 30 }}
+			    country_event = {days = 0 id = FON_water.1} #灭世事件（All gone）
+			}
+
+			else_if = {
+                limit = {
+                check_variable = { FON_Percent_of_Preparation > 30 }
+                check_variable = { FON_Percent_of_Preparation < 80 }
+            }
+                country_event = { days = 0 id = FON_civil_war.1 }  # 内战事件
+            }
+		else = {
+            country_event = { days = 0 id = FON.12 }  #大洪水（正常线路）
+            }
+        }
+		complete_effect = {
+			country_event = {days = 0 id = FON.12 } #大洪水（正常线路）
+		}
+
+		priority = 10000
+
+		fire_only_once = yes
+
+	}
+
+	#加固封印
+    FON_Neuvillette_repulse_Primordial_Sea = {
+      
+        ai_will_do = {
+			base = 15
+			modifier = {
+				factor = 10
+				check_variable = { FON_Neuvillette_repulse_Primordial_Sea_cost > 10 } 
+			}
+			modifier = {
+				factor = 5
+				check_variable = { FON_Neuvillette_repulse_Primordial_Sea_cost > 20 } 
+			}
+			modifier = {
+				factor = 1
+				check_variable = { FON_Neuvillette_repulse_Primordial_Sea_cost > 40 }
+			}
+		}
+
+        allowed = {
+			tag = FON
+		}
+
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = FON_search
+        }
+
+        days_remove = 7
+
+        days_re_enable = 30
+
+        cost = FON_Neuvillette_repulse_Primordial_Sea_cost
+        
+        remove_effect = {
+			add_days_mission_timeout = {
+				mission = FON_watercrisis_mission
+				days = 30
+			}
+			FON_increase_Neuvillette_repulse_Primordial_Sea_cost_effect = yes
+		}
+		
+	}
+
+	#北国的饮食！
+	FON_food_from_SNE = {
+
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		} 
+		allowed={
+			NOT = { has_war_with = SNE }
+		}
+		visible = {
+			has_completed_focus = FON_resources_left
+		}
+		available = {
+			
+		}
+		
+		
+		cost = 20
+ 
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.05_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 5 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.1
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+
+	}
+
+	#北国的帐篷！
+	FON_tents_from_SNE = {
+
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		} 
+		allowed={
+			NOT = { has_war_with = SNE }
+		}
+		visible = {
+			has_completed_focus = FON_resources_left
+		}
+		available = {
+			
+		}
+		
+		
+		cost = 20
+
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.05_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 5 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = -0.05
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+	}
+
+	#北国的设备！
+	FON_devices_from_SNE = {
+	
+			ai_will_do = {
+				base = 15
+				modifier={
+	
+				}
+			} 
+			allowed={
+				NOT = { has_war_with = SNE }
+			}
+			visible = {
+				has_completed_focus = FON_resources_left
+			}
+			available = {
+				
+			}
+
+			cost = 20
+
+			remove_effect = {
+			    custom_effect_tooltip = FON_add_preparation_0.05_tt
+				add_command_power = -10
+				add_to_variable = { FON_Percent_of_Preparation = 5 }
+				add_equipment_to_stockpile ={ type=motorized_0 amount=50 producer=SNE }
+				clamp_variable = {
+					var = FON_Percent_of_Preparation
+					min = 0
+					max = 100
+				}
+			}
+	
+			days_remove = 10
+			days_re_enable = 30
+	}
+
+	#枫丹的饮食！
+	FON_food_from_FON = {
+
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		}
+		allowed={
+			
+		}
+		visible = {
+			has_completed_focus = FON_resources_right
+		}
+		available = {
+			
+		}
+
+		cost = 20
+
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.05_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 5 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+	}
+
+	#枫丹的帐篷！
+	FON_tents_from_FON = {
+
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		} 
+		allowed={
+
+		}
+		visible = {
+			has_completed_focus = FON_resources_right
+		}
+		available = {
+			
+		}
+
+		cost = 20
+		
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.05_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 5 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+	}
+
+	#枫丹的设备！
+	FON_devices_from_FON = {
+	
+			ai_will_do = {
+				base = 15
+				modifier={
+	
+				}
+			} 
+			allowed={
+
+			}
+			visible = {
+				has_completed_focus = FON_resources_right
+			}
+			available = {
+	
+			}
+
+			cost = 20
+
+			remove_effect = {
+			    custom_effect_tooltip = FON_add_preparation_0.05_tt
+				add_to_variable = { FON_Percent_of_Preparation = 5 }
+				clamp_variable = {
+					var = FON_Percent_of_Preparation
+					min = 0
+					max = 100
+				}
+			}
+
+			modifier = {
+				industrial_capacity_factory = 0.05
+			}
+	
+			days_remove = 10
+			days_re_enable = 30
+	}
+
+	#组织刺玟会支援
+	FON_people_from_left = {
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		} 
+		allowed={
+
+		}
+		visible = {
+			has_completed_focus = FON_people_left
+		}
+		available = {
+
+		}
+
+		cost = 15
+
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.1_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 10 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			industrial_capacity_factory = 0.1
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+	}
+
+	#组织政府人员救援
+	FON_people_from_right = {
+		ai_will_do = {
+			base = 15
+			modifier={
+
+			}
+		} 
+		allowed={
+
+		}
+		available = {
+			
+		}
+
+		visible = {
+			has_completed_focus = FON_people_right
+		}
+		available = {
+
+		}
+
+		cost = 15
+
+		remove_effect = {
+		    custom_effect_tooltip = FON_add_preparation_0.1_tt
+			add_command_power = -10
+			add_to_variable = { FON_Percent_of_Preparation = 10 }
+			clamp_variable = {
+				var = FON_Percent_of_Preparation
+				min = 0
+				max = 100
+			}
+		}
+
+		modifier = {
+			industrial_capacity_factory = 0.1
+		}
+
+		days_remove = 10
+		days_re_enable = 30
+	}
+}

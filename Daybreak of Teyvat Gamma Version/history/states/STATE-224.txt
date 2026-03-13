@@ -1,0 +1,19 @@
+state = {
+	id = 224
+	name = "Yelan_Town"
+	resources = {steel = 8
+	aluminium = 2
+	tungsten = 3
+}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+		victory_points = {1662 5}
+	}
+	provinces = {1032 1662 4916 4953 4954 4959}
+	manpower = 1700
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

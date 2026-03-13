@@ -1,0 +1,34 @@
+
+state={
+	id=502
+	name="Opera_Epiclese"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3954 20
+		}
+		victory_points = {
+			3902 20
+		}
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 5
+			dockyard = 3
+			2004 = { naval_base = 5 }
+		}
+
+	}
+
+	provinces={
+		781 1167 1544 2004 3902 3915 3954 3972 
+	}
+	manpower=4200000
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=1.000
+}

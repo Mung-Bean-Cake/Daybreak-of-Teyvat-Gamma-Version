@@ -1,0 +1,29 @@
+
+state={
+	id=96
+	name="GUN_QQ_Land1"
+	resources={
+	}
+
+	history={
+		owner = MHL
+		add_core_of = MHL
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 3717 5 }
+		buildings = {
+			infrastructure = 1
+			3717 = { naval_base = 2 }
+		}
+		victory_points = { 3717 5 }
+
+	}
+
+	provinces={
+		9 1099 1695 3611 3630 3636 3651 3669 3716 3717 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

@@ -1,0 +1,22 @@
+
+state={
+	id=305
+	name="Pearl_Beach"
+	resources={}
+
+	history={
+		owner = SAN
+		add_core_of = SAN
+		add_core_of = INA
+		buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		21 1272 2465 6539 6559 6583 6584 
+	}
+	manpower=99000
+	buildings_max_level_factor=1.000
+		state_category = pastoral
+local_supplies=0.000
+}

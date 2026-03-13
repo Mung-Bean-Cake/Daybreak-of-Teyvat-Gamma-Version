@@ -1,0 +1,29 @@
+
+state={
+	id=608
+	name="Elynas_Inside"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4215 5
+		}
+		buildings = {
+			infrastructure = 1
+
+
+		}
+
+	}
+
+	provinces={
+		4161 4168 4187 4190 4215 4218 
+	}
+	manpower=41871
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=1.000
+}

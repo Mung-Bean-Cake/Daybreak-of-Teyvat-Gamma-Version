@@ -1,0 +1,17 @@
+state = {
+	id = 184
+	name = "ST_LYY_07"
+	resources = {aluminium = 4}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {infrastructure = 1}
+		victory_points = {4597 5}
+	}
+	provinces = {432 4597 4626 4631 4642 6772}
+	manpower = 70000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

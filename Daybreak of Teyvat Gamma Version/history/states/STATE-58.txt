@@ -1,0 +1,32 @@
+
+state={
+	id=58
+	name="Brightcrown_Canyon"
+	resources={
+		aluminium=1.000
+	}
+
+	history={
+		owner = ANR
+		add_core_of = ANR
+		add_core_of = MOT
+		victory_points = {
+			4225 10
+		}
+		buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+			1863 = { naval_base = 1 }
+			4316 = { naval_base = 1 }
+		}
+
+	}
+
+	provinces={
+		1863 2405 4200 4214 4225 4249 4283 4316 
+	}
+	manpower=2000000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

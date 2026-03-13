@@ -1,0 +1,35 @@
+
+state={
+	id=42
+	name="Entombed_City_Ancient_Palace"
+	resources={
+	}
+
+	history={
+		owner = DRA
+		add_core_of = DRA
+		add_core_of = MOT
+		victory_points = {
+			2172 10
+		}
+		victory_points = {
+			4864 5
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+			dockyard = 1
+			4864 = { naval_base = 2 }
+		}
+
+	}
+
+	provinces={
+		1578 2142 2172 4864 4890 4918 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

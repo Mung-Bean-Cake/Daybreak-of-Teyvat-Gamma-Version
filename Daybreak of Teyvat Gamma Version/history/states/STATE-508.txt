@@ -1,0 +1,33 @@
+
+state={
+	id=508
+	name="Mont_Esus_East"
+	resources={
+		steel = 8
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3463 5
+		}
+		victory_points = {
+			3549 5
+		}
+		buildings = {
+			infrastructure = 1
+			3549 = { naval_base = 1 }
+
+		}
+
+	}
+
+	provinces={
+		836 1884 2188 3440 3452 3463 3476 3496 3500 3515 3540 3549 3594 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}

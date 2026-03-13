@@ -1,0 +1,28 @@
+
+state={
+	id=112
+	name="GUN_Pecky_Castle4"
+	resources={
+	}
+
+	history={
+		owner = GUN # MHL SDS
+		add_core_of = SDS
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 3302 25 }
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+			3278 = { naval_base = 4 }
+		}
+	}
+
+	provinces={
+		832 2118 2206 2302 3264 3271 3272 3278 3281 3292 3301 3302 3306 3324 3334 3346 3353 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

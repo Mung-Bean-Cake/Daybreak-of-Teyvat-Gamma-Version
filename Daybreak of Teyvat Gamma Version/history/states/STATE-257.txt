@@ -1,0 +1,21 @@
+
+state={
+	id=257
+	name="Amakane_Island"
+	resources={}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 1 }
+
+	}
+
+	provinces={
+		1778 6248 6271 6275 6789 
+	}
+	manpower=12400
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

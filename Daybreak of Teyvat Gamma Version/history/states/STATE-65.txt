@@ -1,0 +1,32 @@
+
+state={
+	id=65
+	name="North_Rock_Gate"
+	resources={
+		rubber=10.000
+		aluminium=4.000
+	}
+
+	history={
+		owner = RAG
+		add_core_of = RAG
+		add_core_of = MOT
+		victory_points = {
+			4592 5
+		}
+		buildings = {
+			infrastructure = 1
+			industrial_complex = 1
+			4547 = { naval_base = 2 }
+		}
+
+	}
+
+	provinces={
+		863 4527 4547 4551 4559 4566 4582 4592 4627 11426 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0
+}

@@ -1,0 +1,37 @@
+
+state={
+	id=412
+	name="Bayda_Harbor"
+	resources={
+		tungsten=1.000
+		steel=4.000
+		chromium=1.000
+		oil=4.000
+		rubber=1.000
+		aluminium=1.000
+	}
+
+	history={
+		owner = VAN
+		add_core_of = VAN
+		victory_points = {
+			4985 20
+		}
+		buildings = {
+			infrastructure = 2
+			arms_factory = 0
+			industrial_complex = 3
+			dockyard = 1
+			4985 = { naval_base = 7 }
+		}
+
+	}
+
+	provinces={
+		230 773 1624 1859 2463 2600 4925 4939 4943 4965 4985 4991 5005 5012 5026 5035 5047 5067 5076 5122 5135 
+	}
+	manpower=600000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

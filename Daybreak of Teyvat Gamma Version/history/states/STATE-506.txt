@@ -1,0 +1,30 @@
+
+state={
+	id=506
+	name="Fountain_of_Lucine"
+	resources={
+		steel = 12
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			3936 20
+		}
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 3
+
+		}
+
+	}
+
+	provinces={
+		1086 3889 3911 3918 3929 3936 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=1.000
+}

@@ -1,0 +1,30 @@
+state = {
+	id = 190
+	name = "Black_Rock_Factory"
+	resources = {
+		tungsten = 10.000
+		steel = 20.000
+		chromium = 10.000
+		oil = 20.000
+		rubber = 10.000
+		aluminium = 10.000
+	}
+	history = {
+		owner = BRF
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 2
+			arms_factory = 5
+			industrial_complex = 5
+			air_base = 5
+			dockyard = 5
+			air_base = 5
+		}
+		victory_points = {6091 20}
+	}
+	provinces = {287 1193 1337 2320 6020 6046 6051 6091 6113 6186}
+	manpower = 4000000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

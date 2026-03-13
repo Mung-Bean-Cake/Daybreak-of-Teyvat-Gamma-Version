@@ -1,0 +1,16 @@
+state = {
+	id = 150
+	name = "Clear_Pool_and_Mountain_Cavern"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1}
+        victory_points = {536 5}
+	}
+	provinces = {536 4724 4760 4791 4816 11432}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

@@ -1,0 +1,29 @@
+
+state={
+	id=269
+	name="Royal_Shadow_Furnace"
+	resources={	steel=44.000}
+
+	history={
+		owner = INA
+		add_core_of = INA
+	buildings = {	infrastructure = 1
+	arms_factory = 8
+	1402 = {
+		naval_base = 1
+
+	}
+    }
+	victory_points = {
+		1402 20 
+	}
+	}
+
+	provinces={
+		1402 6514 6522 6567 
+	}
+	manpower=1371000
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

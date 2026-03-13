@@ -1,0 +1,27 @@
+
+state={
+	id=118
+	name="GUN_Forts_Town"
+	resources={
+	}
+
+	history={
+		owner = GUN # MHL
+		add_core_of = GUN
+		add_core_of = MOT
+		victory_points = { 3426 10 }
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+
+	}
+
+	provinces={
+		1230 1477 2557 2611 2719 3426 3455 
+	}
+	manpower=400000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

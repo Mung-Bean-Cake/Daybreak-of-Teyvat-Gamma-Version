@@ -1,0 +1,16 @@
+state = {
+	id = 222
+	name = "Xinyan_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {infrastructure = 1 
+		arms_factory = 1	}
+	}
+	provinces = {762 1938 5013 5096 6779}
+	manpower = 172000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

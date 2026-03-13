@@ -1,0 +1,22 @@
+state = {
+	id = 126
+	name = "Mt._Tianheng"
+	resources = {tungsten = 18}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		buildings = {
+			infrastructure = 1
+			air_base = 5
+			5642 = {
+				land_facility = 1
+			}
+		}
+	    victory_points = {5642 10}	
+	}
+	provinces = {1224 5568 5642 5670 11465}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

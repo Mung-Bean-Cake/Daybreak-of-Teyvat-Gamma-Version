@@ -1,0 +1,28 @@
+
+state={
+	id=3
+	name="Outer_City_Mondstadt"
+	resources={
+		chromium=2.000
+		aluminium=2.000
+	}
+
+	history={
+		owner = MOT
+		add_core_of = MOT
+		victory_points = { 2824 5 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 4
+		}
+
+	}
+
+	provinces={
+		2824 4406 4436 
+	}
+	manpower=2500000
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=1.000
+}

@@ -1,0 +1,16 @@
+state = {
+	id = 234
+	name = "Alioth_Town"
+	resources = {}
+	history = {
+		owner = LYY
+		add_core_of = LYY
+		add_core_of = CYG
+		buildings = {infrastructure = 1}
+	}
+	provinces = {259 1615 2425 2710 4570 4591}
+	manpower = 200000
+	buildings_max_level_factor = 1.000
+	state_category = town
+	local_supplies = 1.000
+}

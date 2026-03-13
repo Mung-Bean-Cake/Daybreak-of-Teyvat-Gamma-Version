@@ -1,0 +1,26 @@
+
+state={
+	id=5
+	name="Mondstadt_Bridge"
+	resources={
+		aluminium=3.000
+	}
+
+	history={
+		owner = MOT
+		add_core_of = MOT
+		victory_points = { 858 25 }
+		buildings = {
+			infrastructure = 4
+		}
+
+	}
+
+	provinces={
+		858 1690 4359 4392 4469 
+	}
+	manpower=200000
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=1.000
+}

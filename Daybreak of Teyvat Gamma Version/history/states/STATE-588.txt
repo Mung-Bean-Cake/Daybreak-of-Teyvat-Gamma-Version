@@ -1,0 +1,30 @@
+
+state={
+	id=588
+	name="Tower_of_Ipsissimus"
+	resources={
+	}
+
+	history={
+		owner = FON
+		add_core_of = FON
+		victory_points = {
+			4189 20
+		}
+		buildings = {
+			infrastructure = 1
+			dockyard = 1
+			4189 = { naval_base = 3 }
+
+		}
+
+	}
+
+	provinces={
+		833 2669 4189 
+	}
+	manpower=418900
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=1.000
+}
