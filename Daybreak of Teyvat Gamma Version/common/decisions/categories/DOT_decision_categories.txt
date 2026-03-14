@@ -294,7 +294,7 @@ DOT_Generic_DecCat = {
 	}
 	priority = { base = 0 }
 }
-SAN_Sangonomiya_Decisions = {
+SAN_Decisions = {
 	icon = generic_formable_nations
 	picture = GFX_DOT_Space_Program_decisions
 	allowed = { or = { tag = SAN } }

@@ -1,0 +1,3624 @@
+# 纳塔 MOD 剧本优化：全面提升游戏体验
+
+# 纳塔MOD剧本优化说明
+
+本次优化严格遵循《原神》官方纳塔设定，基于六大部族（沃陆之邦、回声之子、流泉之众、悬木人、花羽会、烟谜主）核心设定重构剧本，**严格保持80个国策、80个事件、30个决议、30个理念的数量不变**，核心优化方向如下：
+
+1. **核心矛盾强化**：深度植入部族间的历史恩怨、权力博弈、自治与统一的路线冲突，加入火神权威与部族议会的政治斗争、人龙关系的派系争议、主战与主和的路线对立，大幅提升内部政治玩法的深度。
+
+2. **史诗感与贴合度**：完全贴合纳塔官方剧情线（希巴拉克屠龙、奥奇坎暴政、五百年前坎瑞亚灾厄、烬寂海深渊威胁、归火圣夜巡礼、古名传承），所有代码内容与本地化文本均匹配原神世界观，摒弃非官方原创设定。
+
+3. **可玩性提升**：国策树加入多分支路线选择（温和调解/强硬整合、传统守护/技术革新、深渊清剿/内部维稳），事件加入多选项分支，决议提供丰富的内政操作空间，不同选择将触发不同的部族反应、属性增益与剧情走向。
+
+4. **代码规范修正**：修复原代码中HOI4语法不规范问题，完善国策前置条件、国策树层级结构，补全触发逻辑，确保MOD可正常运行，同时强化各系统间的联动性。
+
+---
+
+## 一、国策树文件（NAT_Neo_Focus.txt）
+
+```Plain Text
+
+focus_tree = {
+ id = NAT_Neo_Focus
+ country = {
+ factor = 0
+ modifier = {
+ add = 100
+ or = {
+ tag = NAT
+ }
+ }
+ }
+ default = no
+ continuous_focus_position = {
+ x = 20
+ y = 900
+ }
+
+ #### 阶段1：六大部族的博弈（1-10）——核心突出部族间的政治博弈、拉拢与制衡，奠定内部冲突核心玩法
+ focus = {
+ id = NAT_Call_Tribal_Council
+ icon = GFX_Goal_POL_Political_Power
+ cost = 7.00
+ x = 20
+ y = 1
+ completion_reward = {
+ custom_effect_tooltip = NAT_Call_Tribal_Council_Tooltip
+ add_political_power = 120
+ set_country_flag = NAT_Call_Tribal_Council
+ country_event = { id = NAT_Event.1  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Win_Warlords_Alliance
+ icon = GFX_Goal_POL_Alliances
+ cost = 7.00
+ x = 17
+ y = 2
+ prerequisite = { focus = NAT_Call_Tribal_Council }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Win_Warlords_Alliance_Tooltip
+ add_political_power = 90
+ set_country_flag = NAT_Win_Warlords_Alliance
+ add_stability = 0.05
+ country_event = { id = NAT_Event.2  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Pacify_Volu_Bang
+ icon = GFX_Goal_ECON_Agriculture
+ cost = 7.00
+ x = 14
+ y = 3
+ prerequisite = { focus = NAT_Win_Warlords_Alliance }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Pacify_Volu_Bang_Tooltip
+ add_civilian_factory = 5
+ set_country_flag = NAT_Pacify_Volu_Bang
+ add_manpower = 25000
+ country_event = { id = NAT_Event.3  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Woo_Echo_Sons
+ icon = GFX_Goal_MIL_Weapons_Production
+ cost = 7.00
+ x = 20
+ y = 3
+ prerequisite = { focus = NAT_Win_Warlords_Alliance }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Woo_Echo_Sons_Tooltip
+ add_war_factory = 4
+ set_country_flag = NAT_Woo_Echo_Sons
+ add_equipment_to_stockpile = { type = infantry_equipment_1  amount = 800  producer = NAT }
+ country_event = { id = NAT_Event.4  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Reconcile_Spring_Folk
+ icon = GFX_Goal_ECON_Trade
+ cost = 7.00
+ x = 26
+ y = 3
+ prerequisite = { focus = NAT_Win_Warlords_Alliance }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Reconcile_Spring_Folk_Tooltip
+ add_trade_efficiency = 0.15
+ set_country_flag = NAT_Reconcile_Spring_Folk
+ add_naval_factory = 3
+ country_event = { id = NAT_Event.5  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Bind_Hanging_Tree_Clan
+ icon = GFX_Goal_MIL_Mobility
+ cost = 7.00
+ x = 11
+ y = 4
+ prerequisite = { focus = NAT_Pacify_Volu_Bang }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Bind_Hanging_Tree_Clan_Tooltip
+ add_land_breakthrough = 0.10
+ set_country_flag = NAT_Bind_Hanging_Tree_Clan
+ add_construction_speed = 0.10
+ country_event = { id = NAT_Event.6  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Win_Feather_Guild
+ icon = GFX_Goal_AIR_Air_Industry
+ cost = 7.00
+ x = 17
+ y = 4
+ prerequisite = { focus = NAT_Pacify_Volu_Bang focus = NAT_Woo_Echo_Sons }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Win_Feather_Guild_Tooltip
+ add_air_factory = 5
+ set_country_flag = NAT_Win_Feather_Guild
+ add_air_experience = 50
+ country_event = { id = NAT_Event.7  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Appease_Smoke_Mystics
+ icon = GFX_Goal_ESP_Intelligence
+ cost = 7.00
+ x = 23
+ y = 4
+ prerequisite = { focus = NAT_Woo_Echo_Sons focus = NAT_Reconcile_Spring_Folk }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Appease_Smoke_Mystics_Tooltip
+ add_intelligence_agency_efficiency = 0.12
+ set_country_flag = NAT_Appease_Smoke_Mystics
+ add_espionage_efficiency = { target = WORLD  value = 0.10 }
+ country_event = { id = NAT_Event.8  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Mediate_Tribal_Border_Disputes
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 29
+ y = 4
+ prerequisite = { focus = NAT_Reconcile_Spring_Folk }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mediate_Tribal_Border_Disputes_Tooltip
+ add_stability = 0.10
+ set_country_flag = NAT_Mediate_Tribal_Border_Disputes
+ reduce_war_exhaustion = 0.08
+ country_event = { id = NAT_Event.9  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Great_Fire_Pact
+ icon = GFX_Goal_POL_Government
+ cost = 7.00
+ x = 20
+ y = 5
+ prerequisite = { 
+ focus = NAT_Bind_Hanging_Tree_Clan
+ focus = NAT_Win_Feather_Guild
+ focus = NAT_Appease_Smoke_Mystics
+ focus = NAT_Mediate_Tribal_Border_Disputes
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Great_Fire_Pact_Tooltip
+ add_political_power = 150
+ set_country_flag = NAT_Establish_Great_Fire_Pact
+ add_stability = 0.15
+ add_government_authority = 15
+ country_event = { id = NAT_Event.10  days = 1 }
+ }
+ }
+
+ #### 阶段2：火神的权柄与议会（11-20）——核心突出玛薇卡的权威与部族议会的政治斗争，路线选择与权力博弈
+ focus = {
+ id = NAT_Mavuika_s_Will_Declaration
+ icon = GFX_Goal_POL_Political_Power
+ cost = 7.00
+ x = 20
+ y = 6
+ prerequisite = { focus = NAT_Establish_Great_Fire_Pact }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mavuika_s_Will_Declaration_Tooltip
+ add_political_power = 180
+ set_country_flag = NAT_Mavuika_s_Will_Declaration
+ add_war_support = 0.15
+ country_event = { id = NAT_Event.11  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Reform_Tribal_Parliament
+ icon = GFX_Goal_POL_Government
+ cost = 7.00
+ x = 16
+ y = 7
+ prerequisite = { focus = NAT_Mavuika_s_Will_Declaration }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Reform_Tribal_Parliament_Tooltip
+ add_government_authority = 12
+ set_country_flag = NAT_Reform_Tribal_Parliament
+ add_stability = 0.08
+ country_event = { id = NAT_Event.12  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Strengthen_Fire_God_Authority
+ icon = GFX_Goal_POL_Authoritarianism
+ cost = 7.00
+ x = 24
+ y = 7
+ prerequisite = { focus = NAT_Mavuika_s_Will_Declaration }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Strengthen_Fire_God_Authority_Tooltip
+ add_ideology_support = { ideology = authoritarianism  value = 0.10 }
+ set_country_flag = NAT_Strengthen_Fire_God_Authority
+ add_political_power = 100
+ country_event = { id = NAT_Event.13  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Codify_Ancient_Name_System
+ icon = GFX_Goal_ESP_Nationalism
+ cost = 7.00
+ x = 12
+ y = 8
+ prerequisite = { focus = NAT_Reform_Tribal_Parliament }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Codify_Ancient_Name_System_Tooltip
+ add_nationalism = 0.12
+ set_country_flag = NAT_Codify_Ancient_Name_System
+ add_happiness = { target = all  value = 0.08 }
+ country_event = { id = NAT_Event.14  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Suppress_Separatist_Forces
+ icon = GFX_Goal_MIL_Counter_Insurgency
+ cost = 7.00
+ x = 20
+ y = 8
+ prerequisite = { focus = NAT_Reform_Tribal_Parliament focus = NAT_Strengthen_Fire_God_Authority }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Suppress_Separatist_Forces_Tooltip
+ add_garrison_efficiency = 0.15
+ set_country_flag = NAT_Suppress_Separatist_Forces
+ reduce_consumer_goods = 0.02
+ country_event = { id = NAT_Event.15  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Honor_Heroes_Of_The_Calamity
+ icon = GFX_Goal_ESP_Nationalism
+ cost = 7.00
+ x = 28
+ y = 8
+ prerequisite = { focus = NAT_Strengthen_Fire_God_Authority }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Honor_Heroes_Of_The_Calamity_Tooltip
+ add_war_support = 0.18
+ set_country_flag = NAT_Honor_Heroes_Of_The_Calamity
+ add_army_experience = 50
+ country_event = { id = NAT_Event.16  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Redress_Ocican_Tyranny_Injustice
+ icon = GFX_Goal_POL_Justice
+ cost = 7.00
+ x = 8
+ y = 9
+ prerequisite = { focus = NAT_Codify_Ancient_Name_System }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Redress_Ocican_Tyranny_Injustice_Tooltip
+ add_stability = 0.12
+ set_country_flag = NAT_Redress_Ocican_Tyranny_Injustice
+ add_relations = { target = ALL  value = 10 }
+ country_event = { id = NAT_Event.17  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Duel_Mediation_System
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 16
+ y = 9
+ prerequisite = { focus = NAT_Codify_Ancient_Name_System focus = NAT_Suppress_Separatist_Forces }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Duel_Mediation_System_Tooltip
+ add_political_power = 80
+ set_country_flag = NAT_Establish_Duel_Mediation_System
+ reduce_war_exhaustion = 0.10
+ country_event = { id = NAT_Event.18  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Unite_Tribal_Law_Code
+ icon = GFX_Goal_POL_Legal_Reform
+ cost = 7.00
+ x = 24
+ y = 9
+ prerequisite = { focus = NAT_Suppress_Separatist_Forces focus = NAT_Honor_Heroes_Of_The_Calamity }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Unite_Tribal_Law_Code_Tooltip
+ add_government_authority = 18
+ set_country_flag = NAT_Unite_Tribal_Law_Code
+ add_stability = 0.10
+ country_event = { id = NAT_Event.19  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Mavuika_s_Oath_To_Natlan
+ icon = GFX_Goal_Leader_Speech
+ cost = 7.00
+ x = 20
+ y = 10
+ prerequisite = { 
+ focus = NAT_Redress_Ocican_Tyranny_Injustice
+ focus = NAT_Establish_Duel_Mediation_System
+ focus = NAT_Unite_Tribal_Law_Code
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mavuika_s_Oath_To_Natlan_Tooltip
+ set_country_flag = NAT_Mavuika_s_Oath_To_Natlan
+ add_stability = 0.20
+ add_war_support = 0.20
+ add_political_power = 200
+ country_event = { id = NAT_Event.20  days = 1 }
+ }
+ }
+
+ #### 阶段3：炉心与源火的秘辛（21-30）——核心突出源火、燃素技术、人龙关系的派系斗争，古龙遗迹的探索与争议
+ focus = {
+ id = NAT_Explore_Turan_Sacred_City
+ icon = GFX_Goal_TEC_Research
+ cost = 7.00
+ x = 20
+ y = 11
+ prerequisite = { focus = NAT_Mavuika_s_Oath_To_Natlan }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Explore_Turan_Sacred_City_Tooltip
+ add_research_speed = 0.10
+ set_country_flag = NAT_Explore_Turan_Sacred_City
+ add_industrial_efficiency = 0.08
+ country_event = { id = NAT_Event.21  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Study_Phyton_Technology
+ icon = GFX_Goal_ECON_Industry
+ cost = 7.00
+ x = 15
+ y = 12
+ prerequisite = { focus = NAT_Explore_Turan_Sacred_City }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Study_Phyton_Technology_Tooltip
+ add_factory_output = 0.12
+ set_country_flag = NAT_Study_Phyton_Technology
+ add_industrial_capacity = 10
+ country_event = { id = NAT_Event.22  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Dragon_Human_Relationship_Policy
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 25
+ y = 12
+ prerequisite = { focus = NAT_Explore_Turan_Sacred_City }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Dragon_Human_Relationship_Policy_Tooltip
+ add_stability = 0.07
+ set_country_flag = NAT_Dragon_Human_Relationship_Policy
+ add_relations = { target = NAT_DRAGON_TAG  value = 40 }
+ country_event = { id = NAT_Event.23  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Source_Fire_Heart_Guard
+ icon = GFX_Goal_MIL_Fortifications
+ cost = 7.00
+ x = 10
+ y = 13
+ prerequisite = { focus = NAT_Study_Phyton_Technology }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Source_Fire_Heart_Guard_Tooltip
+ add_land_defense = { value = 0.15  duration = 730 }
+ set_country_flag = NAT_Source_Fire_Heart_Guard
+ build_fortifications = { level = 3  province = NAT_TURAN_VOLCANO_PROVINCE  amount = 1 }
+ country_event = { id = NAT_Event.24  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Elemental_Furnace_Construction
+ icon = GFX_Goal_ECON_Power_Plants
+ cost = 7.00
+ x = 18
+ y = 13
+ prerequisite = { focus = NAT_Study_Phyton_Technology }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Elemental_Furnace_Construction_Tooltip
+ add_electricity = 3000
+ set_country_flag = NAT_Elemental_Furnace_Construction
+ add_civilian_factory = 7
+ country_event = { id = NAT_Event.25  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Win_Dragon_Sages_Support
+ icon = GFX_Goal_TEC_Research
+ cost = 7.00
+ x = 22
+ y = 13
+ prerequisite = { focus = NAT_Dragon_Human_Relationship_Policy }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Win_Dragon_Sages_Support_Tooltip
+ add_research_speed = 0.15
+ set_country_flag = NAT_Win_Dragon_Sages_Support
+ add_laboratory = 4
+ country_event = { id = NAT_Event.26  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Suppress_Anti_Dragon_Extremists
+ icon = GFX_Goal_POL_Internal_Affairs
+ cost = 7.00
+ x = 30
+ y = 13
+ prerequisite = { focus = NAT_Dragon_Human_Relationship_Policy }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Suppress_Anti_Dragon_Extremists_Tooltip
+ add_government_authority = 10
+ set_country_flag = NAT_Suppress_Anti_Dragon_Extremists
+ add_stability = 0.05
+ country_event = { id = NAT_Event.27  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Ancient_Dragon_Forge_Restoration
+ icon = GFX_Goal_MIL_Weapons_Production
+ cost = 7.00
+ x = 14
+ y = 14
+ prerequisite = { focus = NAT_Source_Fire_Heart_Guard focus = NAT_Elemental_Furnace_Construction }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Ancient_Dragon_Forge_Restoration_Tooltip
+ add_war_factory = 8
+ set_country_flag = NAT_Ancient_Dragon_Forge_Restoration
+ add_equipment_quality_factor = { type = infantry_equipment  value = 0.10 }
+ country_event = { id = NAT_Event.28  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Seal_Abyss_Rifts_In_Volcano
+ icon = GFX_Goal_MIL_Defensive
+ cost = 7.00
+ x = 26
+ y = 14
+ prerequisite = { focus = NAT_Win_Dragon_Sages_Support focus = NAT_Suppress_Anti_Dragon_Extremists }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Seal_Abyss_Rifts_In_Volcano_Tooltip
+ add_land_defense = { value = 0.10  duration = 1095 }
+ set_country_flag = NAT_Seal_Abyss_Rifts_In_Volcano
+ reduce_war_exhaustion = 0.05
+ country_event = { id = NAT_Event.29  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Master_Secret_Source_Technology
+ icon = GFX_Goal_TEC_Advanced_Research
+ cost = 7.00
+ x = 20
+ y = 15
+ prerequisite = { focus = NAT_Ancient_Dragon_Forge_Restoration focus = NAT_Seal_Abyss_Rifts_In_Volcano }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Master_Secret_Source_Technology_Tooltip
+ add_research_speed = 0.20
+ set_country_flag = NAT_Master_Secret_Source_Technology
+ add_industrial_efficiency = 0.15
+ add_nuclear_research = 10
+ country_event = { id = NAT_Event.30  days = 1 }
+ }
+ }
+
+ #### 阶段4：决斗法典与荣花演武（31-40）——核心突出纳塔决斗文化，用决斗解决内部冲突，强化军事与民族凝聚力，路线选择与内部荣誉斗争
+ focus = {
+ id = NAT_Establish_Duel_Code
+ icon = GFX_Goal_POL_Legal_Reform
+ cost = 7.00
+ x = 20
+ y = 16
+ prerequisite = { focus = NAT_Master_Secret_Source_Technology }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Duel_Code_Tooltip
+ add_stability = 0.10
+ set_country_flag = NAT_Establish_Duel_Code
+ add_political_power = 60
+ country_event = { id = NAT_Event.31  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Build_Sacred_Duel_Arena
+ icon = GFX_Goal_ECON_Construction
+ cost = 7.00
+ x = 15
+ y = 17
+ prerequisite = { focus = NAT_Establish_Duel_Code }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Build_Sacred_Duel_Arena_Tooltip
+ add_construction_speed = 0.18
+ set_country_flag = NAT_Build_Sacred_Duel_Arena
+ add_civilian_factory = { province = NAT_CAPITAL_PROVINCE  amount = 6 }
+ country_event = { id = NAT_Event.32  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Hold_Glorious_Flower_Martial_Arts
+ icon = GFX_Goal_MIL_Training
+ cost = 7.00
+ x = 25
+ y = 17
+ prerequisite = { focus = NAT_Establish_Duel_Code }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Hold_Glorious_Flower_Martial_Arts_Tooltip
+ add_army_experience = 80
+ set_country_flag = NAT_Hold_Glorious_Flower_Martial_Arts
+ add_war_support = 0.12
+ country_event = { id = NAT_Event.33  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Standardize_Honor_Duel_Rules
+ icon = GFX_Goal_POL_Justice
+ cost = 7.00
+ x = 10
+ y = 18
+ prerequisite = { focus = NAT_Build_Sacred_Duel_Arena }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Standardize_Honor_Duel_Rules_Tooltip
+ add_stability = 0.08
+ set_country_flag = NAT_Standardize_Honor_Duel_Rules
+ add_government_authority = 8
+ country_event = { id = NAT_Event.34  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Duel_Champion_System
+ icon = GFX_Goal_MIL_Offensive
+ cost = 7.00
+ x = 20
+ y = 18
+ prerequisite = { focus = NAT_Build_Sacred_Duel_Arena focus = NAT_Hold_Glorious_Flower_Martial_Arts }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Duel_Champion_System_Tooltip
+ add_land_attack = { value = 0.12  duration = 730 }
+ set_country_flag = NAT_Establish_Duel_Champion_System
+ add_army_experience_gain = 0.10
+ country_event = { id = NAT_Event.35  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Duel_Training_Camp_System
+ icon = GFX_Goal_MIL_Recruitment
+ cost = 7.00
+ x = 30
+ y = 18
+ prerequisite = { focus = NAT_Hold_Glorious_Flower_Martial_Arts }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Duel_Training_Camp_System_Tooltip
+ add_land_recruitment_speed = 0.15
+ set_country_flag = NAT_Duel_Training_Camp_System
+ add_manpower = 50000
+ country_event = { id = NAT_Event.36  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Hold_Fire_Return_Sacred_Night_Pilgrimage
+ icon = GFX_Goal_ESP_Religious
+ cost = 7.00
+ x = 5
+ y = 19
+ prerequisite = { focus = NAT_Standardize_Honor_Duel_Rules }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Hold_Fire_Return_Sacred_Night_Pilgrimage_Tooltip
+ add_nationalism = 0.18
+ set_country_flag = NAT_Hold_Fire_Return_Sacred_Night_Pilgrimage
+ add_war_support = 0.20
+ country_event = { id = NAT_Event.37  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Duel_Resolve_Tribal_Conflicts
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 15
+ y = 19
+ prerequisite = { focus = NAT_Standardize_Honor_Duel_Rules focus = NAT_Establish_Duel_Champion_System }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Duel_Resolve_Tribal_Conflicts_Tooltip
+ add_stability = 0.15
+ set_country_flag = NAT_Duel_Resolve_Tribal_Conflicts
+ add_relations = { target = ALL  value = 15 }
+ country_event = { id = NAT_Event.38  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Flame_Blessing_For_Duel_Warriors
+ icon = GFX_Goal_MIL_War_Industry
+ cost = 7.00
+ x = 25
+ y = 19
+ prerequisite = { focus = NAT_Establish_Duel_Champion_System focus = NAT_Duel_Training_Camp_System }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Flame_Blessing_For_Duel_Warriors_Tooltip
+ add_war_factory = 6
+ set_country_flag = NAT_Flame_Blessing_For_Duel_Warriors
+ add_equipment_to_stockpile = { type = motorized_equipment_1  amount = 300  producer = NAT }
+ country_event = { id = NAT_Event.39  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Ultimate_Duel_Of_Heroes
+ icon = GFX_Goal_MIL_Elite_Training
+ cost = 7.00
+ x = 20
+ y = 20
+ prerequisite = { 
+ focus = NAT_Hold_Fire_Return_Sacred_Night_Pilgrimage
+ focus = NAT_Duel_Resolve_Tribal_Conflicts
+ focus = NAT_Flame_Blessing_For_Duel_Warriors
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Ultimate_Duel_Of_Heroes_Tooltip
+ add_land_attack = { value = 0.25  duration = 1095 }
+ set_country_flag = NAT_Ultimate_Duel_Of_Heroes
+ add_war_support = 0.30
+ add_army_experience = 150
+ country_event = { id = NAT_Event.40  days = 1 }
+ }
+ }
+
+ #### 阶段5：部族的整合与裂痕（41-50）——核心突出统一与自治的路线斗争，解决内部分裂风险，完成部族的深度整合，史诗级的国家构建
+ focus = {
+ id = NAT_Promote_Natlan_National_Identity
+ icon = GFX_Goal_ESP_Nationalism
+ cost = 7.00
+ x = 20
+ y = 21
+ prerequisite = { focus = NAT_Ultimate_Duel_Of_Heroes }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Promote_Natlan_National_Identity_Tooltip
+ add_nationalism = 0.20
+ set_country_flag = NAT_Promote_Natlan_National_Identity
+ add_stability = 0.10
+ country_event = { id = NAT_Event.41  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Integrate_Tribal_Resource_System
+ icon = GFX_Goal_ECON_Resource_Management
+ cost = 7.00
+ x = 16
+ y = 22
+ prerequisite = { focus = NAT_Promote_Natlan_National_Identity }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Integrate_Tribal_Resource_System_Tooltip
+ add_resource = { type = steel  amount = 800 }
+ set_country_flag = NAT_Integrate_Tribal_Resource_System
+ add_resource = { type = oil  amount = 600 }
+ country_event = { id = NAT_Event.42  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Unify_Tribal_Military_Forces
+ icon = GFX_Goal_MIL_Army_Reform
+ cost = 7.00
+ x = 24
+ y = 22
+ prerequisite = { focus = NAT_Promote_Natlan_National_Identity }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Unify_Tribal_Military_Forces_Tooltip
+ add_land_attack = { value = 0.10  duration = 730 }
+ set_country_flag = NAT_Unify_Tribal_Military_Forces
+ add_division_recruitment_speed = 0.15
+ country_event = { id = NAT_Event.43  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Autonomy_Policy_For_Loyal_Tribes
+ icon = GFX_Goal_POL_Federalism
+ cost = 7.00
+ x = 12
+ y = 23
+ prerequisite = { focus = NAT_Integrate_Tribal_Resource_System }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Autonomy_Policy_For_Loyal_Tribes_Tooltip
+ add_stability = 0.12
+ set_country_flag = NAT_Autonomy_Policy_For_Loyal_Tribes
+ add_happiness = { target = all  value = 0.10 }
+ country_event = { id = NAT_Event.44  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Unified_Taxation_System
+ icon = GFX_Goal_ECON_Taxation
+ cost = 7.00
+ x = 20
+ y = 23
+ prerequisite = { focus = NAT_Integrate_Tribal_Resource_System focus = NAT_Unify_Tribal_Military_Forces }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Unified_Taxation_System_Tooltip
+ add_factory_output = 0.10
+ set_country_flag = NAT_Establish_Unified_Taxation_System
+ reduce_consumer_goods = 0.03
+ country_event = { id = NAT_Event.45  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Suppress_Rebellious_Tribal_Elders
+ icon = GFX_Goal_POL_Counter_Insurgency
+ cost = 7.00
+ x = 28
+ y = 23
+ prerequisite = { focus = NAT_Unify_Tribal_Military_Forces }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Suppress_Rebellious_Tribal_Elders_Tooltip
+ add_government_authority = 15
+ set_country_flag = NAT_Suppress_Rebellious_Tribal_Elders
+ add_political_power = 90
+ country_event = { id = NAT_Event.46  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Unify_Cultural_And_Educational_System
+ icon = GFX_Goal_ESP_Culture
+ cost = 7.00
+ x = 8
+ y = 24
+ prerequisite = { focus = NAT_Autonomy_Policy_For_Loyal_Tribes }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Unify_Cultural_And_Educational_System_Tooltip
+ add_research_speed = 0.08
+ set_country_flag = NAT_Unify_Cultural_And_Educational_System
+ add_cultural_influence = { target = WORLD  value = 0.10 }
+ country_event = { id = NAT_Event.47  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Natlan_Unified_Law
+ icon = GFX_Goal_POL_Legal_Reform
+ cost = 7.00
+ x = 16
+ y = 24
+ prerequisite = { focus = NAT_Autonomy_Policy_For_Loyal_Tribes focus = NAT_Establish_Unified_Taxation_System }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Natlan_Unified_Law_Tooltip
+ add_stability = 0.18
+ set_country_flag = NAT_Establish_Natlan_Unified_Law
+ add_government_authority = 20
+ country_event = { id = NAT_Event.48  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Integrate_Tribal_Guard_Forces
+ icon = GFX_Goal_MIL_Garrison
+ cost = 7.00
+ x = 24
+ y = 24
+ prerequisite = { focus = NAT_Establish_Unified_Taxation_System focus = NAT_Suppress_Rebellious_Tribal_Elders }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Integrate_Tribal_Guard_Forces_Tooltip
+ add_garrison_efficiency = 0.20
+ set_country_flag = NAT_Integrate_Tribal_Guard_Forces
+ add_land_defense = { value = 0.08  duration = 730 }
+ country_event = { id = NAT_Event.49  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_All_Tribes_Unification_Declaration
+ icon = GFX_Goal_POL_National_Unification
+ cost = 7.00
+ x = 20
+ y = 25
+ prerequisite = { 
+ focus = NAT_Unify_Cultural_And_Educational_System
+ focus = NAT_Establish_Natlan_Unified_Law
+ focus = NAT_Integrate_Tribal_Guard_Forces
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_All_Tribes_Unification_Declaration_Tooltip
+ set_country_flag = NAT_All_Tribes_Unification_Declaration
+ set_national_stability = 0.90
+ add_political_power = 250
+ add_manpower = 100000
+ add_war_support = 0.25
+ country_event = { id = NAT_Event.50  days = 1 }
+ }
+ }
+
+ #### 阶段6：燃素军工与龙骸锻造（51-60）——核心突出军事工业建设，基于燃素技术的军工革新，强化军队战斗力，为内部稳定和外部对抗奠定基础
+ focus = {
+ id = NAT_Establish_Phyton_Weapon_Research
+ icon = GFX_Goal_MIL_Weapons_Research
+ cost = 7.00
+ x = 20
+ y = 26
+ prerequisite = { focus = NAT_All_Tribes_Unification_Declaration }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Phyton_Weapon_Research_Tooltip
+ add_research_speed = { type = land_weapons  value = 0.15 }
+ set_country_flag = NAT_Establish_Phyton_Weapon_Research
+ add_equipment_quality_factor = { type = artillery_equipment  value = 0.10 }
+ country_event = { id = NAT_Event.51  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Flame_Enchantment_Forge_Expansion
+ icon = GFX_Goal_MIL_War_Industry
+ cost = 7.00
+ x = 15
+ y = 27
+ prerequisite = { focus = NAT_Establish_Phyton_Weapon_Research }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Flame_Enchantment_Forge_Expansion_Tooltip
+ add_war_factory = 9
+ set_country_flag = NAT_Flame_Enchantment_Forge_Expansion
+ add_equipment_production_efficiency = { type = infantry_equipment  value = 0.12 }
+ country_event = { id = NAT_Event.52  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Dragon_Bone_Armor_Development
+ icon = GFX_Goal_MIL_Armor_Research
+ cost = 7.00
+ x = 25
+ y = 27
+ prerequisite = { focus = NAT_Establish_Phyton_Weapon_Research }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Dragon_Bone_Armor_Development_Tooltip
+ add_land_armor_value_bonus = 15
+ set_country_flag = NAT_Dragon_Bone_Armor_Development
+ add_equipment_to_stockpile = { type = heavy_tank_equipment_1  amount = 200  producer = NAT }
+ country_event = { id = NAT_Event.53  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Expansion_Of_Volcano_Industrial_Zone
+ icon = GFX_Goal_ECON_Industrial_Expansion
+ cost = 7.00
+ x = 10
+ y = 28
+ prerequisite = { focus = NAT_Flame_Enchantment_Forge_Expansion }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Expansion_Of_Volcano_Industrial_Zone_Tooltip
+ add_civilian_factory = 10
+ set_country_flag = NAT_Expansion_Of_Volcano_Industrial_Zone
+ add_industrial_efficiency = 0.10
+ country_event = { id = NAT_Event.54  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Mobile_Warfare_Tactics_Innovation
+ icon = GFX_Goal_MIL_Doctrine
+ cost = 7.00
+ x = 20
+ y = 28
+ prerequisite = { focus = NAT_Flame_Enchantment_Forge_Expansion focus = NAT_Dragon_Bone_Armor_Development }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mobile_Warfare_Tactics_Innovation_Tooltip
+ add_land_breakthrough = 0.15
+ set_country_flag = NAT_Mobile_Warfare_Tactics_Innovation
+ add_doctrine_progress = { type = mobile_warfare  value = 10 }
+ country_event = { id = NAT_Event.55  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Flame_Artillery_Development
+ icon = GFX_Goal_MIL_Artillery
+ cost = 7.00
+ x = 30
+ y = 28
+ prerequisite = { focus = NAT_Dragon_Bone_Armor_Development }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Flame_Artillery_Development_Tooltip
+ add_equipment_to_stockpile = { type = artillery_equipment_1  amount = 500  producer = NAT }
+ set_country_flag = NAT_Flame_Artillery_Development
+ add_land_attack = { value = 0.08  duration = 540 }
+ country_event = { id = NAT_Event.56  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Naval_Forge_Construction
+ icon = GFX_Goal_MIL_Naval_Industry
+ cost = 7.00
+ x = 5
+ y = 29
+ prerequisite = { focus = NAT_Expansion_Of_Volcano_Industrial_Zone }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Naval_Forge_Construction_Tooltip
+ add_naval_factory = 6
+ set_country_flag = NAT_Naval_Forge_Construction
+ add_naval_attack = { value = 0.10  duration = 730 }
+ country_event = { id = NAT_Event.57  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Aviation_Industry_Expansion
+ icon = GFX_Goal_AIR_Air_Industry
+ cost = 7.00
+ x = 15
+ y = 29
+ prerequisite = { focus = NAT_Expansion_Of_Volcano_Industrial_Zone focus = NAT_Mobile_Warfare_Tactics_Innovation }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Aviation_Industry_Expansion_Tooltip
+ add_air_factory = 7
+ set_country_flag = NAT_Aviation_Industry_Expansion
+ add_air_attack = { value = 0.10  duration = 730 }
+ country_event = { id = NAT_Event.58  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Elite_Flame_Warrior_Training
+ icon = GFX_Goal_MIL_Elite_Training
+ cost = 7.00
+ x = 25
+ y = 29
+ prerequisite = { focus = NAT_Mobile_Warfare_Tactics_Innovation focus = NAT_Flame_Artillery_Development }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Elite_Flame_Warrior_Training_Tooltip
+ add_army_experience = 120
+ set_country_flag = NAT_Elite_Flame_Warrior_Training
+ add_special_forces_cap = 10
+ country_event = { id = NAT_Event.59  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Military_Industry_Modernization
+ icon = GFX_Goal_MIL_Industrial_Mobilization
+ cost = 7.00
+ x = 20
+ y = 30
+ prerequisite = { 
+ focus = NAT_Naval_Forge_Construction
+ focus = NAT_Aviation_Industry_Expansion
+ focus = NAT_Elite_Flame_Warrior_Training
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Military_Industry_Modernization_Tooltip
+ add_war_factory = 15
+ set_country_flag = NAT_Military_Industry_Modernization
+ add_industrial_efficiency = 0.18
+ add_production_speed_factory = 0.10
+ country_event = { id = NAT_Event.60  days = 1 }
+ }
+ }
+
+ #### 阶段7：深渊的低语与烬寂海的阴影（61-70）——核心突出深渊渗透的内部危机，主战与主和的派系斗争，清剿内部深渊势力，解决五百年前灾厄遗留问题
+ focus = {
+ id = NAT_Investigate_Abyss_Infiltration
+ icon = GFX_Goal_ESP_Counter_Espionage
+ cost = 7.00
+ x = 20
+ y = 31
+ prerequisite = { focus = NAT_Military_Industry_Modernization }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Investigate_Abyss_Infiltration_Tooltip
+ add_counter_espionage = 0.15
+ set_country_flag = NAT_Investigate_Abyss_Infiltration
+ add_intelligence_agency_efficiency = 0.10
+ country_event = { id = NAT_Event.61  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Strengthen_Night_God_Realm_Protection
+ icon = GFX_Goal_ESP_Religious
+ cost = 7.00
+ x = 15
+ y = 32
+ prerequisite = { focus = NAT_Investigate_Abyss_Infiltration }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Strengthen_Night_God_Realm_Protection_Tooltip
+ add_stability = 0.10
+ set_country_flag = NAT_Strengthen_Night_God_Realm_Protection
+ add_nationalism = 0.10
+ country_event = { id = NAT_Event.62  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Clean_Up_Abyss_Cult_Forces
+ icon = GFX_Goal_MIL_Counter_Insurgency
+ cost = 7.00
+ x = 25
+ y = 32
+ prerequisite = { focus = NAT_Investigate_Abyss_Infiltration }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Clean_Up_Abyss_Cult_Forces_Tooltip
+ add_government_authority = 12
+ set_country_flag = NAT_Clean_Up_Abyss_Cult_Forces
+ add_garrison_efficiency = 0.15
+ country_event = { id = NAT_Event.63  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_The_Shadow_Of_The_Embersea
+ icon = GFX_Goal_MIL_Defensive_Planning
+ cost = 7.00
+ x = 10
+ y = 33
+ prerequisite = { focus = NAT_Strengthen_Night_God_Realm_Protection }
+ completion_reward = {
+ custom_effect_tooltip = NAT_The_Shadow_Of_The_Embersea_Tooltip
+ add_land_defense = { value = 0.12  duration = 1095 }
+ set_country_flag = NAT_The_Shadow_Of_The_Embersea
+ build_fortifications = { level = 4  province = NAT_EMBERSEA_BORDER_PROVINCE  amount = 1 }
+ country_event = { id = NAT_Event.64  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Hold_War_Council_Against_Abyss
+ icon = GFX_Goal_POL_War_Planning
+ cost = 7.00
+ x = 20
+ y = 33
+ prerequisite = { focus = NAT_Strengthen_Night_God_Realm_Protection focus = NAT_Clean_Up_Abyss_Cult_Forces }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Hold_War_Council_Against_Abyss_Tooltip
+ add_war_support = 0.25
+ set_country_flag = NAT_Hold_War_Council_Against_Abyss
+ add_political_power = 120
+ country_event = { id = NAT_Event.65  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Unite_Dragon_Alliance_Against_Abyss
+ icon = GFX_Goal_POL_Alliances
+ cost = 7.00
+ x = 30
+ y = 33
+ prerequisite = { focus = NAT_Clean_Up_Abyss_Cult_Forces }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Unite_Dragon_Alliance_Against_Abyss_Tooltip
+ add_land_attack = { value = 0.10  duration = 730 }
+ set_country_flag = NAT_Unite_Dragon_Alliance_Against_Abyss
+ add_army_experience = 80
+ country_event = { id = NAT_Event.66  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Repair_Sealing_Needle_Of_Shadow
+ icon = GFX_Goal_MIL_Fortifications
+ cost = 7.00
+ x = 5
+ y = 34
+ prerequisite = { focus = NAT_The_Shadow_Of_The_Embersea }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Repair_Sealing_Needle_Of_Shadow_Tooltip
+ add_land_defense = { value = 0.18  duration = 1095 }
+ set_country_flag = NAT_Repair_Sealing_Needle_Of_Shadow
+ reduce_war_exhaustion = 0.10
+ country_event = { id = NAT_Event.67  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Develop_Abyss_Resistance_Technology
+ icon = GFX_Goal_TEC_Military_Research
+ cost = 7.00
+ x = 15
+ y = 34
+ prerequisite = { focus = NAT_The_Shadow_Of_The_Embersea focus = NAT_Hold_War_Council_Against_Abyss }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Develop_Abyss_Resistance_Technology_Tooltip
+ add_research_speed = { type = military_technology  value = 0.12 }
+ set_country_flag = NAT_Develop_Abyss_Resistance_Technology
+ reduce_casualties = { type = land  value = 0.10 }
+ country_event = { id = NAT_Event.68  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Heroes_Memorial_For_Calamity
+ icon = GFX_Goal_ESP_Nationalism
+ cost = 7.00
+ x = 25
+ y = 34
+ prerequisite = { focus = NAT_Hold_War_Council_Against_Abyss focus = NAT_Unite_Dragon_Alliance_Against_Abyss }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Heroes_Memorial_For_Calamity_Tooltip
+ add_nationalism = 0.22
+ set_country_flag = NAT_Heroes_Memorial_For_Calamity
+ add_happiness = { target = all  value = 0.15 }
+ country_event = { id = NAT_Event.69  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Mavuika_s_Abyss_Burning_Oath
+ icon = GFX_Goal_Leader_Speech
+ cost = 7.00
+ x = 20
+ y = 35
+ prerequisite = { 
+ focus = NAT_Repair_Sealing_Needle_Of_Shadow
+ focus = NAT_Develop_Abyss_Resistance_Technology
+ focus = NAT_Heroes_Memorial_For_Calamity
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mavuika_s_Abyss_Burning_Oath_Tooltip
+ set_country_flag = NAT_Mavuika_s_Abyss_Burning_Oath
+ add_land_attack = { value = 0.20  duration = 1095 }
+ add_war_support = 0.35
+ add_government_authority = 25
+ country_event = { id = NAT_Event.70  days = 1 }
+ }
+ }
+
+ #### 阶段8：万火归一与纳塔的新生（71-80）——核心突出终极的国家统一与升华，解决所有内部矛盾，确立纳塔在提瓦特的地位，史诗级的终局内容
+ focus = {
+ id = NAT_The_Great_Unity_Of_All_Fires
+ icon = GFX_Goal_POL_National_Unification
+ cost = 7.00
+ x = 20
+ y = 36
+ prerequisite = { focus = NAT_Mavuika_s_Abyss_Burning_Oath }
+ completion_reward = {
+ custom_effect_tooltip = NAT_The_Great_Unity_Of_All_Fires_Tooltip
+ set_national_stability = 1.0
+ set_country_flag = NAT_The_Great_Unity_Of_All_Fires
+ add_happiness = { target = all  value = 0.20 }
+ country_event = { id = NAT_Event.71  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Establish_Diplomatic_Relations_With_Liyue
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 12
+ y = 37
+ prerequisite = { focus = NAT_The_Great_Unity_Of_All_Fires }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Establish_Diplomatic_Relations_With_Liyue_Tooltip
+ add_relations = { target = LIYUE  value = 40 }
+ set_country_flag = NAT_Establish_Diplomatic_Relations_With_Liyue
+ add_trade_efficiency = 0.20
+ country_event = { id = NAT_Event.72  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Teyvat_Flame_Diplomacy_Initiative
+ icon = GFX_Goal_POL_Foreign_Policy
+ cost = 7.00
+ x = 20
+ y = 37
+ prerequisite = { focus = NAT_The_Great_Unity_Of_All_Fires }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Teyvat_Flame_Diplomacy_Initiative_Tooltip
+ add_relations = { target = ALL  value = 20 }
+ set_country_flag = NAT_Teyvat_Flame_Diplomacy_Initiative
+ add_diplomatic_weight = 25
+ country_event = { id = NAT_Event.73  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Alliance_With_Mondstadt_And_Inazuma
+ icon = GFX_Goal_POL_Alliances
+ cost = 7.00
+ x = 28
+ y = 37
+ prerequisite = { focus = NAT_The_Great_Unity_Of_All_Fires }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Alliance_With_Mondstadt_And_Inazuma_Tooltip
+ add_relations = { target = MONDSTADT  value = 35 }
+ add_relations = { target = INAZUMA  value = 30 }
+ set_country_flag = NAT_Alliance_With_Mondstadt_And_Inazuma
+ add_naval_attack = { value = 0.10  duration = 730 }
+ country_event = { id = NAT_Event.74  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Sumeru_Academic_And_Industrial_Cooperation
+ icon = GFX_Goal_TEC_Research
+ cost = 7.00
+ x = 8
+ y = 38
+ prerequisite = { focus = NAT_Establish_Diplomatic_Relations_With_Liyue }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Sumeru_Academic_And_Industrial_Cooperation_Tooltip
+ add_research_speed = 0.15
+ set_country_flag = NAT_Sumeru_Academic_And_Industrial_Cooperation
+ add_relations = { target = SUMERU  value = 30 }
+ country_event = { id = NAT_Event.75  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Eternal_Flame_Legion_Establishment
+ icon = GFX_Goal_MIL_Army_Structure
+ cost = 7.00
+ x = 16
+ y = 38
+ prerequisite = { focus = NAT_Establish_Diplomatic_Relations_With_Liyue focus = NAT_Teyvat_Flame_Diplomacy_Initiative }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Eternal_Flame_Legion_Establishment_Tooltip
+ add_land_recruitment_speed = 0.30
+ set_country_flag = NAT_Eternal_Flame_Legion_Establishment
+ add_manpower = 150000
+ add_division_recruitment_speed = 0.20
+ country_event = { id = NAT_Event.76  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Natlan_Industrial_Renaissance
+ icon = GFX_Goal_ECON_Industrialization
+ cost = 7.00
+ x = 24
+ y = 38
+ prerequisite = { focus = NAT_Teyvat_Flame_Diplomacy_Initiative focus = NAT_Alliance_With_Mondstadt_And_Inazuma }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Natlan_Industrial_Renaissance_Tooltip
+ add_civilian_factory = 20
+ add_war_factory = 15
+ set_country_flag = NAT_Natlan_Industrial_Renaissance
+ add_industrial_efficiency = 0.25
+ country_event = { id = NAT_Event.77  days = 3 }
+ }
+ }
+ focus = {
+ id = NAT_Fontaine_And_Snezhnaya_Diplomatic_Outreach
+ icon = GFX_Goal_POL_Diplomacy
+ cost = 7.00
+ x = 32
+ y = 38
+ prerequisite = { focus = NAT_Alliance_With_Mondstadt_And_Inazuma }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Fontaine_And_Snezhnaya_Diplomatic_Outreach_Tooltip
+ add_relations = { target = FONTAINE  value = 25 }
+ add_relations = { target = SNEZHNAYA  value = 20 }
+ set_country_flag = NAT_Fontaine_And_Snezhnaya_Diplomatic_Outreach
+ add_diplomatic_influence = { target = WORLD  value = 15 }
+ country_event = { id = NAT_Event.78  days = 1 }
+ }
+ }
+ focus = {
+ id = NAT_Mavuika_s_Eternal_Flame_Blessing
+ icon = GFX_Goal_ESP_Religious
+ cost = 7.00
+ x = 16
+ y = 39
+ prerequisite = { 
+ focus = NAT_Sumeru_Academic_And_Industrial_Cooperation
+ focus = NAT_Eternal_Flame_Legion_Establishment
+ focus = NAT_Natlan_Industrial_Renaissance
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Mavuika_s_Eternal_Flame_Blessing_Tooltip
+ add_war_factory = 20
+ set_country_flag = NAT_Mavuika_s_Eternal_Flame_Blessing
+ add_factory_output = 0.15
+ add_equipment_production_efficiency = 0.15
+ country_event = { id = NAT_Event.79  days = 2 }
+ }
+ }
+ focus = {
+ id = NAT_Glory_Of_Natlan_The_Land_Of_Burning_Fires
+ icon = GFX_Goal_ESP_Nationalism
+ cost = 7.00
+ x = 24
+ y = 39
+ prerequisite = { 
+ focus = NAT_Natlan_Industrial_Renaissance
+ focus = NAT_Fontaine_And_Snezhnaya_Diplomatic_Outreach
+ }
+ completion_reward = {
+ custom_effect_tooltip = NAT_Glory_Of_Natlan_The_Land_Of_Burning_Fires_Tooltip
+ set_country_flag = NAT_Glory_Of_Natlan_The_Land_Of_Burning_Fires
+ add_nationalism = 0.50
+ add_war_support = 0.50
+ add_land_attack = { value = 0.30  duration = 1825 }
+ add_government_authority = 50
+ add_political_power = 500
+ country_event = { id = NAT_Event.80  days = 1 }
+ }
+ }
+}
+```
+
+---
+
+## 二、事件文件（NAT_AI_Events.txt）
+
+```Plain Text
+
+# 纳塔国家事件总集 - 80个事件，严格对应国策树，深度植入部族冲突、政治斗争、剧情分支与多选项玩法
+country_event = {
+ id = NAT_Event.1
+ title = NAT_Event.1.t
+ desc = NAT_Event.1.d
+ picture = GFX_evt_political_summit
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.1.a
+ custom_effect_tooltip = NAT_Call_Tribal_Council_Event_Tooltip
+ add_political_power = 30
+ set_national_stability = { value = 0.05  add = yes }
+ }
+ option = {
+ name = NAT_Event.1.b
+ custom_effect_tooltip = NAT_Call_Tribal_Council_Hardline_Tooltip
+ add_government_authority = 5
+ add_political_power = 15
+ set_country_flag = NAT_Hardline_Tribal_Policy
+ }
+}
+
+# 2. 拉拢军阀同盟
+country_event = {
+ id = NAT_Event.2
+ title = NAT_Event.2.t
+ desc = NAT_Event.2.d
+ picture = GFX_evt_alliance_signing
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.2.a
+ custom_effect_tooltip = NAT_Win_Warlords_Alliance_Event_Tooltip
+ add_relations = { target = NAT_TRIBAL_WARLORDS  value = 20 }
+ add_stability = 0.03
+ }
+ option = {
+ name = NAT_Event.2.b
+ custom_effect_tooltip = NAT_Win_Warlords_Military_Bind_Tooltip
+ add_army_experience = 20
+ add_land_recruitment_speed = { type = land  value = 0.05  duration = 180 }
+ }
+}
+
+# 3. 安抚沃陆之邦
+country_event = {
+ id = NAT_Event.3
+ title = NAT_Event.3.t
+ desc = NAT_Event.3.d
+ picture = GFX_evt_agricultural_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.3.a
+ custom_effect_tooltip = NAT_Pacify_Volu_Bang_Event_Tooltip
+ add_civilian_factory = 2
+ add_resource = { type = food  amount = 500 }
+ }
+ option = {
+ name = NAT_Event.3.b
+ custom_effect_tooltip = NAT_Pacify_Volu_Bang_Military_Tooltip
+ add_manpower = 15000
+ add_land_defense = { value = 0.05  duration = 365 }
+ }
+}
+
+# 4. 争取回声之子
+country_event = {
+ id = NAT_Event.4
+ title = NAT_Event.4.t
+ desc = NAT_Event.4.d
+ picture = GFX_evt_factory_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.4.a
+ custom_effect_tooltip = NAT_Woo_Echo_Sons_Event_Tooltip
+ add_war_factory = 2
+ add_equipment_to_stockpile = { type = infantry_equipment_1  amount = 300  producer = NAT }
+ }
+ option = {
+ name = NAT_Event.4.b
+ custom_effect_tooltip = NAT_Woo_Echo_Sons_Forge_Tooltip
+ add_equipment_quality_factor = { type = infantry_equipment  value = 0.05 }
+ add_industrial_capacity = 3
+ }
+}
+
+# 5. 和解流泉之众
+country_event = {
+ id = NAT_Event.5
+ title = NAT_Event.5.t
+ desc = NAT_Event.5.d
+ picture = GFX_evt_trade_route
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.5.a
+ custom_effect_tooltip = NAT_Reconcile_Spring_Folk_Event_Tooltip
+ add_naval_factory = 1
+ add_trade_efficiency = 0.08
+ }
+ option = {
+ name = NAT_Event.5.b
+ custom_effect_tooltip = NAT_Reconcile_Spring_Folk_Coastal_Tooltip
+ add_infrastructure = { province = NAT_COASTAL_PROVINCE  level = 3 }
+ add_resource = { type = oil  amount = 300 }
+ }
+}
+
+# 6. 联结悬木人
+country_event = {
+ id = NAT_Event.6
+ title = NAT_Event.6.t
+ desc = NAT_Event.6.d
+ picture = GFX_evt_engineers_at_work
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.6.a
+ custom_effect_tooltip = NAT_Bind_Hanging_Tree_Clan_Event_Tooltip
+ add_construction_speed = 0.08
+ add_land_breakthrough = 0.05
+ }
+ option = {
+ name = NAT_Event.6.b
+ custom_effect_tooltip = NAT_Bind_Hanging_Tree_Clan_Mobility_Tooltip
+ add_motorized_equipment_production = 0.10
+ add_division_speed = 0.05
+ }
+}
+
+# 7. 争取花羽会
+country_event = {
+ id = NAT_Event.7
+ title = NAT_Event.7.t
+ desc = NAT_Event.7.d
+ picture = GFX_evt_air_force_parade
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.7.a
+ custom_effect_tooltip = NAT_Win_Feather_Guild_Event_Tooltip
+ add_air_factory = 2
+ add_air_experience = 30
+ }
+ option = {
+ name = NAT_Event.7.b
+ custom_effect_tooltip = NAT_Win_Feather_Guild_Dragon_Taming_Tooltip
+ add_air_attack = { value = 0.05  duration = 365 }
+ add_air_superiority_bonus = 0.05
+ }
+}
+
+# 8. 安抚烟谜主
+country_event = {
+ id = NAT_Event.8
+ title = NAT_Event.8.t
+ desc = NAT_Event.8.d
+ picture = GFX_evt_intelligence_operation
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.8.a
+ custom_effect_tooltip = NAT_Appease_Smoke_Mystics_Event_Tooltip
+ add_intelligence_agency_efficiency = 0.08
+ add_counter_espionage = 0.10
+ }
+ option = {
+ name = NAT_Event.8.b
+ custom_effect_tooltip = NAT_Appease_Smoke_Mystics_Mystic_Tooltip
+ add_research_speed = 0.05
+ add_espionage_efficiency = { target = WORLD  value = 0.05 }
+ }
+}
+
+# 9. 调解部族边境争端
+country_event = {
+ id = NAT_Event.9
+ title = NAT_Event.9.t
+ desc = NAT_Event.9.d
+ picture = GFX_evt_peace_mediation
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.9.a
+ custom_effect_tooltip = NAT_Mediate_Border_Disputes_Event_Tooltip
+ add_stability = 0.08
+ reduce_war_exhaustion = 0.05
+ }
+ option = {
+ name = NAT_Event.9.b
+ custom_effect_tooltip = NAT_Mediate_Border_Disputes_Duel_Tooltip
+ add_war_support = 0.05
+ add_army_experience = 15
+ set_country_flag = NAT_Duel_Mediation_Precedent
+ }
+}
+
+# 10. 订立烈火大契
+country_event = {
+ id = NAT_Event.10
+ title = NAT_Event.10.t
+ desc = NAT_Event.10.d
+ picture = GFX_evt_oath_ceremony
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.10.a
+ custom_effect_tooltip = NAT_Great_Fire_Pact_Event_Tooltip
+ add_stability = 0.05
+ add_political_power = 50
+ add_government_authority = 5
+ }
+}
+
+# 11. 玛薇卡的意志宣言
+country_event = {
+ id = NAT_Event.11
+ title = NAT_Event.11.t
+ desc = NAT_Event.11.d
+ picture = GFX_evt_leader_speech
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.11.a
+ custom_effect_tooltip = NAT_Mavuika_Will_Declaration_Event_Tooltip
+ add_war_support = 0.10
+ add_nationalism = 0.08
+ }
+ option = {
+ name = NAT_Event.11.b
+ custom_effect_tooltip = NAT_Mavuika_Will_Hardline_Tooltip
+ add_ideology_support = { ideology = authoritarianism  value = 0.05 }
+ add_political_power = 50
+ }
+}
+
+# 12. 改革部族议会
+country_event = {
+ id = NAT_Event.12
+ title = NAT_Event.12.t
+ desc = NAT_Event.12.d
+ picture = GFX_evt_government_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.12.a
+ custom_effect_tooltip = NAT_Reform_Tribal_Parliament_Event_Tooltip
+ add_stability = 0.05
+ add_government_authority = 3
+ }
+ option = {
+ name = NAT_Event.12.b
+ custom_effect_tooltip = NAT_Reform_Tribal_Parliament_Balance_Tooltip
+ add_political_power = 40
+ add_relations = { target = ALL_TRIBES  value = 10 }
+ }
+}
+
+# 13. 强化火神权威
+country_event = {
+ id = NAT_Event.13
+ title = NAT_Event.13.t
+ desc = NAT_Event.13.d
+ picture = GFX_evt_divine_blessing
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.13.a
+ custom_effect_tooltip = NAT_Strengthen_Fire_God_Authority_Event_Tooltip
+ add_government_authority = 8
+ add_political_power = 30
+ }
+ option = {
+ name = NAT_Event.13.b
+ custom_effect_tooltip = NAT_Strengthen_Fire_God_Authority_Military_Tooltip
+ add_army_experience = 30
+ add_land_attack = { value = 0.03  duration = 365 }
+ }
+}
+
+# 14. 编订古名体系
+country_event = {
+ id = NAT_Event.14
+ title = NAT_Event.14.t
+ desc = NAT_Event.14.d
+ picture = GFX_evt_knightly_code
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.14.a
+ custom_effect_tooltip = NAT_Codify_Ancient_Name_System_Event_Tooltip
+ add_nationalism = 0.08
+ add_happiness = { target = all  value = 0.05 }
+ }
+ option = {
+ name = NAT_Event.14.b
+ custom_effect_tooltip = NAT_Codify_Ancient_Name_System_Military_Tooltip
+ add_land_recruitment_speed = { type = land  value = 0.05  duration = 365 }
+ add_war_support = 0.05
+ }
+}
+
+# 15. 镇压分离主义势力
+country_event = {
+ id = NAT_Event.15
+ title = NAT_Event.15.t
+ desc = NAT_Event.15.d
+ picture = GFX_evt_counter_insurgency
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.15.a
+ custom_effect_tooltip = NAT_Suppress_Separatist_Event_Tooltip
+ add_garrison_efficiency = 0.08
+ reduce_consumer_goods = 0.01
+ }
+ option = {
+ name = NAT_Event.15.b
+ custom_effect_tooltip = NAT_Suppress_Separatist_Hardline_Tooltip
+ add_government_authority = 5
+ add_political_power = 20
+ set_country_flag = NAT_Separatist_Crackdown
+ }
+}
+
+# 16. 纪念灾厄英雄
+country_event = {
+ id = NAT_Event.16
+ title = NAT_Event.16.t
+ desc = NAT_Event.16.d
+ picture = GFX_evt_national_memorial
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.16.a
+ custom_effect_tooltip = NAT_Honor_Calamity_Heroes_Event_Tooltip
+ add_war_support = 0.10
+ add_nationalism = 0.05
+ }
+ option = {
+ name = NAT_Event.16.b
+ custom_effect_tooltip = NAT_Honor_Calamity_Heroes_Military_Tooltip
+ add_army_experience = 30
+ reduce_casualties = { type = land  value = 0.03  duration = 365 }
+ }
+}
+
+# 17. 平反奥奇坎暴政冤案
+country_event = {
+ id = NAT_Event.17
+ title = NAT_Event.17.t
+ desc = NAT_Event.17.d
+ picture = GFX_evt_legal_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.17.a
+ custom_effect_tooltip = NAT_Redress_Ocican_Injustice_Event_Tooltip
+ add_stability = 0.08
+ add_happiness = { target = all  value = 0.06 }
+ }
+ option = {
+ name = NAT_Event.17.b
+ custom_effect_tooltip = NAT_Redress_Ocican_Injustice_Diplomatic_Tooltip
+ add_relations = { target = ALL  value = 8 }
+ add_diplomatic_weight = 5
+ }
+}
+
+# 18. 建立决斗调解制度
+country_event = {
+ id = NAT_Event.18
+ title = NAT_Event.18.t
+ desc = NAT_Event.18.d
+ picture = GFX_evt_duel_challenge
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.18.a
+ custom_effect_tooltip = NAT_Duel_Mediation_System_Event_Tooltip
+ add_political_power = 30
+ reduce_war_exhaustion = 0.05
+ }
+ option = {
+ name = NAT_Event.18.b
+ custom_effect_tooltip = NAT_Duel_Mediation_System_Honor_Tooltip
+ add_war_support = 0.05
+ add_stability = 0.03
+ }
+}
+
+# 19. 统一部族律法
+country_event = {
+ id = NAT_Event.19
+ title = NAT_Event.19.t
+ desc = NAT_Event.19.d
+ picture = GFX_evt_legal_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.19.a
+ custom_effect_tooltip = NAT_Unite_Tribal_Law_Code_Event_Tooltip
+ add_government_authority = 8
+ add_stability = 0.06
+ }
+ option = {
+ name = NAT_Event.19.b
+ custom_effect_tooltip = NAT_Unite_Tribal_Law_Code_Economic_Tooltip
+ reduce_consumer_goods = 0.02
+ add_factory_output = 0.05
+ }
+}
+
+# 20. 玛薇卡的纳塔誓言
+country_event = {
+ id = NAT_Event.20
+ title = NAT_Event.20.t
+ desc = NAT_Event.20.d
+ picture = GFX_evt_oath_ceremony
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.20.a
+ custom_effect_tooltip = NAT_Mavuika_Oath_Event_Tooltip
+ add_stability = 0.05
+ add_war_support = 0.10
+ add_political_power = 50
+ }
+}
+
+# 21. 探索图兰圣城
+country_event = {
+ id = NAT_Event.21
+ title = NAT_Event.21.t
+ desc = NAT_Event.21.d
+ picture = GFX_evt_ancient_ruins
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.21.a
+ custom_effect_tooltip = NAT_Explore_Turan_Sacred_City_Event_Tooltip
+ add_research_speed = 0.05
+ add_industrial_efficiency = 0.05
+ }
+ option = {
+ name = NAT_Event.21.b
+ custom_effect_tooltip = NAT_Explore_Turan_Sacred_City_Dragon_Tooltip
+ add_relations = { target = NAT_DRAGON_TAG  value = 15 }
+ add_laboratory = 2
+ }
+}
+
+# 22. 研究燃素技术
+country_event = {
+ id = NAT_Event.22
+ title = NAT_Event.22.t
+ desc = NAT_Event.22.d
+ picture = GFX_evt_industrial_expansion
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.22.a
+ custom_effect_tooltip = NAT_Study_Phyton_Technology_Event_Tooltip
+ add_factory_output = 0.06
+ add_industrial_capacity = 5
+ }
+ option = {
+ name = NAT_Event.22.b
+ custom_effect_tooltip = NAT_Study_Phyton_Technology_Military_Tooltip
+ add_equipment_production_efficiency = { type = all  value = 0.05 }
+ add_war_factory = 2
+ }
+}
+
+# 23. 人龙关系政策
+country_event = {
+ id = NAT_Event.23
+ title = NAT_Event.23.t
+ desc = NAT_Event.23.d
+ picture = GFX_evt_diplomatic_meeting
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.23.a
+ custom_effect_tooltip = NAT_Dragon_Human_Policy_Cooperation_Tooltip
+ add_stability = 0.05
+ add_relations = { target = NAT_DRAGON_TAG  value = 20 }
+ }
+ option = {
+ name = NAT_Event.23.b
+ custom_effect_tooltip = NAT_Dragon_Human_Policy_Supervision_Tooltip
+ add_government_authority = 5
+ add_garrison_efficiency = 0.05
+ set_country_flag = NAT_Dragon_Supervision_Policy
+ }
+}
+
+# 24. 守护源火之心
+country_event = {
+ id = NAT_Event.24
+ title = NAT_Event.24.t
+ desc = NAT_Event.24.d
+ picture = GFX_evt_fortification_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.24.a
+ custom_effect_tooltip = NAT_Source_Fire_Heart_Guard_Event_Tooltip
+ add_land_defense = { value = 0.05  duration = 365 }
+ build_fortifications = { level = 1  province = NAT_TURAN_VOLCANO_PROVINCE  amount = 1 }
+ }
+ option = {
+ name = NAT_Event.24.b
+ custom_effect_tooltip = NAT_Source_Fire_Heart_Guard_Garrison_Tooltip
+ add_garrison_template = { name = "Source Fire Guard"  garrison = 8 }
+ add_manpower = 10000
+ }
+}
+
+# 25. 建设元素熔炉
+country_event = {
+ id = NAT_Event.25
+ title = NAT_Event.25.t
+ desc = NAT_Event.25.d
+ picture = GFX_evt_power_plant_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.25.a
+ custom_effect_tooltip = NAT_Elemental_Furnace_Event_Tooltip
+ add_electricity = 1500
+ add_civilian_factory = 3
+ }
+ option = {
+ name = NAT_Event.25.b
+ custom_effect_tooltip = NAT_Elemental_Furnace_Industrial_Tooltip
+ add_industrial_efficiency = 0.08
+ add_factory_output = 0.05
+ }
+}
+
+# 26. 争取龙贤士的支持
+country_event = {
+ id = NAT_Event.26
+ title = NAT_Event.26.t
+ desc = NAT_Event.26.d
+ picture = GFX_evt_scientific_exchange
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.26.a
+ custom_effect_tooltip = NAT_Win_Dragon_Sages_Event_Tooltip
+ add_research_speed = 0.10
+ add_laboratory = 2
+ }
+ option = {
+ name = NAT_Event.26.b
+ custom_effect_tooltip = NAT_Win_Dragon_Sages_Military_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_army_experience = 30
+ }
+}
+
+# 27. 镇压反龙极端派
+country_event = {
+ id = NAT_Event.27
+ title = NAT_Event.27.t
+ desc = NAT_Event.27.d
+ picture = GFX_evt_internal_affairs
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.27.a
+ custom_effect_tooltip = NAT_Suppress_Anti_Dragon_Extremists_Event_Tooltip
+ add_stability = 0.03
+ add_relations = { target = NAT_DRAGON_TAG  value = 10 }
+ }
+ option = {
+ name = NAT_Event.27.b
+ custom_effect_tooltip = NAT_Suppress_Anti_Dragon_Extremists_Hardline_Tooltip
+ add_political_power = 20
+ add_government_authority = 3
+ }
+}
+
+# 28. 修复古龙锻坊
+country_event = {
+ id = NAT_Event.28
+ title = NAT_Event.28.t
+ desc = NAT_Event.28.d
+ picture = GFX_evt_industrial_expansion
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.28.a
+ custom_effect_tooltip = NAT_Ancient_Dragon_Forge_Event_Tooltip
+ add_war_factory = 3
+ add_equipment_quality_factor = { type = infantry_equipment  value = 0.05 }
+ }
+ option = {
+ name = NAT_Event.28.b
+ custom_effect_tooltip = NAT_Ancient_Dragon_Forge_Armor_Tooltip
+ add_equipment_to_stockpile = { type = armor_equipment_1  amount = 150  producer = NAT }
+ add_land_armor_value_bonus = 8
+ }
+}
+
+# 29. 封印火山深渊裂隙
+country_event = {
+ id = NAT_Event.29
+ title = NAT_Event.29.t
+ desc = NAT_Event.29.d
+ picture = GFX_evt_engineers_at_work
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.29.a
+ custom_effect_tooltip = NAT_Seal_Abyss_Rifts_Event_Tooltip
+ add_land_defense = { value = 0.05  duration = 365 }
+ reduce_war_exhaustion = 0.03
+ }
+ option = {
+ name = NAT_Event.29.b
+ custom_effect_tooltip = NAT_Seal_Abyss_Rifts_Stability_Tooltip
+ add_stability = 0.05
+ add_nationalism = 0.03
+ }
+}
+
+# 30. 掌握秘源技术
+country_event = {
+ id = NAT_Event.30
+ title = NAT_Event.30.t
+ desc = NAT_Event.30.d
+ picture = GFX_evt_advanced_research
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.30.a
+ custom_effect_tooltip = NAT_Master_Secret_Source_Tech_Event_Tooltip
+ add_research_speed = 0.10
+ add_industrial_efficiency = 0.08
+ }
+ option = {
+ name = NAT_Event.30.b
+ custom_effect_tooltip = NAT_Master_Secret_Source_Tech_Military_Tooltip
+ add_nuclear_research = 5
+ add_research_speed = { type = military_technology  value = 0.10 }
+ }
+}
+
+# 31. 建立决斗法典
+country_event = {
+ id = NAT_Event.31
+ title = NAT_Event.31.t
+ desc = NAT_Event.31.d
+ picture = GFX_evt_legal_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.31.a
+ custom_effect_tooltip = NAT_Establish_Duel_Code_Event_Tooltip
+ add_stability = 0.05
+ add_political_power = 20
+ }
+ option = {
+ name = NAT_Event.31.b
+ custom_effect_tooltip = NAT_Establish_Duel_Code_Martial_Tooltip
+ add_war_support = 0.05
+ add_army_experience = 20
+ }
+}
+
+# 32. 修建神圣决斗竞技场
+country_event = {
+ id = NAT_Event.32
+ title = NAT_Event.32.t
+ desc = NAT_Event.32.d
+ picture = GFX_evt_stadium_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.32.a
+ custom_effect_tooltip = NAT_Build_Duel_Arena_Event_Tooltip
+ add_construction_speed = 0.10
+ add_civilian_factory = 2
+ }
+ option = {
+ name = NAT_Event.32.b
+ custom_effect_tooltip = NAT_Build_Duel_Arena_Cultural_Tooltip
+ add_happiness = { target = all  value = 0.08 }
+ add_nationalism = 0.05
+ }
+}
+
+# 33. 举办荣花演武
+country_event = {
+ id = NAT_Event.33
+ title = NAT_Event.33.t
+ desc = NAT_Event.33.d
+ picture = GFX_evt_tournament
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.33.a
+ custom_effect_tooltip = NAT_Glorious_Flower_Martial_Arts_Event_Tooltip
+ add_army_experience = 40
+ add_war_support = 0.08
+ }
+ option = {
+ name = NAT_Event.33.b
+ custom_effect_tooltip = NAT_Glorious_Flower_Martial_Arts_Champion_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_land_experience_gain = 0.05
+ }
+}
+
+# 34. 规范荣誉决斗规则
+country_event = {
+ id = NAT_Event.34
+ title = NAT_Event.34.t
+ desc = NAT_Event.34.d
+ picture = GFX_evt_knightly_code
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.34.a
+ custom_effect_tooltip = NAT_Standardize_Duel_Rules_Event_Tooltip
+ add_stability = 0.05
+ add_government_authority = 5
+ }
+ option = {
+ name = NAT_Event.34.b
+ custom_effect_tooltip = NAT_Standardize_Duel_Rules_Dispute_Tooltip
+ reduce_war_exhaustion = 0.05
+ add_political_power = 20
+ }
+}
+
+# 35. 建立决斗冠军体系
+country_event = {
+ id = NAT_Event.35
+ title = NAT_Event.35.t
+ desc = NAT_Event.35.d
+ picture = GFX_evt_champion_ceremony
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.35.a
+ custom_effect_tooltip = NAT_Duel_Champion_System_Event_Tooltip
+ add_land_attack = { value = 0.06  duration = 365 }
+ add_army_experience_gain = 0.08
+ }
+ option = {
+ name = NAT_Event.35.b
+ custom_effect_tooltip = NAT_Duel_Champion_System_Morale_Tooltip
+ add_war_support = 0.10
+ add_nationalism = 0.05
+ }
+}
+
+# 36. 决斗训练营体系
+country_event = {
+ id = NAT_Event.36
+ title = NAT_Event.36.t
+ desc = NAT_Event.36.d
+ picture = GFX_evt_training_camp
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.36.a
+ custom_effect_tooltip = NAT_Duel_Training_Camp_Event_Tooltip
+ add_land_recruitment_speed = 0.08
+ add_manpower = 25000
+ }
+ option = {
+ name = NAT_Event.36.b
+ custom_effect_tooltip = NAT_Duel_Training_Camp_Defense_Tooltip
+ add_land_defense = { value = 0.05  duration = 365 }
+ add_garrison_efficiency = 0.08
+ }
+}
+
+# 37. 举办归火圣夜巡礼
+country_event = {
+ id = NAT_Event.37
+ title = NAT_Event.37.t
+ desc = NAT_Event.37.d
+ picture = GFX_evt_religious_ceremony
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.37.a
+ custom_effect_tooltip = NAT_Fire_Return_Pilgrimage_Event_Tooltip
+ add_nationalism = 0.10
+ add_war_support = 0.15
+ }
+ option = {
+ name = NAT_Event.37.b
+ custom_effect_tooltip = NAT_Fire_Return_Pilgrimage_Stability_Tooltip
+ add_stability = 0.10
+ add_happiness = { target = all  value = 0.10 }
+ }
+}
+
+# 38. 以决斗解决部族冲突
+country_event = {
+ id = NAT_Event.38
+ title = NAT_Event.38.t
+ desc = NAT_Event.38.d
+ picture = GFX_evt_international_duel
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.38.a
+ custom_effect_tooltip = NAT_Duel_Resolve_Tribal_Conflicts_Event_Tooltip
+ add_stability = 0.10
+ add_relations = { target = ALL_TRIBES  value = 10 }
+ }
+ option = {
+ name = NAT_Event.38.b
+ custom_effect_tooltip = NAT_Duel_Resolve_Tribal_Conflicts_Martial_Tooltip
+ add_army_experience = 50
+ add_war_support = 0.08
+ }
+}
+
+# 39. 为决斗勇士赋予火焰祝福
+country_event = {
+ id = NAT_Event.39
+ title = NAT_Event.39.t
+ desc = NAT_Event.39.d
+ picture = GFX_evt_divine_blessing
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.39.a
+ custom_effect_tooltip = NAT_Flame_Blessing_Duel_Warriors_Event_Tooltip
+ add_war_factory = 3
+ add_equipment_to_stockpile = { type = motorized_equipment_1  amount = 150  producer = NAT }
+ }
+ option = {
+ name = NAT_Event.39.b
+ custom_effect_tooltip = NAT_Flame_Blessing_Duel_Warriors_Attack_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_equipment_quality_factor = { type = infantry_equipment  value = 0.05 }
+ }
+}
+
+# 40. 英雄的终极决斗
+country_event = {
+ id = NAT_Event.40
+ title = NAT_Event.40.t
+ desc = NAT_Event.40.d
+ picture = GFX_evt_epic_duel
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.40.a
+ custom_effect_tooltip = NAT_Ultimate_Hero_Duel_Event_Tooltip
+ add_land_attack = { value = 0.10  duration = 365 }
+ add_war_support = 0.15
+ add_army_experience = 80
+ }
+}
+
+# 41. 推广纳塔民族认同
+country_event = {
+ id = NAT_Event.41
+ title = NAT_Event.41.t
+ desc = NAT_Event.41.d
+ picture = GFX_evt_national_pride
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.41.a
+ custom_effect_tooltip = NAT_Natlan_National_Identity_Event_Tooltip
+ add_nationalism = 0.10
+ add_stability = 0.05
+ }
+ option = {
+ name = NAT_Event.41.b
+ custom_effect_tooltip = NAT_Natlan_National_Identity_Political_Tooltip
+ add_political_power = 50
+ add_government_authority = 5
+ }
+}
+
+# 42. 整合部族资源体系
+country_event = {
+ id = NAT_Event.42
+ title = NAT_Event.42.t
+ desc = NAT_Event.42.d
+ picture = GFX_evt_resource_management
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.42.a
+ custom_effect_tooltip = NAT_Integrate_Tribal_Resource_Event_Tooltip
+ add_resource = { type = steel  amount = 300 }
+ add_resource = { type = oil  amount = 200 }
+ }
+ option = {
+ name = NAT_Event.42.b
+ custom_effect_tooltip = NAT_Integrate_Tribal_Resource_Industrial_Tooltip
+ add_industrial_efficiency = 0.08
+ add_factory_output = 0.05
+ }
+}
+
+# 43. 统一部族军事力量
+country_event = {
+ id = NAT_Event.43
+ title = NAT_Event.43.t
+ desc = NAT_Event.43.d
+ picture = GFX_evt_army_formation
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.43.a
+ custom_effect_tooltip = NAT_Unify_Tribal_Military_Event_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_division_recruitment_speed = 0.10
+ }
+ option = {
+ name = NAT_Event.43.b
+ custom_effect_tooltip = NAT_Unify_Tribal_Military_Experience_Tooltip
+ add_army_experience = 60
+ add_land_experience_gain = 0.08
+ }
+}
+
+# 44. 忠诚部族的自治政策
+country_event = {
+ id = NAT_Event.44
+ title = NAT_Event.44.t
+ desc = NAT_Event.44.d
+ picture = GFX_evt_federalism_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.44.a
+ custom_effect_tooltip = NAT_Loyal_Tribe_Autonomy_Event_Tooltip
+ add_stability = 0.08
+ add_happiness = { target = all  value = 0.07 }
+ }
+ option = {
+ name = NAT_Event.44.b
+ custom_effect_tooltip = NAT_Loyal_Tribe_Autonomy_Economic_Tooltip
+ add_civilian_factory = 3
+ add_construction_speed = 0.05
+ }
+}
+
+# 45. 建立统一税收体系
+country_event = {
+ id = NAT_Event.45
+ title = NAT_Event.45.t
+ desc = NAT_Event.45.d
+ picture = GFX_evt_taxation_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.45.a
+ custom_effect_tooltip = NAT_Unified_Taxation_System_Event_Tooltip
+ add_factory_output = 0.06
+ reduce_consumer_goods = 0.02
+ }
+ option = {
+ name = NAT_Event.45.b
+ custom_effect_tooltip = NAT_Unified_Taxation_System_Political_Tooltip
+ add_government_authority = 8
+ add_political_power = 30
+ }
+}
+
+# 46. 镇压叛乱部族长老
+country_event = {
+ id = NAT_Event.46
+ title = NAT_Event.46.t
+ desc = NAT_Event.46.d
+ picture = GFX_evt_political_purge
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.46.a
+ custom_effect_tooltip = NAT_Suppress_Rebellious_Elders_Event_Tooltip
+ add_government_authority = 8
+ add_political_power = 40
+ }
+ option = {
+ name = NAT_Event.46.b
+ custom_effect_tooltip = NAT_Suppress_Rebellious_Elders_Military_Tooltip
+ add_garrison_efficiency = 0.10
+ add_land_defense = { value = 0.03  duration = 365 }
+ }
+}
+
+# 47. 统一文化教育体系
+country_event = {
+ id = NAT_Event.47
+ title = NAT_Event.47.t
+ desc = NAT_Event.47.d
+ picture = GFX_evt_cultural_exchange
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.47.a
+ custom_effect_tooltip = NAT_Unify_Cultural_Education_Event_Tooltip
+ add_research_speed = 0.05
+ add_cultural_influence = { target = WORLD  value = 0.08 }
+ }
+ option = {
+ name = NAT_Event.47.b
+ custom_effect_tooltip = NAT_Unify_Cultural_Education_Nationalism_Tooltip
+ add_nationalism = 0.08
+ add_stability = 0.05
+ }
+}
+
+# 48. 制定纳塔统一律法
+country_event = {
+ id = NAT_Event.48
+ title = NAT_Event.48.t
+ desc = NAT_Event.48.d
+ picture = GFX_evt_legal_reform
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.48.a
+ custom_effect_tooltip = NAT_Natlan_Unified_Law_Event_Tooltip
+ add_stability = 0.10
+ add_government_authority = 10
+ }
+ option = {
+ name = NAT_Event.48.b
+ custom_effect_tooltip = NAT_Natlan_Unified_Law_Economic_Tooltip
+ reduce_consumer_goods = 0.01
+ add_trade_efficiency = 0.08
+ }
+}
+
+# 49. 整合部族护卫力量
+country_event = {
+ id = NAT_Event.49
+ title = NAT_Event.49.t
+ desc = NAT_Event.49.d
+ picture = GFX_evt_military_parade
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.49.a
+ custom_effect_tooltip = NAT_Integrate_Tribal_Guard_Event_Tooltip
+ add_garrison_efficiency = 0.10
+ add_land_defense = { value = 0.05  duration = 365 }
+ }
+ option = {
+ name = NAT_Event.49.b
+ custom_effect_tooltip = NAT_Integrate_Tribal_Guard_Manpower_Tooltip
+ add_manpower = 30000
+ add_land_recruitment_speed = { type = land  value = 0.05  duration = 365 }
+ }
+}
+
+# 50. 全部族统一宣言
+country_event = {
+ id = NAT_Event.50
+ title = NAT_Event.50.t
+ desc = NAT_Event.50.d
+ picture = GFX_evt_national_unification
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.50.a
+ custom_effect_tooltip = NAT_All_Tribes_Unification_Event_Tooltip
+ add_stability = 0.05
+ add_political_power = 100
+ add_manpower = 50000
+ add_war_support = 0.10
+ }
+}
+
+# 51. 建立燃素武器研究所
+country_event = {
+ id = NAT_Event.51
+ title = NAT_Event.51.t
+ desc = NAT_Event.51.d
+ picture = GFX_evt_weapons_research
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.51.a
+ custom_effect_tooltip = NAT_Phyton_Weapon_Research_Event_Tooltip
+ add_research_speed = { type = land_weapons  value = 0.08 }
+ add_equipment_quality_factor = { type = artillery_equipment  value = 0.05 }
+ }
+ option = {
+ name = NAT_Event.51.b
+ custom_effect_tooltip = NAT_Phyton_Weapon_Research_Industrial_Tooltip
+ add_war_factory = 2
+ add_industrial_capacity = 3
+ }
+}
+
+# 52. 扩建火焰附魔锻坊
+country_event = {
+ id = NAT_Event.52
+ title = NAT_Event.52.t
+ desc = NAT_Event.52.d
+ picture = GFX_evt_industrial_expansion
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.52.a
+ custom_effect_tooltip = NAT_Flame_Enchantment_Forge_Event_Tooltip
+ add_war_factory = 4
+ add_equipment_production_efficiency = { type = infantry_equipment  value = 0.08 }
+ }
+ option = {
+ name = NAT_Event.52.b
+ custom_effect_tooltip = NAT_Flame_Enchantment_Forge_Quality_Tooltip
+ add_equipment_quality_factor = { type = infantry_equipment  value = 0.05 }
+ add_factory_output = 0.05
+ }
+}
+
+# 53. 研发龙骨装甲
+country_event = {
+ id = NAT_Event.53
+ title = NAT_Event.53.t
+ desc = NAT_Event.53.d
+ picture = GFX_evt_heavy_tank_division
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.53.a
+ custom_effect_tooltip = NAT_Dragon_Bone_Armor_Event_Tooltip
+ add_land_armor_value_bonus = 10
+ add_equipment_to_stockpile = { type = heavy_tank_equipment_1  amount = 100  producer = NAT }
+ }
+ option = {
+ name = NAT_Event.53.b
+ custom_effect_tooltip = NAT_Dragon_Bone_Armor_Attack_Tooltip
+ add_armor_attack_factor = 0.10
+ add_land_breakthrough = 0.05
+ }
+}
+
+# 54. 扩建火山工业区
+country_event = {
+ id = NAT_Event.54
+ title = NAT_Event.54.t
+ desc = NAT_Event.54.d
+ picture = GFX_evt_factory_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.54.a
+ custom_effect_tooltip = NAT_Volcano_Industrial_Zone_Event_Tooltip
+ add_civilian_factory = 5
+ add_industrial_efficiency = 0.06
+ }
+ option = {
+ name = NAT_Event.54.b
+ custom_effect_tooltip = NAT_Volcano_Industrial_Zone_Infrastructure_Tooltip
+ add_infrastructure = { province = NAT_TURAN_VOLCANO_PROVINCE  level = 3 }
+ add_construction_speed = 0.08
+ }
+}
+
+# 55. 革新机动战术
+country_event = {
+ id = NAT_Event.55
+ title = NAT_Event.55.t
+ desc = NAT_Event.55.d
+ picture = GFX_evt_military_tactics
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.55.a
+ custom_effect_tooltip = NAT_Mobile_Warfare_Tactics_Event_Tooltip
+ add_land_breakthrough = 0.10
+ add_doctrine_progress = { type = mobile_warfare  value = 5 }
+ }
+ option = {
+ name = NAT_Event.55.b
+ custom_effect_tooltip = NAT_Mobile_Warfare_Tactics_Speed_Tooltip
+ add_division_speed = 0.08
+ add_motorized_equipment_production = 0.10
+ }
+}
+
+# 56. 研发火焰火炮
+country_event = {
+ id = NAT_Event.56
+ title = NAT_Event.56.t
+ desc = NAT_Event.56.d
+ picture = GFX_evt_artillery_barrage
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.56.a
+ custom_effect_tooltip = NAT_Flame_Artillery_Development_Event_Tooltip
+ add_equipment_to_stockpile = { type = artillery_equipment_1  amount = 250  producer = NAT }
+ add_land_attack = { value = 0.04  duration = 365 }
+ }
+ option = {
+ name = NAT_Event.56.b
+ custom_effect_tooltip = NAT_Flame_Artillery_Development_Production_Tooltip
+ add_equipment_production_efficiency = { type = artillery_equipment  value = 0.10 }
+ add_war_factory = 2
+ }
+}
+
+# 57. 建设海军锻坊
+country_event = {
+ id = NAT_Event.57
+ title = NAT_Event.57.t
+ desc = NAT_Event.57.d
+ picture = GFX_evt_naval_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.57.a
+ custom_effect_tooltip = NAT_Naval_Forge_Construction_Event_Tooltip
+ add_naval_factory = 3
+ add_naval_attack = { value = 0.05  duration = 365 }
+ }
+ option = {
+ name = NAT_Event.57.b
+ custom_effect_tooltip = NAT_Naval_Forge_Construction_Base_Tooltip
+ build_naval_base = { province = NAT_COASTAL_PROVINCE  level = 2 }
+ add_naval_factory = 2
+ }
+}
+
+# 58. 扩建航空工业
+country_event = {
+ id = NAT_Event.58
+ title = NAT_Event.58.t
+ desc = NAT_Event.58.d
+ picture = GFX_evt_aircraft_production
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.58.a
+ custom_effect_tooltip = NAT_Aviation_Industry_Expansion_Event_Tooltip
+ add_air_factory = 3
+ add_air_attack = { value = 0.05  duration = 365 }
+ }
+ option = {
+ name = NAT_Event.58.b
+ custom_effect_tooltip = NAT_Aviation_Industry_Expansion_Experience_Tooltip
+ add_air_experience = 40
+ add_research_speed = { type = air_technology  value = 0.10 }
+ }
+}
+
+# 59. 精锐火焰战士训练
+country_event = {
+ id = NAT_Event.59
+ title = NAT_Event.59.t
+ desc = NAT_Event.59.d
+ picture = GFX_evt_elite_training
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.59.a
+ custom_effect_tooltip = NAT_Elite_Flame_Warrior_Training_Event_Tooltip
+ add_army_experience = 70
+ add_special_forces_cap = 5
+ }
+ option = {
+ name = NAT_Event.59.b
+ custom_effect_tooltip = NAT_Elite_Flame_Warrior_Training_Attack_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ reduce_casualties = { type = land  value = 0.05  duration = 365 }
+ }
+}
+
+# 60. 军事工业现代化
+country_event = {
+ id = NAT_Event.60
+ title = NAT_Event.60.t
+ desc = NAT_Event.60.d
+ picture = GFX_evt_industrial_modernization
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.60.a
+ custom_effect_tooltip = NAT_Military_Industry_Modernization_Event_Tooltip
+ add_war_factory = 7
+ add_industrial_efficiency = 0.10
+ }
+ option = {
+ name = NAT_Event.60.b
+ custom_effect_tooltip = NAT_Military_Industry_Modernization_Production_Tooltip
+ add_production_speed_factory = 0.08
+ add_factory_output = 0.08
+ }
+}
+
+# 61. 调查深渊渗透
+country_event = {
+ id = NAT_Event.61
+ title = NAT_Event.61.t
+ desc = NAT_Event.61.d
+ picture = GFX_evt_counter_espionage
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.61.a
+ custom_effect_tooltip = NAT_Investigate_Abyss_Infiltration_Event_Tooltip
+ add_counter_espionage = 0.10
+ add_intelligence_agency_efficiency = 0.08
+ }
+ option = {
+ name = NAT_Event.61.b
+ custom_effect_tooltip = NAT_Investigate_Abyss_Infiltration_Political_Tooltip
+ add_political_power = 30
+ add_government_authority = 3
+ }
+}
+
+# 62. 强化夜神国度防护
+country_event = {
+ id = NAT_Event.62
+ title = NAT_Event.62.t
+ desc = NAT_Event.62.d
+ picture = GFX_evt_religious_ceremony
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.62.a
+ custom_effect_tooltip = NAT_Strengthen_Night_God_Realm_Event_Tooltip
+ add_stability = 0.07
+ add_nationalism = 0.06
+ }
+ option = {
+ name = NAT_Event.62.b
+ custom_effect_tooltip = NAT_Strengthen_Night_God_Realm_Spiritual_Tooltip
+ add_war_support = 0.08
+ add_happiness = { target = all  value = 0.06 }
+ }
+}
+
+# 63. 清剿深渊邪教势力
+country_event = {
+ id = NAT_Event.63
+ title = NAT_Event.63.t
+ desc = NAT_Event.63.d
+ picture = GFX_evt_counter_insurgency
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.63.a
+ custom_effect_tooltip = NAT_Clean_Up_Abyss_Cult_Event_Tooltip
+ add_government_authority = 6
+ add_garrison_efficiency = 0.08
+ }
+ option = {
+ name = NAT_Event.63.b
+ custom_effect_tooltip = NAT_Clean_Up_Abyss_Cult_Stability_Tooltip
+ add_stability = 0.05
+ reduce_war_exhaustion = 0.03
+ }
+}
+
+# 64. 烬寂海的阴影
+country_event = {
+ id = NAT_Event.64
+ title = NAT_Event.64.t
+ desc = NAT_Event.64.d
+ picture = GFX_evt_border_conflict
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.64.a
+ custom_effect_tooltip = NAT_Embersea_Shadow_Event_Tooltip
+ add_land_defense = { value = 0.08  duration = 365 }
+ build_fortifications = { level = 2  province = NAT_EMBERSEA_BORDER_PROVINCE  amount = 1 }
+ }
+ option = {
+ name = NAT_Event.64.b
+ custom_effect_tooltip = NAT_Embersea_Shadow_Intelligence_Tooltip
+ add_intelligence_agency_efficiency = 0.08
+ add_espionage_efficiency = { target = ABYSS_TAG  value = 0.15 }
+ }
+}
+
+# 65. 召开抗深渊战争会议
+country_event = {
+ id = NAT_Event.65
+ title = NAT_Event.65.t
+ desc = NAT_Event.65.d
+ picture = GFX_evt_war_council
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.65.a
+ custom_effect_tooltip = NAT_Abyss_War_Council_Event_Tooltip
+ add_war_support = 0.15
+ add_political_power = 60
+ }
+ option = {
+ name = NAT_Event.65.b
+ custom_effect_tooltip = NAT_Abyss_War_Council_Military_Tooltip
+ add_army_experience = 50
+ add_land_attack = { value = 0.03  duration = 365 }
+ }
+}
+
+# 66. 联合龙族抗渊同盟
+country_event = {
+ id = NAT_Event.66
+ title = NAT_Event.66.t
+ desc = NAT_Event.66.d
+ picture = GFX_evt_alliance_signing
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.66.a
+ custom_effect_tooltip = NAT_Dragon_Alliance_Against_Abyss_Event_Tooltip
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_army_experience = 40
+ }
+ option = {
+ name = NAT_Event.66.b
+ custom_effect_tooltip = NAT_Dragon_Alliance_Against_Abyss_Tech_Tooltip
+ add_research_speed = 0.08
+ add_laboratory = 2
+ }
+}
+
+# 67. 修复缝影针封印
+country_event = {
+ id = NAT_Event.67
+ title = NAT_Event.67.t
+ desc = NAT_Event.67.d
+ picture = GFX_evt_fortification_construction
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.67.a
+ custom_effect_tooltip = NAT_Repair_Shadow_Sealing_Needle_Event_Tooltip
+ add_land_defense = { value = 0.10  duration = 730 }
+ reduce_war_exhaustion = 0.08
+ }
+ option = {
+ name = NAT_Event.67.b
+ custom_effect_tooltip = NAT_Repair_Shadow_Sealing_Needle_Stability_Tooltip
+ add_stability = 0.08
+ add_nationalism = 0.05
+ }
+}
+
+# 68. 研发抗深渊技术
+country_event = {
+ id = NAT_Event.68
+ title = NAT_Event.68.t
+ desc = NAT_Event.68.d
+ picture = GFX_evt_scientific_research
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.68.a
+ custom_effect_tooltip = NAT_Abyss_Resistance_Technology_Event_Tooltip
+ add_research_speed = { type = military_technology  value = 0.08 }
+ reduce_casualties = { type = land  value = 0.07 }
+ }
+ option = {
+ name = NAT_Event.68.b
+ custom_effect_tooltip = NAT_Abyss_Resistance_Technology_Industrial_Tooltip
+ add_war_factory = 3
+ add_equipment_production_efficiency = { type = all  value = 0.05 }
+ }
+}
+
+# 69. 灾厄英雄纪念碑
+country_event = {
+ id = NAT_Event.69
+ title = NAT_Event.69.t
+ desc = NAT_Event.69.d
+ picture = GFX_evt_national_memorial
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.69.a
+ custom_effect_tooltip = NAT_Calamity_Heroes_Memorial_Event_Tooltip
+ add_nationalism = 0.12
+ add_happiness = { target = all  value = 0.10 }
+ }
+ option = {
+ name = NAT_Event.69.b
+ custom_effect_tooltip = NAT_Calamity_Heroes_Memorial_War_Support_Tooltip
+ add_war_support = 0.15
+ add_army_experience = 30
+ }
+}
+
+# 70. 玛薇卡的焚渊誓言
+country_event = {
+ id = NAT_Event.70
+ title = NAT_Event.70.t
+ desc = NAT_Event.70.d
+ picture = GFX_evt_leader_speech
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.70.a
+ custom_effect_tooltip = NAT_Mavuika_Abyss_Burning_Oath_Event_Tooltip
+ add_land_attack = { value = 0.10  duration = 365 }
+ add_war_support = 0.15
+ add_government_authority = 10
+ }
+}
+
+# 71. 万火归一
+country_event = {
+ id = NAT_Event.71
+ title = NAT_Event.71.t
+ desc = NAT_Event.71.d
+ picture = GFX_evt_national_glory
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.71.a
+ custom_effect_tooltip = NAT_Great_Unity_Of_All_Fires_Event_Tooltip
+ add_happiness = { target = all  value = 0.10 }
+ add_stability = 0.05
+ }
+}
+
+# 72. 与璃月建立外交关系
+country_event = {
+ id = NAT_Event.72
+ title = NAT_Event.72.t
+ desc = NAT_Event.72.d
+ picture = GFX_evt_embassy_opening
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.72.a
+ custom_effect_tooltip = NAT_Liyue_Diplomatic_Relations_Event_Tooltip
+ add_relations = { target = LIYUE  value = 20 }
+ add_trade_efficiency = 0.10
+ }
+ option = {
+ name = NAT_Event.72.b
+ custom_effect_tooltip = NAT_Liyue_Diplomatic_Relations_Trade_Tooltip
+ add_trade_efficiency = 0.15
+ add_resource = { type = steel  amount = 500 }
+ }
+}
+
+# 73. 提瓦特火焰外交倡议
+country_event = {
+ id = NAT_Event.73
+ title = NAT_Event.73.t
+ desc = NAT_Event.73.d
+ picture = GFX_evt_diplomatic_summit
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.73.a
+ custom_effect_tooltip = NAT_Teyvat_Flame_Diplomacy_Event_Tooltip
+ add_relations = { target = ALL  value = 10 }
+ add_diplomatic_weight = 10
+ }
+ option = {
+ name = NAT_Event.73.b
+ custom_effect_tooltip = NAT_Teyvat_Flame_Diplomacy_Cultural_Tooltip
+ add_cultural_influence = { target = WORLD  value = 0.10 }
+ add_nationalism = 0.05
+ }
+}
+
+# 74. 与蒙德、稻妻结盟
+country_event = {
+ id = NAT_Event.74
+ title = NAT_Event.74.t
+ desc = NAT_Event.74.d
+ picture = GFX_evt_alliance_treaty
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.74.a
+ custom_effect_tooltip = NAT_Mondstadt_Inazuma_Alliance_Event_Tooltip
+ add_relations = { target = MONDSTADT  value = 20 }
+ add_relations = { target = INAZUMA  value = 15 }
+ }
+ option = {
+ name = NAT_Event.74.b
+ custom_effect_tooltip = NAT_Mondstadt_Inazuma_Alliance_Military_Tooltip
+ add_naval_attack = { value = 0.05  duration = 365 }
+ add_air_attack = { value = 0.05  duration = 365 }
+ }
+}
+
+# 75. 须弥学术与工业合作
+country_event = {
+ id = NAT_Event.75
+ title = NAT_Event.75.t
+ desc = NAT_Event.75.d
+ picture = GFX_evt_scientific_exchange
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.75.a
+ custom_effect_tooltip = NAT_Sumeru_Academic_Cooperation_Event_Tooltip
+ add_research_speed = 0.10
+ add_relations = { target = SUMERU  value = 15 }
+ }
+ option = {
+ name = NAT_Event.75.b
+ custom_effect_tooltip = NAT_Sumeru_Academic_Cooperation_Industrial_Tooltip
+ add_laboratory = 3
+ add_industrial_efficiency = 0.05
+ }
+}
+
+# 76. 建立永恒火焰军团
+country_event = {
+ id = NAT_Event.76
+ title = NAT_Event.76.t
+ desc = NAT_Event.76.d
+ picture = GFX_evt_army_formation
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.76.a
+ custom_effect_tooltip = NAT_Eternal_Flame_Legion_Event_Tooltip
+ add_land_recruitment_speed = 0.15
+ add_manpower = 75000
+ }
+ option = {
+ name = NAT_Event.76.b
+ custom_effect_tooltip = NAT_Eternal_Flame_Legion_Combat_Tooltip
+ add_division_recruitment_speed = 0.15
+ add_land_attack = { value = 0.05  duration = 730 }
+ }
+}
+
+# 77. 纳塔工业复兴
+country_event = {
+ id = NAT_Event.77
+ title = NAT_Event.77.t
+ desc = NAT_Event.77.d
+ picture = GFX_evt_industrial_boom
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.77.a
+ custom_effect_tooltip = NAT_Natlan_Industrial_Renaissance_Event_Tooltip
+ add_civilian_factory = 10
+ add_war_factory = 7
+ }
+ option = {
+ name = NAT_Event.77.b
+ custom_effect_tooltip = NAT_Natlan_Industrial_Renaissance_Efficiency_Tooltip
+ add_industrial_efficiency = 0.15
+ add_factory_output = 0.10
+ }
+}
+
+# 78. 枫丹与至冬外交拓展
+country_event = {
+ id = NAT_Event.78
+ title = NAT_Event.78.t
+ desc = NAT_Event.78.d
+ picture = GFX_evt_diplomatic_meeting
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.78.a
+ custom_effect_tooltip = NAT_Fontaine_Snezhnaya_Diplomatic_Event_Tooltip
+ add_relations = { target = FONTAINE  value = 15 }
+ add_relations = { target = SNEZHNAYA  value = 10 }
+ }
+ option = {
+ name = NAT_Event.78.b
+ custom_effect_tooltip = NAT_Fontaine_Snezhnaya_Diplomatic_Influence_Tooltip
+ add_diplomatic_influence = { target = WORLD  value = 10 }
+ add_diplomatic_weight = 10
+ }
+}
+
+# 79. 玛薇卡的永恒火焰祝福
+country_event = {
+ id = NAT_Event.79
+ title = NAT_Event.79.t
+ desc = NAT_Event.79.d
+ picture = GFX_evt_ultimate_blessing
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.79.a
+ custom_effect_tooltip = NAT_Mavuika_Eternal_Flame_Blessing_Event_Tooltip
+ add_war_factory = 10
+ add_factory_output = 0.08
+ }
+ option = {
+ name = NAT_Event.79.b
+ custom_effect_tooltip = NAT_Mavuika_Eternal_Flame_Blessing_Production_Tooltip
+ add_equipment_production_efficiency = 0.10
+ add_industrial_capacity = 10
+ }
+}
+
+# 80. 燃烧之地纳塔的荣耀
+country_event = {
+ id = NAT_Event.80
+ title = NAT_Event.80.t
+ desc = NAT_Event.80.d
+ picture = GFX_evt_national_glory
+ fire_only_once = yes
+ is_triggered_only = yes
+ option = {
+ name = NAT_Event.80.a
+ custom_effect_tooltip = NAT_Glory_Of_Natlan_Event_Tooltip
+ add_nationalism = 0.20
+ add_war_support = 0.20
+ add_land_attack = { value = 0.10  duration = 1095 }
+ add_government_authority = 20
+ add_political_power = 200
+ }
+}
+```
+
+---
+
+## 三、决议文件（NAT_AI_Decisions.txt）
+
+```Plain Text
+
+# 纳塔国家决议 - 30个决议，分为内政政治、军事治安、经济工业、文化外交四大类，突出部族冲突调解、内部政治操作、纳塔特色玩法
+decisions = {
+ #### 第一类：内政政治类决议（1-8）
+ # 1. 召开部族联合会议
+ NAT_Hold_Tribal_Joint_Council = {
+ icon = GFX_decision_political_summit
+ allowed = {
+ has_country_flag = NAT_Call_Tribal_Council
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Held_Tribal_Joint_Council }
+ stability < 0.8
+ }
+ cost = {
+ political_power = 75
+ }
+ effect = {
+ set_country_flag = NAT_Held_Tribal_Joint_Council
+ add_stability = 0.10
+ add_political_power = 30
+ add_relations = { target = ALL_TRIBES  value = 15 }
+ custom_effect_tooltip = NAT_Hold_Tribal_Joint_Council_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.9
+ }
+ }
+
+ # 2. 调解部族边境冲突
+ NAT_Mediate_Tribal_Border_Conflict = {
+ icon = GFX_decision_peace_mediation
+ allowed = {
+ has_country_flag = NAT_Establish_Duel_Mediation_System
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Mediated_Tribal_Conflict_Recent }
+ stability < 0.75
+ }
+ cost = {
+ political_power = 50
+ }
+ effect = {
+ set_country_flag = NAT_Mediated_Tribal_Conflict_Recent
+ clr_country_flag = NAT_Mediated_Tribal_Conflict_Recent days = 180
+ add_stability = 0.07
+ reduce_war_exhaustion = 0.05
+ custom_effect_tooltip = NAT_Mediate_Tribal_Border_Conflict_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.85
+ }
+ }
+
+ # 3. 授予英雄古名
+ NAT_Award_Hero_Ancient_Name = {
+ icon = GFX_decision_award_medal
+ allowed = {
+ has_country_flag = NAT_Codify_Ancient_Name_System
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Awarded_Ancient_Name_Recent }
+ war_support > 0.3
+ }
+ cost = {
+ political_power = 60
+ army_experience = 30
+ }
+ effect = {
+ set_country_flag = NAT_Awarded_Ancient_Name_Recent
+ clr_country_flag = NAT_Awarded_Ancient_Name_Recent days = 365
+ add_land_attack = { value = 0.05  duration = 365 }
+ add_war_support = 0.08
+ add_nationalism = 0.05
+ custom_effect_tooltip = NAT_Award_Hero_Ancient_Name_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.8
+ }
+ }
+
+ # 4. 镇压部族分离主义叛乱
+ NAT_Suppress_Tribal_Separatist_Rebellion = {
+ icon = GFX_decision_counter_insurgency
+ allowed = {
+ has_country_flag = NAT_Suppress_Separatist_Forces
+ }
+ available = {
+ garrison_control < 0.9
+ NOT = { has_country_flag = NAT_Suppressed_Separatist_Recent }
+ }
+ cost = {
+ political_power = 80
+ army_experience = 20
+ }
+ effect = {
+ set_country_flag = NAT_Suppressed_Separatist_Recent
+ clr_country_flag = NAT_Suppressed_Separatist_Recent days = 180
+ add_garrison_efficiency = 0.15
+ add_government_authority = 5
+ custom_effect_tooltip = NAT_Suppress_Tribal_Separatist_Rebellion_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.95
+ }
+ }
+
+ # 5. 平反历史冤案
+ NAT_Redress_Historical_Injustice = {
+ icon = GFX_decision_justice_reform
+ allowed = {
+ has_country_flag = NAT_Redress_Ocican_Tyranny_Injustice
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Redressed_Historical_Injustice }
+ stability < 0.8
+ }
+ cost = {
+ political_power = 40
+ }
+ effect = {
+ set_country_flag = NAT_Redressed_Historical_Injustice
+ add_stability = 0.08
+ add_happiness = { target = all  value = 0.06 }
+ custom_effect_tooltip = NAT_Redress_Historical_Injustice_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.75
+ }
+ }
+
+ # 6. 规范部族税收制度
+ NAT_Standardize_Tribal_Taxation_System = {
+ icon = GFX_decision_taxation_reform
+ allowed = {
+ has_country_flag = NAT_Establish_Unified_Taxation_System
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Standardized_Taxation_Recent }
+ }
+ cost = {
+ political_power = 65
+ }
+ effect = {
+ set_country_flag = NAT_Standardized_Taxation_Recent
+ clr_country_flag = NAT_Standardized_Taxation_Recent days = 365
+ reduce_consumer_goods = 0.02
+ add_factory_output = 0.04
+ custom_effect_tooltip = NAT_Standardize_Tribal_Taxation_System_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.8
+ }
+ }
+
+ # 7. 拉拢部族长老议会
+ NAT_Woo_Tribal_Elder_Council = {
+ icon = GFX_decision_political_negotiation
+ allowed = {
+ has_country_flag = NAT_Reform_Tribal_Parliament
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Wooed_Tribal_Elders_Recent }
+ ideology_support = { ideology = authoritarianism  < 0.4 }
+ }
+ cost = {
+ political_power = 55
+ }
+ effect = {
+ set_country_flag = NAT_Wooed_Tribal_Elders_Recent
+ clr_country_flag = NAT_Wooed_Tribal_Elders_Recent days = 180
+ add_ideology_support = { ideology = authoritarianism  value = 0.05 }
+ add_government_authority = 6
+ custom_effect_tooltip = NAT_Woo_Tribal_Elder_Council_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.7
+ }
+ }
+
+ # 8. 清剿内部深渊邪教
+ NAT_Clean_Up_Internal_Abyss_Cults = {
+ icon = GFX_decision_counter_espionage
+ allowed = {
+ has_country_flag = NAT_Clean_Up_Abyss_Cult_Forces
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Cleaned_Abyss_Cults_Recent }
+ counter_espionage < 0.8
+ }
+ cost = {
+ political_power = 70
+ intelligence_agency_power = 30
+ }
+ effect = {
+ set_country_flag = NAT_Cleaned_Abyss_Cults_Recent
+ clr_country_flag = NAT_Cleaned_Abyss_Cults_Recent days = 180
+ add_counter_espionage = 0.12
+ add_stability = 0.05
+ custom_effect_tooltip = NAT_Clean_Up_Internal_Abyss_Cults_Tooltip
+ }
+ ai_will_do = {
+ factor = 0.9
+ }
+ }
+
+ #### 第二类：军事治安类决议（9-16）
+ # 9. 举办全国决斗演武
+ NAT_Hold_National_Duel_Martial_Arts = {
+ icon = GFX_decision_military_training
+ allowed = {
+ has_country_flag = NAT_Establish_Duel_Code
+ }
+ available = {
+ NOT = { has_country_flag = NAT_Held_Duel_M
+```
+
+```Plain Text
+## 四、民族精神
+# 1. 火神永恒权柄
+NAT_Mavuika_Eternal_Authority = {
+    picture = idea_nat_mavuika_authority
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        government_authority = 0.15
+        war_support_factor = 0.12
+        ideology_support = { ideology = authoritarianism  value = 0.08 }
+    }
+}
+
+# 2. 沃陆之邦丰饶誓约
+NAT_Volu_Bang_Fertility_Oath = {
+    picture = idea_nat_volu_bang_fertility
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        civilian_factory_output = 0.10
+        agriculture_yield_factor = 0.15
+        manpower_factor = 0.08
+    }
+}
+
+# 3. 回声之子锻火传承
+NAT_Echo_Sons_Forging_Heritage = {
+    picture = idea_nat_echo_sons_forging
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        war_factory_output = 0.12
+        equipment_production_efficiency_factor = { type = infantry_equipment  value = 0.10 }
+        research_speed = { type = land_weapons  value = 0.08 }
+    }
+}
+
+# 4. 流泉之众通商航道
+NAT_Spring_Folk_Trade_Waterway = {
+    picture = idea_nat_spring_folk_trade
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        trade_efficiency_factor = 0.15
+        naval_factory_output = 0.10
+        naval_speed_factor = 0.08
+    }
+}
+
+# 5. 悬木人天堑工事
+NAT_Hanging_Tree_Clan_Fortification = {
+    picture = idea_nat_hanging_tree_fort
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        construction_speed_factor = 0.12
+        land_breakthrough_factor = 0.10
+        land_defense_factor = 0.09
+    }
+}
+
+# 6. 花羽会空翼制霸
+NAT_Feather_Guild_Air_Supremacy = {
+    picture = idea_nat_feather_guild_air
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        air_factory_output = 0.12
+        air_attack_factor = 0.10
+        air_experience_gain_factor = 0.10
+    }
+}
+
+# 7. 烟谜主谜烟秘仪
+NAT_Smoke_Mystics_Mystic_Ritual = {
+    picture = idea_nat_smoke_mystics_ritual
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        intelligence_agency_efficiency_factor = 0.12
+        counter_espionage_factor = 0.15
+        espionage_efficiency_factor = { target = WORLD  value = 0.10 }
+    }
+}
+
+# 8. 古名传承体系
+NAT_Ancient_Name_Inheritance_System = {
+    picture = idea_nat_ancient_name_inheritance
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        nationalism_factor = 0.12
+        army_experience_gain_factor = 0.10
+        war_support_factor = 0.08
+    }
+}
+
+# 9. 归火圣夜巡礼
+NAT_Fire_Return_Sacred_Night_Pilgrimage = {
+    picture = idea_nat_fire_return_pilgrimage
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        stability_factor = 0.15
+        war_support_factor = 0.18
+        manpower_factor = 0.10
+    }
+}
+
+# 10. 燃素技术革新
+NAT_Phyton_Technology_Innovation = {
+    picture = idea_nat_phyton_tech_innovation
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        industrial_efficiency_factor = 0.12
+        factory_output_factor = 0.10
+        research_speed_factor = 0.09
+    }
+}
+
+# 11. 人龙共生盟约
+NAT_Dragon_Human_Symbiosis_Covenant = {
+    picture = idea_nat_dragon_human_covenant
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        stability_factor = 0.10
+        land_attack_factor = 0.08
+        research_speed = { type = military_technology  value = 0.07 }
+    }
+}
+
+# 12. 决斗法典荣光
+NAT_Duel_Code_Glory = {
+    picture = idea_nat_duel_code_glory
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_morale_factor = 0.12
+        army_experience_factor = 0.10
+        war_support_factor = 0.09
+    }
+}
+
+# 13. 夜神之国守护
+NAT_Night_God_Realm_Protection = {
+    picture = idea_nat_night_god_realm_protect
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        stability_factor = 0.10
+        counter_espionage_factor = 0.12
+        garrison_efficiency_factor = 0.10
+    }
+}
+
+# 14. 盗火者智慧传承
+NAT_Fire_Stealer_Wisdom_Heritage = {
+    picture = idea_nat_fire_stealer_wisdom
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        research_speed_factor = 0.15
+        industrial_efficiency_factor = 0.10
+        num_laboratories_add = 3
+    }
+}
+
+# 15. 烬寂海深渊防线
+NAT_Embersea_Abyss_Defense_Line = {
+    picture = idea_nat_embersea_defense_line
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_defense_factor = 0.15
+        fortification_construction_speed_factor = 0.20
+        war_exhaustion_factor = -0.08
+    }
+}
+
+# 16. 龙骨军工锻造
+NAT_Dragon_Bone_Military_Forging = {
+    picture = idea_nat_dragon_bone_forging
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_armor_value_factor = 0.15
+        equipment_quality_factor = { type = artillery_equipment  value = 0.08 }
+        war_factory_output = 0.10
+    }
+}
+
+# 17. 部族大团结誓言
+NAT_Great_Tribal_Unity_Oath = {
+    picture = idea_nat_tribal_unity_oath
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        stability_factor = 0.12
+        government_authority = 0.10
+        consumer_goods_factor = -0.03
+    }
+}
+
+# 18. 荣花演武盛典
+NAT_Glorious_Flower_Martial_Arts_Ceremony = {
+    picture = idea_nat_flower_martial_arts
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        army_experience_factor = 0.15
+        land_attack_factor = 0.08
+        land_recruitment_speed_factor = 0.10
+    }
+}
+
+# 19. 大灵的魂灵庇佑
+NAT_Great_Spirit_Soul_Blessing = {
+    picture = idea_nat_great_spirit_blessing
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        consumer_goods_factor = -0.02
+        stability_factor = 0.08
+        manpower_recovery_factor = 0.10
+    }
+}
+
+# 20. 秘源机兵军工应用
+NAT_Secret_Source_Automaton_Military_Application = {
+    picture = idea_nat_secret_source_automaton
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        equipment_production_efficiency_factor = { type = all  value = 0.09 }
+        land_breakthrough_factor = 0.10
+        motorized_equipment_production_factor = 0.12
+    }
+}
+
+# 21. 抗深渊战术体系
+NAT_Abyss_Resistance_Tactics_System = {
+    picture = idea_nat_abyss_resistance_tactics
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_casualties_factor = -0.10
+        land_defense_factor = 0.10
+        intelligence_agency_efficiency_factor = 0.08
+    }
+}
+
+# 22. 希巴拉克英雄遗产
+NAT_Xibarak_Hero_Legacy = {
+    picture = idea_nat_xibarak_legacy
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        government_authority = 0.12
+        nationalism_factor = 0.15
+        war_support_factor = 0.10
+    }
+}
+
+# 23. 奥奇坎历史冤案平反
+NAT_Ocikan_Tyranny_Injustice_Redress = {
+    picture = idea_nat_ocikan_injustice_redress
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        stability_factor = 0.10
+        political_power_factor = 0.08
+        relations_factor = { target = ALL  value = 0.05 }
+    }
+}
+
+# 24. 火山工业区扩建
+NAT_Volcano_Industrial_Zone_Expansion = {
+    picture = idea_nat_volcano_industrial_zone
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        civilian_factory_output = 0.12
+        war_factory_output = 0.10
+        industrial_efficiency_factor = 0.09
+    }
+}
+
+# 25. 纳塔民族认同构建
+NAT_Natlan_National_Identity_Construction = {
+    picture = idea_nat_natlan_national_identity
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        nationalism_factor = 0.18
+        stability_factor = 0.10
+        diplomatic_weight_factor = 0.15
+    }
+}
+
+# 26. 还魂诗的誓约
+NAT_Soul_Return_Poem_Oath = {
+    picture = idea_nat_soul_return_poem
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_morale_factor = 0.15
+        land_casualties_factor = -0.08
+        war_support_factor = 0.10
+    }
+}
+
+# 27. 流炎之池秘传
+NAT_Flame_Flow_Pool_Esoterica = {
+    picture = idea_nat_flame_flow_pool
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        research_speed_factor = 0.12
+        num_laboratories_add = 2
+        industrial_efficiency_factor = 0.08
+    }
+}
+
+# 28. 缝影针封印加固
+NAT_Shadow_Sealing_Needle_Reinforcement = {
+    picture = idea_nat_sealing_needle_reinforce
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_defense_factor = 0.12
+        garrison_efficiency_factor = 0.15
+        stability_factor = 0.07
+    }
+}
+
+# 29. 六英杰英雄传承
+NAT_Six_Heroes_Heroic_Legacy = {
+    picture = idea_nat_six_heroes_legacy
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        land_attack_factor = 0.10
+        army_experience_factor = 0.12
+        special_forces_cap_factor = 0.15
+    }
+}
+
+# 30. 万火归一的荣光
+NAT_Great_Unity_Of_All_Fires_Glory = {
+    picture = idea_nat_all_fires_unity_glory
+    allowed = { always = yes }
+    allowed_civil_war = { always = yes }
+    modifier = {
+        government_authority = 0.20
+        stability_factor = 0.15
+        war_support_factor = 0.20
+        factory_output_factor = 0.10
+        land_attack_factor = 0.10
+    }
+}
