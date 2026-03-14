@@ -294,3 +294,11 @@ DOT_Generic_DecCat = {
 	}
 	priority = { base = 0 }
 }
+SAN_Sangonomiya_Decisions = {
+	icon = generic_formable_nations
+	picture = GFX_DOT_Space_Program_decisions
+	allowed = { or = { tag = SAN } }
+	available = { or = { tag = SAN } }
+	available = { or = { tag = SAN } }
+	priority = { base = 90 }
+}

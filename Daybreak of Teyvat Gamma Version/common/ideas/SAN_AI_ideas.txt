@@ -1,0 +1,115 @@
+###########################
+# 民族精神
+###########################
+
+ideas = {
+	country = {
+		# 文件路径：common/national_spirits/san_national_spirits.txt
+		# 模板格式：ID = { picture = 图片ID removal_cost = -1 modifier = { 效果列表 } }
+
+		# 1. 珊瑚同心（ns_san_unity）
+		ns_san_unity = {
+			# 珊瑚同心：海祇岛民众团结一心反抗幕府
+			picture = EAW_89  # 复用模板图片，可替换为 GFX_idea_san_unity
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.10          # 稳定度 +10%
+				war_support_factor = 0.10        # 战争支持度 +10%
+				manpower_growth_factor = 0.05    # 人力增长 +5%
+			}
+		}
+
+		# 2. 璃月之盟（ns_geo_ally）
+		ns_geo_ally = {
+			# 璃月之盟：获得璃月物资与外交支援
+			picture = EAW_89  # 可替换为 GFX_idea_san_geo_ally
+			removal_cost = -1
+			modifier = {
+				civilian_factory_efficiency = 0.15  # 民用工厂效率 +15%
+				steel_factor = 20                   # 钢材产量 +20
+				iron_factor = 10                    # 铁矿产量 +10
+				diplomatic_power_gain = 25          # 每月外交点数 +25
+			}
+		}
+
+		# 3. 心海的智略（ns_kokomi_leader）
+		ns_kokomi_leader = {
+			# 心海的智略：珊瑚宫心海的卓越领导与智谋
+			picture = EAW_89  # 可替换为 GFX_idea_san_kokomi_leader
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.15       # 全研究速度 +15%
+				planning_speed_factor = 0.20       # 作战规划速度 +20%
+				army_organization_factor = 0.10    # 陆军组织度 +10%
+				popularity = 0.15                  # 心海声望 +15%
+			}
+		}
+
+		# 4. 珊瑚的胜利（ns_san_victory）
+		ns_san_victory = {
+			# 珊瑚的胜利：击败幕府军队的阶段性胜利
+			picture = EAW_89  # 可替换为 GFX_idea_san_victory
+			removal_cost = -1
+			modifier = {
+				stability_factor = 0.20           # 稳定度 +20%
+				war_support_factor = 0.20         # 战争支持度 +20%
+				manpower = 5000                   # 人力 +5000
+				building_cost_factor = -0.15      # 建筑建造成本 -15%（等价于速度+15%）
+			}
+		}
+
+		# 5. 海神时代（ns_sea_god_era）
+		ns_sea_god_era = {
+			# 海神时代：推翻幕府统治后的全新时代
+			picture = EAW_89  # 可替换为 GFX_idea_san_sea_god_era
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.25      # 全研究速度 +25%
+				ship_attack = 0.20                # 所有舰船攻击 +20%
+				ship_defense = 0.20               # 所有舰船防御 +20%
+				food_factor = 10                  # 粮食产量 +10
+				steel_factor = 5                  # 钢材产量 +5
+				oil_factor = 5                    # 石油产量 +5
+				stability_factor = 0.30           # 稳定度 +30%
+				war_support_factor = 0.30         # 战争支持度 +30%
+			}
+		}
+
+		# 6. 临时战备增益（ns_temp_buff）
+		ns_temp_buff = {
+			# 临时战备增益：短期提升军队战斗力
+			picture = EAW_89  # 可替换为 GFX_idea_san_temp_buff
+			removal_cost = -1
+			modifier = {
+				infantry_attack = 0.05            # 步兵攻击 +5%
+				planning_speed_factor = 0.10      # 规划速度 +10%
+			}
+			expiry_days = 7  # 7天后自动移除（保留模板外的官方合规参数）
+		}
+
+		# 7. 胜利的荣光（ns_victory_buff）
+		ns_victory_buff = {
+			# 胜利的荣光：大胜后军队士气高涨
+			picture = EAW_89  # 可替换为 GFX_idea_san_victory_buff
+			removal_cost = -1
+			modifier = {
+				experience_gain_army = 0.20       # 陆军经验获取 +20%
+				experience_gain_navy = 0.20       # 海军经验获取 +20%
+				supply_consumption_factor = -0.10 # 补给消耗 -10%
+			}
+			expiry_days = 30  # 30天后自动移除
+		}
+
+		# 8. 新海祇时代（ns_san_era）
+		ns_san_era = {
+			# 新海祇时代：国力全面提升的黄金时期
+			picture = EAW_89  # 可替换为 GFX_idea_san_era
+			removal_cost = -1
+			modifier = {
+				research_speed_factor = 0.30      # 全研究速度 +30%
+				building_cost_factor = -0.25      # 建筑建造成本 -25%（等价于速度+25%）
+				manpower_growth_factor = 0.20     # 人力增长 +20%
+			}
+		}
+	}
+}
