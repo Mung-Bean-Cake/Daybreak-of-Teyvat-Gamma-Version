@@ -1,0 +1,1393 @@
+###########################
+# NAT Events
+###########################
+
+add_namespace = NAT
+add_namespace = NAT_Event
+add_namespace = NAT_News
+
+#### 阶段1：部族凝聚（1-10）
+
+# 1. 统一火焰部族
+country_event = {
+	id = NAT_Event.1
+	title = NAT_Event.1.t
+	desc = NAT_Event.1.d
+	picture = GFX_evt_nationalism_rise
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.1.a
+		custom_effect_tooltip = NAT_Unite_The_Flame_Tribes_Tooltip
+		add_political_power = 50
+		add_nationalism = 0.08
+		set_national_stability = { value = 0.1  add = yes }
+	}
+}
+
+# 2. 和解灰烬部族
+country_event = {
+	id = NAT_Event.2
+	title = NAT_Event.2.t
+	desc = NAT_Event.2.d
+	picture = GFX_evt_diplomacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.2.a
+		custom_effect_tooltip = NAT_Reconcile_The_Ash_Tribe_Tooltip
+		add_political_power = 30
+		reduce_war_exhaustion = 0.06
+		set_national_stability = { value = 0.09  add = yes }
+	}
+}
+
+# 3. 强化部族同盟
+country_event = {
+	id = NAT_Event.3
+	title = NAT_Event.3.t
+	desc = NAT_Event.3.d
+	picture = GFX_evt_alliance_formed
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.3.a
+		custom_effect_tooltip = NAT_Strengthen_Tribe_Alliances_Tooltip
+		add_diplomatic_weight = 8
+		add_alliance_cohesion = 0.12
+		add_political_power = 25
+	}
+}
+
+# 4. 建立部族议会
+country_event = {
+	id = NAT_Event.4
+	title = NAT_Event.4.t
+	desc = NAT_Event.4.d
+	picture = GFX_evt_government_reform
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.4.a
+		custom_effect_tooltip = NAT_Establish_Tribal_Council_Tooltip
+		add_government_authority = 15
+		add_political_power = 60
+		set_national_stability = { value = 0.15  add = yes }
+	}
+}
+
+# 5. 火焰部族庆典
+country_event = {
+	id = NAT_Event.5
+	title = NAT_Event.5.t
+	desc = NAT_Event.5.d
+	picture = GFX_evt_cultural_festival
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.5.a
+		custom_effect_tooltip = NAT_Flame_Tribe_Festival_Tooltip
+		add_war_support = 0.12
+		add_happiness = { target = all  value = 0.07 }
+		add_political_power = 20
+	}
+}
+
+# 6. 整合烬火部族
+country_event = {
+	id = NAT_Event.6
+	title = NAT_Event.6.t
+	desc = NAT_Event.6.d
+	picture = GFX_evt_factory_construction
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.6.a
+		custom_effect_tooltip = NAT_Integrate_The_Cinder_Tribe_Tooltip
+		add_equipment_to_stockpile = { type = steel  amount = 25000  producer = NAT }
+		add_civilian_factory = 6
+		add_industrial_capacity = 7
+	}
+}
+
+# 7. 部族军事训练
+country_event = {
+	id = NAT_Event.7
+	title = NAT_Event.7.t
+	desc = NAT_Event.7.d
+	picture = GFX_evt_military_parade
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.7.a
+		custom_effect_tooltip = NAT_Tribal_Military_Training_Tooltip
+		add_army_experience = 60
+		add_land_attack = { value = 0.07  duration = 365 }
+		add_recruitment_speed = { type = land  value = 0.08 }
+	}
+}
+
+# 8. 解决部族边境争端
+country_event = {
+	id = NAT_Event.8
+	title = NAT_Event.8.t
+	desc = NAT_Event.8.d
+	picture = GFX_evt_peace_treaty
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.8.a
+		custom_effect_tooltip = NAT_Resolve_Tribal_Border_Disputes_Tooltip
+		set_national_stability = { value = 0.18  add = yes }
+		reduce_war_exhaustion = 0.11
+		add_political_power = 35
+	}
+}
+
+# 9. 火焰酋长集会
+country_event = {
+	id = NAT_Event.9
+	title = NAT_Event.9.t
+	desc = NAT_Event.9.d
+	picture = GFX_evt_political_summit
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.9.a
+		custom_effect_tooltip = NAT_Flame_Chieftains_Gathering_Tooltip
+		add_political_power = 75
+		add_government_authority = 20
+		add_nationalism = 0.10
+	}
+}
+
+# 10. 采纳部族法典
+country_event = {
+	id = NAT_Event.10
+	title = NAT_Event.10.t
+	desc = NAT_Event.10.d
+	picture = GFX_evt_legal_reform
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.10.a
+		custom_effect_tooltip = NAT_Adopt_Tribal_Legal_Code_Tooltip
+		set_national_stability = { value = 0.12  add = yes }
+		add_political_power = 28
+		add_authority = 8
+	}
+}
+
+
+#### 阶段2：炉心守护（11-20）
+
+# 11. 守护炉心
+country_event = {
+	id = NAT_Event.11
+	title = NAT_Event.11.t
+	desc = NAT_Event.11.d
+	picture = GFX_evt_fortification_construction
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.11.a
+		custom_effect_tooltip = NAT_Guard_The_Furnace_Heart_Tooltip
+		add_land_defense = { value = 0.13  duration = 730 }
+		add_fort_level = { province = NAT_Furnace_Heart_Province  level = 2 }
+		add_garrison_template = { name = "Furnace Heart Guard"  garrison = 12 }
+	}
+}
+
+# 12. 修复炉心屏障
+country_event = {
+	id = NAT_Event.12
+	title = NAT_Event.12.t
+	desc = NAT_Event.12.d
+	picture = GFX_evt_infrastructure_construction
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.12.a
+		custom_effect_tooltip = NAT_Repair_Furnace_Heart_Barriers_Tooltip
+		add_construction_speed = 0.15
+		add_infrastructure = { province = NAT_Furnace_Heart_Province  level = 4 }
+		add_civilian_factory = 4
+	}
+}
+
+# 13. 充能炉心
+country_event = {
+	id = NAT_Event.13
+	title = NAT_Event.13.t
+	desc = NAT_Event.13.d
+	picture = GFX_evt_war_industry_boost
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.13.a
+		custom_effect_tooltip = NAT_Charge_The_Furnace_Heart_Tooltip
+		add_war_factory = 7
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 1200  producer = NAT }
+		add_industrial_capacity = 9
+	}
+}
+
+# 14. 监控炉心能量
+country_event = {
+	id = NAT_Event.14
+	title = NAT_Event.14.t
+	desc = NAT_Event.14.d
+	picture = GFX_evt_intelligence_operation
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.14.a
+		custom_effect_tooltip = NAT_Monitor_Furnace_Heart_Energy_Tooltip
+		add_intelligence_agency_efficiency = 0.08
+		add_espionage_efficiency = { target = WORLD  value = 0.06 }
+		add_political_power = 22
+	}
+}
+
+# 15. 炉心献祭仪式
+country_event = {
+	id = NAT_Event.15
+	title = NAT_Event.15.t
+	desc = NAT_Event.15.d
+	picture = GFX_evt_religious_ceremony
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.15.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Sacrifice_Ritual_Tooltip
+		add_war_support = 0.18
+		add_happiness = { target = all  value = 0.10 }
+		add_nationalism = 0.09
+	}
+}
+
+# 16. 招募炉心守卫
+country_event = {
+	id = NAT_Event.16
+	title = NAT_Event.16.t
+	desc = NAT_Event.16.d
+	picture = GFX_evt_recruitment_drive
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.16.a
+		custom_effect_tooltip = NAT_Recruit_Furnace_Guardians_Tooltip
+		add_manpower = 45000
+		add_recruitment_speed = { type = land  value = 0.11 }
+		add_garrison_efficiency = 0.10
+	}
+}
+
+# 17. 升级炉心锻造厂
+country_event = {
+	id = NAT_Event.17
+	title = NAT_Event.17.t
+	desc = NAT_Event.17.d
+	picture = GFX_evt_industrial_expansion
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.17.a
+		custom_effect_tooltip = NAT_Upgrade_Furnace_Heart_Forge_Tooltip
+		add_civilian_factory = 8
+		add_factory_output = 0.09
+		add_equipment_to_stockpile = { type = artillery_equipment  amount = 400  producer = NAT }
+	}
+}
+
+# 18. 封印炉心裂隙
+country_event = {
+	id = NAT_Event.18
+	title = NAT_Event.18.t
+	desc = NAT_Event.18.d
+	picture = GFX_evt_engineers_at_work
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.18.a
+		custom_effect_tooltip = NAT_Seal_Furnace_Heart_Rifts_Tooltip
+		add_land_defense = { value = 0.16  duration = 730 }
+		add_fort_level = { province = NAT_Furnace_Heart_Province  level = 3 }
+		add_construction_speed = 0.12
+	}
+}
+
+# 19. 驾驭炉心热能
+country_event = {
+	id = NAT_Event.19
+	title = NAT_Event.19.t
+	desc = NAT_Event.19.d
+	picture = GFX_evt_power_plant_construction
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.19.a
+		custom_effect_tooltip = NAT_Harness_Furnace_Heart_Heat_Tooltip
+		add_electricity = 2500
+		add_industrial_efficiency = 0.11
+		add_war_factory = 5
+	}
+}
+
+# 20. 炉心应急协议
+country_event = {
+	id = NAT_Event.20
+	title = NAT_Event.20.t
+	desc = NAT_Event.20.d
+	picture = GFX_evt_mobilization_order
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.20.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Emergency_Protocol_Tooltip
+		add_mobilization_speed = 0.18
+		reduce_war_exhaustion = 0.13
+		add_government_authority = 12
+	}
+}
+
+
+#### 阶段3：玛薇卡的意志（21-30）
+
+# 21. 玛薇卡的意志宣言
+country_event = {
+	id = NAT_Event.21
+	title = NAT_Event.21.t
+	desc = NAT_Event.21.d
+	picture = GFX_evt_leader_speech
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.21.a
+		custom_effect_tooltip = NAT_Mavuika_s_Declaration_Of_Will_Tooltip
+		add_political_power = 100
+		add_government_authority = 30
+		add_nationalism = 0.15
+	}
+}
+
+# 22. 玛薇卡的决斗挑战
+country_event = {
+	id = NAT_Event.22
+	title = NAT_Event.22.t
+	desc = NAT_Event.22.d
+	picture = GFX_evt_duel_challenge
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.22.a
+		custom_effect_tooltip = NAT_Mavuika_s_Duel_Challenge_Tooltip
+		add_land_attack = { value = 0.12  duration = 540 }
+		add_war_support = 0.20
+		add_army_experience = 80
+	}
+}
+
+# 23. 玛薇卡的火焰祝福
+country_event = {
+	id = NAT_Event.23
+	title = NAT_Event.23.t
+	desc = NAT_Event.23.d
+	picture = GFX_evt_divine_blessing
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.23.a
+		custom_effect_tooltip = NAT_Mavuika_s_Flame_Blessing_Tooltip
+		add_war_factory = 9
+		add_equipment_to_stockpile = { type = armor_equipment  amount = 300  producer = NAT }
+		add_industrial_capacity = 11
+	}
+}
+
+# 24. 玛薇卡的部族统一
+country_event = {
+	id = NAT_Event.24
+	title = NAT_Event.24.t
+	desc = NAT_Event.24.d
+	picture = GFX_evt_national_unification
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.24.a
+		custom_effect_tooltip = NAT_Mavuika_s_Tribal_Unification_Tooltip
+		add_relations = { target = ALL  value = 18 }
+		set_national_stability = { value = 0.22  add = yes }
+		add_political_power = 85
+	}
+}
+
+# 25. 玛薇卡的战吼
+country_event = {
+	id = NAT_Event.25
+	title = NAT_Event.25.t
+	desc = NAT_Event.25.d
+	picture = GFX_evt_war_rally
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.25.a
+		custom_effect_tooltip = NAT_Mavuika_s_War_Cry_Tooltip
+		add_nationalism = 0.18
+		add_war_support = 0.25
+		add_happiness = { target = all  value = 0.11 }
+	}
+}
+
+# 26. 玛薇卡的炉心誓言
+country_event = {
+	id = NAT_Event.26
+	title = NAT_Event.26.t
+	desc = NAT_Event.26.d
+	picture = GFX_evt_oath_ceremony
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.26.a
+		custom_effect_tooltip = NAT_Mavuika_s_Furnace_Heart_Vow_Tooltip
+		set_national_stability = { value = 0.25  add = yes }
+		add_ideology_support = { ideology = fascism  value = 0.09 }
+		add_government_authority = 18
+	}
+}
+
+# 27. 玛薇卡的战士训练
+country_event = {
+	id = NAT_Event.27
+	title = NAT_Event.27.t
+	desc = NAT_Event.27.d
+	picture = GFX_evt_elite_training
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.27.a
+		custom_effect_tooltip = NAT_Mavuika_s_Warriors_Training_Tooltip
+		add_army_experience = 120
+		add_land_experience_gain = 0.10
+		add_recruitment_speed = { type = land  value = 0.14 }
+	}
+}
+
+# 28. 玛薇卡的外交宣示
+country_event = {
+	id = NAT_Event.28
+	title = NAT_Event.28.t
+	desc = NAT_Event.28.d
+	picture = GFX_evt_diplomatic_meeting
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.28.a
+		custom_effect_tooltip = NAT_Mavuika_s_Diplomatic_Assertion_Tooltip
+		add_diplomatic_influence = { target = NEIGHBORS  value = 12 }
+		add_diplomatic_weight = 15
+		add_relations = { target = NEIGHBORS  value = 20 }
+	}
+}
+
+# 29. 玛薇卡的火焰军团
+country_event = {
+	id = NAT_Event.29
+	title = NAT_Event.29.t
+	desc = NAT_Event.29.d
+	picture = GFX_evt_army_formation
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.29.a
+		custom_effect_tooltip = NAT_Mavuika_s_Flame_Army_Tooltip
+		add_recruitment_speed = { type = land  value = 0.20 }
+		add_manpower = 80000
+		add_land_attack = { value = 0.10  duration = 730 }
+	}
+}
+
+# 30. 玛薇卡的终极火焰
+country_event = {
+	id = NAT_Event.30
+	title = NAT_Event.30.t
+	desc = NAT_Event.30.d
+	picture = GFX_evt_advanced_weapons
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.30.a
+		custom_effect_tooltip = NAT_Mavuika_s_Ultimate_Flame_Tooltip
+		add_war_factory = 12
+		add_equipment_to_stockpile = { type = rocket_equipment  amount = 150  producer = NAT }
+		add_industrial_efficiency = 0.14
+	}
+}
+
+
+#### 阶段4：对外彰显（31-40）
+
+# 31. 彰显火焰荣耀
+country_event = {
+	id = NAT_Event.31
+	title = NAT_Event.31.t
+	desc = NAT_Event.31.d
+	picture = GFX_evt_national_pride
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.31.a
+		custom_effect_tooltip = NAT_Showcase_Flame_Pride_Tooltip
+		add_nationalism = 0.16
+		add_war_support = 0.14
+		add_happiness = { target = all  value = 0.09 }
+	}
+}
+
+# 32. 璃月火焰大使馆
+country_event = {
+	id = NAT_Event.32
+	title = NAT_Event.32.t
+	desc = NAT_Event.32.d
+	picture = GFX_evt_embassy_opening
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.32.a
+		custom_effect_tooltip = NAT_Flame_Embassy_In_Liyue_Tooltip
+		add_relations = { target = LIYUE  value = 35 }
+		add_trade_efficiency = 0.12
+		add_resource = { type = rubber  amount = 1500  }
+	}
+}
+
+# 33. 蒙德火焰大使馆
+country_event = {
+	id = NAT_Event.33
+	title = NAT_Event.33.t
+	desc = NAT_Event.33.d
+	picture = GFX_evt_diplomatic_treaty
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.33.a
+		custom_effect_tooltip = NAT_Flame_Embassy_In_Mondstadt_Tooltip
+		add_relations = { target = MONDSTADT  value = 32 }
+		add_trade_efficiency = 0.10
+		add_resource = { type = oil  amount = 1000  }
+	}
+}
+
+# 34. 前往须弥的火焰外交使团
+country_event = {
+	id = NAT_Event.34
+	title = NAT_Event.34.t
+	desc = NAT_Event.34.d
+	picture = GFX_evt_scientific_exchange
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.34.a
+		custom_effect_tooltip = NAT_Flame_Diplomatic_Mission_To_Sumeru_Tooltip
+		add_relations = { target = SUMERU  value = 28 }
+		add_research_speed = { type = industrial  value = 0.08 }
+		add_civilian_factory = 7
+	}
+}
+
+# 35. 前往稻妻的火焰外交使团
+country_event = {
+	id = NAT_Event.35
+	title = NAT_Event.35.t
+	desc = NAT_Event.35.d
+	picture = GFX_evt_naval_diplomat
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.35.a
+		custom_effect_tooltip = NAT_Flame_Diplomatic_Mission_To_Inazuma_Tooltip
+		add_relations = { target = INAZUMA  value = 25 }
+		add_naval_attack = { value = 0.09  duration = 540 }
+		add_naval_factory = 4
+	}
+}
+
+# 36. 火焰体育节
+country_event = {
+	id = NAT_Event.36
+	title = NAT_Event.36.t
+	desc = NAT_Event.36.d
+	picture = GFX_evt_sports_event
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.36.a
+		custom_effect_tooltip = NAT_Flame_Sports_Festival_Tooltip
+		add_happiness = { target = all  value = 0.15 }
+		add_war_support = 0.13
+		add_nationalism = 0.08
+	}
+}
+
+# 37. 火焰文化交流
+country_event = {
+	id = NAT_Event.37
+	title = NAT_Event.37.t
+	desc = NAT_Event.37.d
+	picture = GFX_evt_cultural_exchange
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.37.a
+		custom_effect_tooltip = NAT_Flame_Cultural_Exchange_Tooltip
+		add_cultural_influence = { target = WORLD  value = 0.11 }
+		set_national_stability = { value = 0.14  add = yes }
+		add_relations = { target = ALL  value = 10 }
+	}
+}
+
+# 38. 火焰贸易路线扩张
+country_event = {
+	id = NAT_Event.38
+	title = NAT_Event.38.t
+	desc = NAT_Event.38.d
+	picture = GFX_evt_trade_route
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.38.a
+		custom_effect_tooltip = NAT_Flame_Trade_Route_Expansion_Tooltip
+		add_trade_efficiency = 0.18
+		add_resource = { type = rubber  amount = 2000  }
+		add_civilian_factory = 9
+	}
+}
+
+# 39. 火焰维和部队
+country_event = {
+	id = NAT_Event.39
+	title = NAT_Event.39.t
+	desc = NAT_Event.39.d
+	picture = GFX_evt_peacekeeping_mission
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.39.a
+		custom_effect_tooltip = NAT_Flame_Peacekeeping_Force_Tooltip
+		add_peacekeeping_efficiency = 0.20
+		add_relations = { target = MINORS  value = 22 }
+		add_government_authority = 14
+	}
+}
+
+# 40. 火焰国际决斗锦标赛
+country_event = {
+	id = NAT_Event.40
+	title = NAT_Event.40.t
+	desc = NAT_Event.40.d
+	picture = GFX_evt_tournament
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.40.a
+		custom_effect_tooltip = NAT_Flame_International_Duel_Tournament_Tooltip
+		add_land_attack = { value = 0.15  duration = 730 }
+		add_war_support = 0.22
+		add_army_experience = 100
+	}
+}
+
+
+#### 阶段5：决斗体系（41-50）
+
+# 41. 建立决斗法典
+country_event = {
+	id = NAT_Event.41
+	title = NAT_Event.41.t
+	desc = NAT_Event.41.d
+	picture = GFX_evt_knightly_code
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.41.a
+		custom_effect_tooltip = NAT_Establish_Duel_Code_Tooltip
+		set_national_stability = { value = 0.16  add = yes }
+		add_political_power = 40
+		add_government_authority = 10
+	}
+}
+
+# 42. 决斗竞技场建设
+country_event = {
+	id = NAT_Event.42
+	title = NAT_Event.42.t
+	desc = NAT_Event.42.d
+	picture = GFX_evt_stadium_construction
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.42.a
+		custom_effect_tooltip = NAT_Duel_Arena_Construction_Tooltip
+		add_construction_speed = 0.22
+		add_civilian_factory = { province = NAT_Capital_Province  amount = 8 }
+		add_happiness = { target = all  value = 0.12 }
+	}
+}
+
+# 43. 决斗冠军头衔
+country_event = {
+	id = NAT_Event.43
+	title = NAT_Event.43.t
+	desc = NAT_Event.43.d
+	picture = GFX_evt_champion_ceremony
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.43.a
+		custom_effect_tooltip = NAT_Duel_Champion_Title_Tooltip
+		add_land_attack = { value = 0.20  duration = 730 }
+		add_army_experience = 150
+		add_war_support = 0.16
+	}
+}
+
+# 44. 决斗训练营
+country_event = {
+	id = NAT_Event.44
+	title = NAT_Event.44.t
+	desc = NAT_Event.44.d
+	picture = GFX_evt_training_camp
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.44.a
+		custom_effect_tooltip = NAT_Duel_Training_Camps_Tooltip
+		add_recruitment_speed = { type = land  value = 0.18 }
+		add_manpower = 65000
+		add_land_defense = { value = 0.09  duration = 540 }
+	}
+}
+
+# 45. 决斗奖励体系
+country_event = {
+	id = NAT_Event.45
+	title = NAT_Event.45.t
+	desc = NAT_Event.45.d
+	picture = GFX_evt_reward_ceremony
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.45.a
+		custom_effect_tooltip = NAT_Duel_Reward_System_Tooltip
+		add_happiness = { target = all  value = 0.20 }
+		reduce_consumer_goods = 0.03
+		add_political_power = 35
+	}
+}
+
+# 46. 与外国战士决斗
+country_event = {
+	id = NAT_Event.46
+	title = NAT_Event.46.t
+	desc = NAT_Event.46.d
+	picture = GFX_evt_international_duel
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.46.a
+		custom_effect_tooltip = NAT_Duel_Against_Foreign_Warriors_Tooltip
+		add_land_attack = { value = 0.25  duration = 730 }
+		add_war_support = 0.28
+		add_nationalism = 0.12
+	}
+}
+
+# 47. 决斗调解议会
+country_event = {
+	id = NAT_Event.47
+	title = NAT_Event.47.t
+	desc = NAT_Event.47.d
+	picture = GFX_evt_peace_mediation
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.47.a
+		custom_effect_tooltip = NAT_Duel_Mediation_Council_Tooltip
+		add_relations = { target = ALL  value = 14 }
+		set_national_stability = { value = 0.19  add = yes }
+		reduce_war_exhaustion = 0.10
+	}
+}
+
+# 48. 决斗火焰祝福
+country_event = {
+	id = NAT_Event.48
+	title = NAT_Event.48.t
+	desc = NAT_Event.48.d
+	picture = GFX_evt_combat_blessing
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.48.a
+		custom_effect_tooltip = NAT_Duel_Flame_Blessing_Tooltip
+		add_war_factory = 11
+		add_equipment_to_stockpile = { type = motorized_equipment  amount = 400  producer = NAT }
+		add_industrial_capacity = 13
+	}
+}
+
+# 49. 决斗法律认可
+country_event = {
+	id = NAT_Event.49
+	title = NAT_Event.49.t
+	desc = NAT_Event.49.d
+	picture = GFX_evt_legal_recognition
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.49.a
+		custom_effect_tooltip = NAT_Duel_Legal_Recognition_Tooltip
+		add_government_authority = 25
+		add_ideology_support = { ideology = authoritarianism  value = 0.11 }
+		set_national_stability = { value = 0.21  add = yes }
+	}
+}
+
+# 50. 火焰终极决斗
+country_event = {
+	id = NAT_Event.50
+	title = NAT_Event.50.t
+	desc = NAT_Event.50.d
+	picture = GFX_evt_epic_duel
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.50.a
+		custom_effect_tooltip = NAT_Ultimate_Duel_Of_Flame_Tooltip
+		add_land_attack = { value = 0.30  duration = 1095 }
+		add_war_support = 0.35
+		add_army_experience = 200
+	}
+}
+
+
+#### 阶段6：火焰权能强化（51-60）
+
+# 51. 火焰附魔技术
+country_event = {
+	id = NAT_Event.51
+	title = NAT_Event.51.t
+	desc = NAT_Event.51.d
+	picture = GFX_evt_magic_enchantment
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.51.a
+		custom_effect_tooltip = NAT_Flame_Enchantment_Technique_Tooltip
+		add_land_attack = { value = 0.10  duration = 730 }
+		add_equipment_quality = { type = infantry  value = 0.12 }
+		add_war_factory = 6
+	}
+}
+
+# 52. 火焰涌动战术
+country_event = {
+	id = NAT_Event.52
+	title = NAT_Event.52.t
+	desc = NAT_Event.52.d
+	picture = GFX_evt_military_tactics
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.52.a
+		custom_effect_tooltip = NAT_Surge_Of_Flame_Tactics_Tooltip
+		add_land_breakthrough = 0.18
+		add_doctrine_progress = { type = mobile_warfare  value = 8 }
+		add_army_experience = 90
+	}
+}
+
+# 53. 火元素共鸣
+country_event = {
+	id = NAT_Event.53
+	title = NAT_Event.53.t
+	desc = NAT_Event.53.d
+	picture = GFX_evt_elemental_resonance
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.53.a
+		custom_effect_tooltip = NAT_Fire_Element_Resonance_Tooltip
+		add_war_factory = 10
+		add_factory_output = 0.15
+		add_industrial_efficiency = 0.12
+	}
+}
+
+# 54. 炼狱护盾研发
+country_event = {
+	id = NAT_Event.54
+	title = NAT_Event.54.t
+	desc = NAT_Event.54.d
+	picture = GFX_evt_shield_technology
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.54.a
+		custom_effect_tooltip = NAT_Inferno_Shield_Development_Tooltip
+		add_land_defense = { value = 0.18  duration = 1095 }
+		add_armor_value = { type = land  value = 12 }
+		add_war_factory = 8
+	}
+}
+
+# 55. 火焰浪潮攻势
+country_event = {
+	id = NAT_Event.55
+	title = NAT_Event.55.t
+	desc = NAT_Event.55.d
+	picture = GFX_evt_wave_offensive
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.55.a
+		custom_effect_tooltip = NAT_Flame_Wave_Offensive_Tooltip
+		add_land_attack = { value = 0.14  duration = 730 }
+		add_air_superiority_bonus = 0.10
+		add_air_experience = 70
+	}
+}
+
+# 56. 点燃战场
+country_event = {
+	id = NAT_Event.56
+	title = NAT_Event.56.t
+	desc = NAT_Event.56.d
+	picture = GFX_evt_artillery_barrage
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.56.a
+		custom_effect_tooltip = NAT_Ignite_The_Battlefield_Tooltip
+		add_war_factory = 13
+		add_equipment_to_stockpile = { type = artillery_equipment  amount = 600  producer = NAT }
+		add_land_attack = { value = 0.11  duration = 540 }
+	}
+}
+
+# 57. 火焰抗性训练
+country_event = {
+	id = NAT_Event.57
+	title = NAT_Event.57.t
+	desc = NAT_Event.57.d
+	picture = GFX_evt_survival_training
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.57.a
+		custom_effect_tooltip = NAT_Flame_Resistance_Training_Tooltip
+		add_manpower = 70000
+		add_land_survival = 0.12
+		reduce_casualties = { type = land  value = 0.08 }
+	}
+}
+
+# 58. 玛薇卡的火焰拥抱
+country_event = {
+	id = NAT_Event.58
+	title = NAT_Event.58.t
+	desc = NAT_Event.58.d
+	picture = GFX_evt_national_blessing
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.58.a
+		custom_effect_tooltip = NAT_Mavuika_s_Flame_Embrace_Tooltip
+		add_nationalism = 0.25
+		add_happiness = { target = all  value = 0.18 }
+		set_national_stability = { value = 0.24  add = yes }
+	}
+}
+
+# 59. 火元素核心研究
+country_event = {
+	id = NAT_Event.59
+	title = NAT_Event.59.t
+	desc = NAT_Event.59.d
+	picture = GFX_evt_nuclear_research
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.59.a
+		custom_effect_tooltip = NAT_Flame_Elemental_Core_Research_Tooltip
+		add_research_speed = 0.20
+		add_nuclear_research = 15
+		add_laboratory = 5
+	}
+}
+
+# 60. 不屈的火焰意志
+country_event = {
+	id = NAT_Event.60
+	title = NAT_Event.60.t
+	desc = NAT_Event.60.d
+	picture = GFX_evt_national_resolve
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.60.a
+		custom_effect_tooltip = NAT_Unyielding_Flame_Will_Tooltip
+		add_political_power = 120
+		add_war_support = 0.40
+		add_government_authority = 22
+	}
+}
+
+
+#### 阶段7：炉心终极进化（61-70）
+
+# 61. 炉心升华
+country_event = {
+	id = NAT_Event.61
+	title = NAT_Event.61.t
+	desc = NAT_Event.61.d
+	picture = GFX_evt_divine_ascension
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.61.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Ascension_Tooltip
+		add_electricity = 4000
+		add_industrial_efficiency = 0.20
+		add_civilian_factory = 12
+	}
+}
+
+# 62. 元素熔炉整合
+country_event = {
+	id = NAT_Event.62
+	title = NAT_Event.62.t
+	desc = NAT_Event.62.d
+	picture = GFX_evt_elemental_industry
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.62.a
+		custom_effect_tooltip = NAT_Elemental_Furnace_Integration_Tooltip
+		add_civilian_factory = 15
+		add_resource = { type = aluminum  amount = 3000  }
+		add_factory_output = 0.18
+	}
+}
+
+# 63. 永恒火焰倡议
+country_event = {
+	id = NAT_Event.63
+	title = NAT_Event.63.t
+	desc = NAT_Event.63.d
+	picture = GFX_evt_eternal_flame
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.63.a
+		custom_effect_tooltip = NAT_Eternal_Flame_Initiative_Tooltip
+		add_nationalism = 0.30
+		set_national_stability = 0.95
+		add_happiness = { target = all  value = 0.22 }
+	}
+}
+
+# 64. 炉心超频
+country_event = {
+	id = NAT_Event.64
+	title = NAT_Event.64.t
+	desc = NAT_Event.64.d
+	picture = GFX_evt_overdrive
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.64.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Overdrive_Tooltip
+		add_war_factory = 18
+		add_equipment_to_stockpile = { type = modern_tank_equipment  amount = 400  producer = NAT }
+		add_industrial_capacity = 18
+	}
+}
+
+# 65. 击退炉心入侵者
+country_event = {
+	id = NAT_Event.65
+	title = NAT_Event.65.t
+	desc = NAT_Event.65.d
+	picture = GFX_evt_defense_victory
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.65.a
+		custom_effect_tooltip = NAT_Repel_Furnace_Invaders_Tooltip
+		add_land_defense = { value = 0.25  duration = 1095 }
+		add_anti_tank = { value = 0.18  duration = 730 }
+		add_war_support = 0.28
+	}
+}
+
+# 66. 炉心启迪
+country_event = {
+	id = NAT_Event.66
+	title = NAT_Event.66.t
+	desc = NAT_Event.66.d
+	picture = GFX_evt_scientific_enlightenment
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.66.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Enlightenment_Tooltip
+		add_research_speed = 0.25
+		add_rocket_research = 20
+		add_laboratory = 8
+	}
+}
+
+# 67. 火焰锻造大师
+country_event = {
+	id = NAT_Event.67
+	title = NAT_Event.67.t
+	desc = NAT_Event.67.d
+	picture = GFX_evt_master_forge
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.67.a
+		custom_effect_tooltip = NAT_Flame_Forge_Mastery_Tooltip
+		add_construction_speed = 0.30
+		add_naval_base = { province = NAT_Coastal_Province  level = 2 }
+		add_naval_factory = 7
+	}
+}
+
+# 68. 炉心协同
+country_event = {
+	id = NAT_Event.68
+	title = NAT_Event.68.t
+	desc = NAT_Event.68.d
+	picture = GFX_evt_alliance_synergy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.68.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Synergy_Tooltip
+		add_relations = { target = NAT_Allies  value = 45 }
+		add_alliance_cohesion = 0.20
+		add_diplomatic_weight = 20
+	}
+}
+
+# 69. 火焰装甲研发
+country_event = {
+	id = NAT_Event.69
+	title = NAT_Event.69.t
+	desc = NAT_Event.69.d
+	picture = GFX_evt_heavy_tank_division
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.69.a
+		custom_effect_tooltip = NAT_Flame_Armor_Development_Tooltip
+		add_armor_attack = { value = 0.25  duration = 1095 }
+		add_equipment_to_stockpile = { type = heavy_tank_equipment  amount = 250  producer = NAT }
+		add_war_factory = 14
+	}
+}
+
+# 70. 超越炉心极限
+country_event = {
+	id = NAT_Event.70
+	title = NAT_Event.70.t
+	desc = NAT_Event.70.d
+	picture = GFX_evt_limit_break
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.70.a
+		custom_effect_tooltip = NAT_Transcend_Furnace_Limits_Tooltip
+		add_political_power = 150
+		add_government_authority = 35
+		add_industrial_efficiency = 0.22
+	}
+}
+
+
+#### 阶段8：燃烧的终章（71-80）
+
+# 71. 提瓦特火焰同盟
+country_event = {
+	id = NAT_Event.71
+	title = NAT_Event.71.t
+	desc = NAT_Event.71.d
+	picture = GFX_evt_global_alliance
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.71.a
+		custom_effect_tooltip = NAT_Teyvat_Flame_Alliance_Tooltip
+		add_relations = { target = TEYVAT  value = 40 }
+		add_diplomatic_weight = 30
+		add_alliance_cohesion = 0.25
+	}
+}
+
+# 72. 玛薇卡的终极决斗
+country_event = {
+	id = NAT_Event.72
+	title = NAT_Event.72.t
+	desc = NAT_Event.72.d
+	picture = GFX_evt_legendary_duel
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.72.a
+		custom_effect_tooltip = NAT_Mavuika_s_Ultimate_Duel_Tooltip
+		add_land_attack = { value = 0.40  duration = 1825 }
+		add_war_support = 0.50
+		add_army_experience = 300
+	}
+}
+
+# 73. 提瓦特火焰至上
+country_event = {
+	id = NAT_Event.73
+	title = NAT_Event.73.t
+	desc = NAT_Event.73.d
+	picture = GFX_evt_global_supremacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.73.a
+		custom_effect_tooltip = NAT_Flame_Supremacy_In_Teyvat_Tooltip
+		add_nationalism = 0.40
+		add_cultural_influence = { target = WORLD  value = 0.25 }
+		add_happiness = { target = all  value = 0.25 }
+	}
+}
+
+# 74. 统一所有火焰部族
+country_event = {
+	id = NAT_Event.74
+	title = NAT_Event.74.t
+	desc = NAT_Event.74.d
+	picture = GFX_evt_complete_unification
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.74.a
+		custom_effect_tooltip = NAT_Unify_All_Flame_Tribes_Tooltip
+		add_political_power = 200
+		add_manpower = 150000
+		set_national_stability = 1.0
+	}
+}
+
+# 75. 永恒火焰军团
+country_event = {
+	id = NAT_Event.75
+	title = NAT_Event.75.t
+	desc = NAT_Event.75.d
+	picture = GFX_evt_eternal_army
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.75.a
+		custom_effect_tooltip = NAT_Flame_Army_Of_The_Eternal_Tooltip
+		add_recruitment_speed = { type = land  value = 0.35 }
+		add_army_size = 0.30
+		add_manpower = 200000
+	}
+}
+
+# 76. 提瓦特的炉心
+country_event = {
+	id = NAT_Event.76
+	title = NAT_Event.76.t
+	desc = NAT_Event.76.d
+	picture = GFX_evt_global_power_hub
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.76.a
+		custom_effect_tooltip = NAT_Furnace_Heart_Of_Teyvat_Tooltip
+		add_electricity = 6000
+		add_industrial_efficiency = 0.30
+		add_civilian_factory = 20
+	}
+}
+
+# 77. 火焰外交至上
+country_event = {
+	id = NAT_Event.77
+	title = NAT_Event.77.t
+	desc = NAT_Event.77.d
+	picture = GFX_evt_diplomatic_supremacy
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.77.a
+		custom_effect_tooltip = NAT_Flame_Diplomatic_Supremacy_Tooltip
+		add_diplomatic_influence = { target = WORLD  value = 20 }
+		add_diplomatic_weight = 40
+		add_relations = { target = ALL  value = 25 }
+	}
+}
+
+# 78. 玛薇卡的火焰祝福
+country_event = {
+	id = NAT_Event.78
+	title = NAT_Event.78.t
+	desc = NAT_Event.78.d
+	picture = GFX_evt_ultimate_blessing
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.78.a
+		custom_effect_tooltip = NAT_Mavuika_s_Blessing_Of_The_Flame_Tooltip
+		add_war_factory = 25
+		add_equipment_to_stockpile = { type = rocket_equipment_2  amount = 300  producer = NAT }
+		add_industrial_capacity = 25
+	}
+}
+
+# 79. 火焰战胜逆境
+country_event = {
+	id = NAT_Event.79
+	title = NAT_Event.79.t
+	desc = NAT_Event.79.d
+	picture = GFX_evt_final_victory
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.79.a
+		custom_effect_tooltip = NAT_Flame_Victory_Over_Adversity_Tooltip
+		add_land_defense = { value = 0.35  duration = 1825 }
+		reduce_war_exhaustion = 1.0
+		add_government_authority = 40
+	}
+}
+
+# 80. 燃烧之地纳塔的荣耀
+country_event = {
+	id = NAT_Event.80
+	title = NAT_Event.80.t
+	desc = NAT_Event.80.d
+	picture = GFX_evt_national_glory
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = NAT_Event.80.a
+		custom_effect_tooltip = NAT_Glory_Of_Natlan_The_Burning_Land_Tooltip
+		set_national_stability = 1.0
+		add_happiness = { target = all  value = 0.30 }
+		add_war_support = 0.60
+		add_civilian_factory = 25
+		add_war_factory = 20
+		add_land_attack = { value = 0.30  duration = 1825 }
+	}
+}

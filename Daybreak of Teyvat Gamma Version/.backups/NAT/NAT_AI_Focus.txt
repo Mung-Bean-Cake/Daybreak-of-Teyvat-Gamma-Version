@@ -1,0 +1,1233 @@
+###########################
+# 
+###########################
+
+focus_tree = {
+	id = NAT_Neo_Focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			or = {
+				tag = NAT
+			}
+		}
+	}
+	default = no
+	continuous_focus_position = {
+		x = 20
+		y = 900
+	}
+
+	# 阶段1：部族凝聚（核心主干，y=1-5，x=20为中心）
+	focus = {
+		id = NAT_Unite_The_Flame_Tribes
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 20  # 主干核心列
+		y = 1
+		completion_reward = {
+			custom_effect_tooltip = NAT_Unite_The_Flame_Tribes_Tooltip
+			add_political_power = 200
+			set_country_flag = NAT_Unite_The_Flame_Tribes
+			add_war_support = 0.15
+			country_event = { id = NAT_Event.1  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Reconcile_The_Ash_Tribe
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 18  # 主干左侧分支（x-2）
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = NAT_Reconcile_The_Ash_Tribe_Tooltip
+			add_political_power = 180
+			set_country_flag = NAT_Reconcile_The_Ash_Tribe
+			add_stability = 0.10
+			country_event = { id = NAT_Event.2  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Strengthen_Tribe_Alliances
+		icon = GFX_Goal_POL_Alliances
+		cost = 8.00
+		x = 22  # 主干右侧分支（x+2）
+		y = 2
+		completion_reward = {
+			custom_effect_tooltip = NAT_Strengthen_Tribe_Alliances_Tooltip
+			add_political_power = 150
+			set_country_flag = NAT_Strengthen_Tribe_Alliances
+			add_relations = { target = NAT_Tribe_Allies value = 25 }
+			country_event = { id = NAT_Event.3  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Establish_Tribal_Council
+		icon = GFX_Goal_POL_Government
+		cost = 8.00
+		x = 16  # 左侧二级分支（x-4）
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = NAT_Establish_Tribal_Council_Tooltip
+			add_political_power = 170
+			set_country_flag = NAT_Establish_Tribal_Council
+			change_government_support = { ideology = authoritarianism value = 0.05 }
+			country_event = { id = NAT_Event.4  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Tribe_Festival
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 20  # 主干延伸（x=20）
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Tribe_Festival_Tooltip
+			add_war_support = 0.20
+			set_country_flag = NAT_Flame_Tribe_Festival
+			add_happiness = 0.10
+			country_event = { id = NAT_Event.5  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Integrate_The_Cinder_Tribe
+		icon = GFX_Goal_ECON_Infrastructure
+		cost = 8.00
+		x = 24  # 右侧二级分支（x+4）
+		y = 3
+		completion_reward = {
+			custom_effect_tooltip = NAT_Integrate_The_Cinder_Tribe_Tooltip
+			add_industrial_capacity_bonus = 15
+			set_country_flag = NAT_Integrate_The_Cinder_Tribe
+			add_resource = { type = steel amount = 500 }
+			country_event = { id = NAT_Event.6  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Tribal_Military_Training
+		icon = GFX_Goal_MIL_Doctrine
+		cost = 8.00
+		x = 14  # 左侧三级分支（x-6）
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = NAT_Tribal_Military_Training_Tooltip
+			add_army_experience = 100
+			set_country_flag = NAT_Tribal_Military_Training
+			add_land_attack_bonus = 0.05
+			country_event = { id = NAT_Event.7  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Resolve_Tribal_Border_Disputes
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = NAT_Resolve_Tribal_Border_Disputes_Tooltip
+			add_stability = 0.15
+			set_country_flag = NAT_Resolve_Tribal_Border_Disputes
+			reduce_war_exhaustion = 0.10
+			country_event = { id = NAT_Event.8  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Chieftains_Gathering
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Chieftains_Gathering_Tooltip
+			add_political_power = 220
+			set_country_flag = NAT_Flame_Chieftains_Gathering
+			add_government_authority_bonus = 10
+			country_event = { id = NAT_Event.9  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Adopt_Tribal_Legal_Code
+		icon = GFX_Goal_POL_Government
+		cost = 8.00
+		x = 26  # 右侧三级分支（x+6）
+		y = 4
+		completion_reward = {
+			custom_effect_tooltip = NAT_Adopt_Tribal_Legal_Code_Tooltip
+			add_stability = 0.20
+			set_country_flag = NAT_Adopt_Tribal_Legal_Code
+			add_political_power = 50
+			country_event = { id = NAT_Event.10  days = 2 }
+		}
+	}
+
+	# 阶段2：炉心守护（根系向下延伸，y=5-9）
+	focus = {
+		id = NAT_Guard_The_Furnace_Heart
+		icon = GFX_Goal_MIL_Fortifications
+		cost = 8.00
+		x = 12  # 左侧四级分支（x-8）
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = NAT_Guard_The_Furnace_Heart_Tooltip
+			add_land_defense_bonus = 0.10
+			set_country_flag = NAT_Guard_The_Furnace_Heart
+			build_fortifications = { level = 1 province = NAT_Furnace_Heart_Province amount = 3 }
+			country_event = { id = NAT_Event.11  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Repair_Furnace_Heart_Barriers
+		icon = GFX_Goal_ECON_Construction
+		cost = 8.00
+		x = 16  # 左侧三级分支延伸（x-4）
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = NAT_Repair_Furnace_Heart_Barriers_Tooltip
+			add_construction_speed_bonus = 0.15
+			set_country_flag = NAT_Repair_Furnace_Heart_Barriers
+			add_infrastructure = { province = NAT_Furnace_Heart_Province amount = 5 }
+			country_event = { id = NAT_Event.12  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Charge_The_Furnace_Heart
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 20  # 主干继续向下（x=20）
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = NAT_Charge_The_Furnace_Heart_Tooltip
+			add_war_industry = 10
+			set_country_flag = NAT_Charge_The_Furnace_Heart
+			add_equipment_to_stockpile = { type = infantry_equipment_1  amount = 100 producer = NAT }
+			country_event = { id = NAT_Event.13  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Monitor_Furnace_Heart_Energy
+		icon = GFX_Goal_ESP_Intelligence
+		cost = 8.00
+		x = 24  # 右侧三级分支延伸（x+4）
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = NAT_Monitor_Furnace_Heart_Energy_Tooltip
+			add_intelligence_agency_efficiency_bonus = 0.05
+			set_country_flag = NAT_Monitor_Furnace_Heart_Energy
+			add_espionage_efficiency_bonus = { target = WORLD value = 0.05 }
+			country_event = { id = NAT_Event.14  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Sacrifice_Ritual
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 28  # 右侧四级分支（x+8）
+		y = 5
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Sacrifice_Ritual_Tooltip
+			add_war_support = 0.25
+			set_country_flag = NAT_Furnace_Heart_Sacrifice_Ritual
+			add_happiness = 0.15
+			country_event = { id = NAT_Event.15  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Recruit_Furnace_Guardians
+		icon = GFX_Goal_MIL_Recruitment
+		cost = 8.00
+		x = 10  # 左侧五级分支（x-10）
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = NAT_Recruit_Furnace_Guardians_Tooltip
+			add_land_recruitment_speed_bonus = 0.10
+			set_country_flag = NAT_Recruit_Furnace_Guardians
+			add_manpower = 50000
+			country_event = { id = NAT_Event.16  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Upgrade_Furnace_Heart_Forge
+		icon = GFX_Goal_ECON_Industry
+		cost = 8.00
+		x = 14  # 左侧四级分支延伸（x-6）
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = NAT_Upgrade_Furnace_Heart_Forge_Tooltip
+			add_civilian_industry = 12
+			set_country_flag = NAT_Upgrade_Furnace_Heart_Forge
+			add_factory_output_bonus = 0.08
+			country_event = { id = NAT_Event.17  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Seal_Furnace_Heart_Rifts
+		icon = GFX_Goal_MIL_Fortifications
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = NAT_Seal_Furnace_Heart_Rifts_Tooltip
+			add_land_defense_bonus = 0.15
+			set_country_flag = NAT_Seal_Furnace_Heart_Rifts
+			build_fortifications = { level = 2 province = NAT_Furnace_Heart_Province amount = 2 }
+			country_event = { id = NAT_Event.18  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Harness_Furnace_Heart_Heat
+		icon = GFX_Goal_ECON_Power_Plants
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = NAT_Harness_Furnace_Heart_Heat_Tooltip
+			add_electricity_production_bonus = 20
+			set_country_flag = NAT_Harness_Furnace_Heart_Heat
+			add_industrial_efficiency_bonus = 0.10
+			country_event = { id = NAT_Event.19  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Emergency_Protocol
+		icon = GFX_Goal_MIL_Mobilization
+		cost = 8.00
+		x = 26  # 右侧三级分支延伸（x+6）
+		y = 6
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Emergency_Protocol_Tooltip
+			add_mobilization_speed_bonus = 0.20
+			set_country_flag = NAT_Furnace_Heart_Emergency_Protocol
+			reduce_war_exhaustion = 0.10
+			country_event = { id = NAT_Event.20  days = 2 }
+		}
+	}
+
+	# 阶段3：玛薇卡的意志（根系继续向下+向外，y=7-11）
+	focus = {
+		id = NAT_Mavuika_s_Declaration_Of_Will
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 8   # 左侧六级分支（x-12）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Declaration_Of_Will_Tooltip
+			add_political_power = 250
+			set_country_flag = NAT_Mavuika_s_Declaration_Of_Will
+			add_government_authority_bonus = 15
+			country_event = { id = NAT_Event.21  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Duel_Challenge
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 12  # 左侧四级分支延伸（x-8）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Duel_Challenge_Tooltip
+			add_land_attack_bonus = 0.10
+			set_country_flag = NAT_Mavuika_s_Duel_Challenge
+			add_war_support = 0.30
+			country_event = { id = NAT_Event.22  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Flame_Blessing
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 16  # 左侧三级分支延伸（x-4）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Flame_Blessing_Tooltip
+			add_war_industry = 15
+			set_country_flag = NAT_Mavuika_s_Flame_Blessing
+			add_equipment_to_stockpile = { type = armor_equipment_1  amount = 30 producer = NAT }
+			country_event = { id = NAT_Event.23  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Tribal_Unification
+		icon = GFX_Goal_POL_Alliances
+		cost = 8.00
+		x = 20  # 主干核心延伸（x=20）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Tribal_Unification_Tooltip
+			add_relations = { target = ALL value = 15 }
+			set_country_flag = NAT_Mavuika_s_Tribal_Unification
+			add_stability = 0.25
+			country_event = { id = NAT_Event.24  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_War_Cry
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 24  # 右侧三级分支延伸（x+4）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_War_Cry_Tooltip
+			add_nationalism = 0.20
+			set_country_flag = NAT_Mavuika_s_War_Cry
+			add_war_support = 0.35
+			country_event = { id = NAT_Event.25  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Furnace_Heart_Vow
+		icon = GFX_Goal_POL_Government
+		cost = 8.00
+		x = 28  # 右侧四级分支延伸（x+8）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Furnace_Heart_Vow_Tooltip
+			add_stability = 0.30
+			set_country_flag = NAT_Mavuika_s_Furnace_Heart_Vow
+			change_government_support = { ideology = fascism value = 0.08 }
+			country_event = { id = NAT_Event.26  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Warriors_Training
+		icon = GFX_Goal_MIL_Doctrine
+		cost = 8.00
+		x = 32  # 右侧五级分支（x+12）
+		y = 7
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Warriors_Training_Tooltip
+			add_army_experience = 200
+			set_country_flag = NAT_Mavuika_s_Warriors_Training
+			add_land_combat_experience_gain_bonus = 0.10
+			country_event = { id = NAT_Event.27  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Diplomatic_Assertion
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 10  # 左侧五级分支延伸（x-10）
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Diplomatic_Assertion_Tooltip
+			add_diplomatic_influence = { target = NEIGHBOR_COUNTRIES value = 10 }
+			set_country_flag = NAT_Mavuika_s_Diplomatic_Assertion
+			add_diplomatic_weight_bonus = 5
+			country_event = { id = NAT_Event.28  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Flame_Army
+		icon = GFX_Goal_MIL_Recruitment
+		cost = 8.00
+		x = 14  # 左侧四级分支延伸（x-6）
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Flame_Army_Tooltip
+			add_land_recruitment_speed_bonus = 0.20
+			set_country_flag = NAT_Mavuika_s_Flame_Army
+			add_manpower = 100000
+			country_event = { id = NAT_Event.29  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Ultimate_Flame
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 8
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Ultimate_Flame_Tooltip
+			add_war_industry = 20
+			set_country_flag = NAT_Mavuika_s_Ultimate_Flame
+			add_equipment_to_stockpile = { type = rocket_equipment_1  amount = 20 producer = NAT }
+			country_event = { id = NAT_Event.30  days = 2 }
+		}
+	}
+
+	# 阶段4：对外彰显（根系右侧扩展，y=9-13）
+	focus = {
+		id = NAT_Showcase_Flame_Pride
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = NAT_Showcase_Flame_Pride_Tooltip
+			add_nationalism = 0.25
+			set_country_flag = NAT_Showcase_Flame_Pride
+			add_war_support = 0.20
+			country_event = { id = NAT_Event.31  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Embassy_In_Liyue
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 26  # 右侧三级分支延伸（x+6）
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Embassy_In_Liyue_Tooltip
+			add_relations = { target = LIYUE value = 30 }
+			set_country_flag = NAT_Flame_Embassy_In_Liyue
+			add_trade_agreement = { target = LIYUE }
+			country_event = { id = NAT_Event.32  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Embassy_In_Mondstadt
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 30  # 右侧六级分支（x+10）
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Embassy_In_Mondstadt_Tooltip
+			add_relations = { target = MONDSTADT value = 30 }
+			set_country_flag = NAT_Flame_Embassy_In_Mondstadt
+			add_trade_agreement = { target = MONDSTADT }
+			country_event = { id = NAT_Event.33  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Diplomatic_Mission_To_Sumeru
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 34  # 右侧七级分支（x+14）
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Diplomatic_Mission_To_Sumeru_Tooltip
+			add_relations = { target = SUMERU value = 25 }
+			set_country_flag = NAT_Flame_Diplomatic_Mission_To_Sumeru
+			add_research_bonus = { type = industrial_technology value = 0.05 }
+			country_event = { id = NAT_Event.34  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Diplomatic_Mission_To_Inazuma
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 38  # 右侧八级分支（x+18）
+		y = 9
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Diplomatic_Mission_To_Inazuma_Tooltip
+			add_relations = { target = INAZUMA value = 20 }
+			set_country_flag = NAT_Flame_Diplomatic_Mission_To_Inazuma
+			add_naval_attack_bonus = 0.05
+			country_event = { id = NAT_Event.35  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Sports_Festival
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 24  # 右侧三级分支延伸（x+4）
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Sports_Festival_Tooltip
+			add_happiness = 0.20
+			set_country_flag = NAT_Flame_Sports_Festival
+			add_war_support = 0.15
+			country_event = { id = NAT_Event.36  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Cultural_Exchange
+		icon = GFX_Goal_ESP_Culture
+		cost = 8.00
+		x = 28  # 右侧四级分支延伸（x+8）
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Cultural_Exchange_Tooltip
+			add_cultural_influence = { target = WORLD value = 0.10 }
+			set_country_flag = NAT_Flame_Cultural_Exchange
+			add_stability = 0.10
+			country_event = { id = NAT_Event.37  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Trade_Route_Expansion
+		icon = GFX_Goal_ECON_Trade
+		cost = 8.00
+		x = 32  # 右侧五级分支延伸（x+12）
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Trade_Route_Expansion_Tooltip
+			add_trade_efficiency_bonus = 0.15
+			set_country_flag = NAT_Flame_Trade_Route_Expansion
+			add_resource = { type = rubber amount = 300 }
+			country_event = { id = NAT_Event.38  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Peacekeeping_Force
+		icon = GFX_Goal_MIL_Peacekeeping
+		cost = 8.00
+		x = 36  # 右侧九级分支（x+16）
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Peacekeeping_Force_Tooltip
+			add_peacekeeping_bonus = 0.20
+			set_country_flag = NAT_Flame_Peacekeeping_Force
+			add_relations = { target = MINOR_COUNTRIES value = 20 }
+			country_event = { id = NAT_Event.39  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_International_Duel_Tournament
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 40  # 右侧十级分支（x+20）
+		y = 10
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_International_Duel_Tournament_Tooltip
+			add_land_attack_bonus = 0.15
+			set_country_flag = NAT_Flame_International_Duel_Tournament
+			add_war_support = 0.25
+			country_event = { id = NAT_Event.40  days = 2 }
+		}
+	}
+
+	# 阶段5：决斗体系（根系左侧扩展，y=11-15）
+	focus = {
+		id = NAT_Establish_Duel_Code
+		icon = GFX_Goal_POL_Government
+		cost = 8.00
+		x = 6   # 左侧七级分支（x-14）
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = NAT_Establish_Duel_Code_Tooltip
+			add_stability = 0.20
+			set_country_flag = NAT_Establish_Duel_Code
+			add_political_power = 75
+			country_event = { id = NAT_Event.41  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Arena_Construction
+		icon = GFX_Goal_ECON_Construction
+		cost = 8.00
+		x = 8   # 左侧六级分支延伸（x-12）
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Arena_Construction_Tooltip
+			add_construction_speed_bonus = 0.20
+			set_country_flag = NAT_Duel_Arena_Construction
+			build_civilian_factories = { province = NAT_Capital_Province amount = 8 }
+			country_event = { id = NAT_Event.42  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Champion_Title
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 10  # 左侧五级分支延伸（x-10）
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Champion_Title_Tooltip
+			add_land_attack_bonus = 0.20
+			set_country_flag = NAT_Duel_Champion_Title
+			add_army_experience = 150
+			country_event = { id = NAT_Event.43  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Training_Camps
+		icon = GFX_Goal_MIL_Recruitment
+		cost = 8.00
+		x = 12  # 左侧四级分支延伸（x-8）
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Training_Camps_Tooltip
+			add_land_recruitment_speed_bonus = 0.15
+			set_country_flag = NAT_Duel_Training_Camps
+			add_manpower = 75000
+			country_event = { id = NAT_Event.44  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Reward_System
+		icon = GFX_Goal_ECON_Economy
+		cost = 8.00
+		x = 14  # 左侧四级分支延伸（x-6）
+		y = 11
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Reward_System_Tooltip
+			add_happiness = 0.25
+			set_country_flag = NAT_Duel_Reward_System
+			change_consumer_goods_factor = -0.02
+			country_event = { id = NAT_Event.45  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Against_Foreign_Warriors
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 16  # 左侧三级分支延伸（x-4）
+		y = 12
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Against_Foreign_Warriors_Tooltip
+			add_land_attack_bonus = 0.25
+			set_country_flag = NAT_Duel_Against_Foreign_Warriors
+			add_war_support = 0.30
+			country_event = { id = NAT_Event.46  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Mediation_Council
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 12
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Mediation_Council_Tooltip
+			add_relations = { target = ALL value = 10 }
+			set_country_flag = NAT_Duel_Mediation_Council
+			add_stability = 0.15
+			country_event = { id = NAT_Event.47  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Flame_Blessing
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 20  # 主干核心延伸（x=20）
+		y = 12
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Flame_Blessing_Tooltip
+			add_war_industry = 18
+			set_country_flag = NAT_Duel_Flame_Blessing
+			add_equipment_to_stockpile = { type = motorized_equipment_1  amount = 40 producer = NAT }
+			country_event = { id = NAT_Event.48  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Duel_Legal_Recognition
+		icon = GFX_Goal_POL_Government
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 12
+		completion_reward = {
+			custom_effect_tooltip = NAT_Duel_Legal_Recognition_Tooltip
+			add_government_authority_bonus = 20
+			set_country_flag = NAT_Duel_Legal_Recognition
+			change_government_support = { ideology = authoritarianism value = 0.10 }
+			country_event = { id = NAT_Event.49  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Ultimate_Duel_Of_Flame
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 24  # 右侧三级分支延伸（x+4）
+		y = 12
+		completion_reward = {
+			custom_effect_tooltip = NAT_Ultimate_Duel_Of_Flame_Tooltip
+			add_land_attack_bonus = 0.30
+			set_country_flag = NAT_Ultimate_Duel_Of_Flame
+			add_war_support = 0.40
+			add_army_experience = 300
+			country_event = { id = NAT_Event.50  days = 2 }
+		}
+	}
+
+	# 阶段6：火焰权能强化（根系向下密集展开，y=13-17）
+	focus = {
+		id = NAT_Flame_Enchantment_Technique
+		icon = GFX_Goal_MIL_Doctrine
+		cost = 8.00
+		x = 4   # 左侧八级分支（x-16）
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Enchantment_Technique_Tooltip
+			add_land_attack_bonus = 0.08
+			set_country_flag = NAT_Flame_Enchantment_Technique
+			add_equipment_quality_bonus = { type = infantry_equipment value = 0.10 }
+			country_event = { id = NAT_Event.51  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Surge_Of_Flame_Tactics
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 6   # 左侧七级分支延伸（x-14）
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = NAT_Surge_Of_Flame_Tactics_Tooltip
+			add_land_breakthrough_bonus = 0.15
+			set_country_flag = NAT_Surge_Of_Flame_Tactics
+			add_doctrine_progress = { type = mobile_warfare value = 5 }
+			country_event = { id = NAT_Event.52  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Fire_Element_Resonance
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 8   # 左侧六级分支延伸（x-12）
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = NAT_Fire_Element_Resonance_Tooltip
+			add_war_industry = 12
+			set_country_flag = NAT_Fire_Element_Resonance
+			add_factory_output_bonus = 0.12
+			country_event = { id = NAT_Event.53  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Inferno_Shield_Development
+		icon = GFX_Goal_MIL_Fortifications
+		cost = 8.00
+		x = 10  # 左侧五级分支延伸（x-10）
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = NAT_Inferno_Shield_Development_Tooltip
+			add_land_defense_bonus = 0.12
+			set_country_flag = NAT_Inferno_Shield_Development
+			add_land_armor_value_bonus = 10
+			country_event = { id = NAT_Event.54  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Wave_Offensive
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 12  # 左侧四级分支延伸（x-8）
+		y = 13
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Wave_Offensive_Tooltip
+			add_land_attack_bonus = 0.12
+			set_country_flag = NAT_Flame_Wave_Offensive
+			add_air_superiority_land_attack_bonus = 0.08
+			country_event = { id = NAT_Event.55  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Ignite_The_Battlefield
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 14  # 左侧四级分支延伸（x-6）
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = NAT_Ignite_The_Battlefield_Tooltip
+			add_war_industry = 14
+			set_country_flag = NAT_Ignite_The_Battlefield
+			add_equipment_to_stockpile = { type = artillery_equipment_1  amount = 60 producer = NAT }
+			country_event = { id = NAT_Event.56  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Resistance_Training
+		icon = GFX_Goal_MIL_Recruitment
+		cost = 8.00
+		x = 16  # 左侧三级分支延伸（x-4）
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Resistance_Training_Tooltip
+			add_manpower = 60000
+			set_country_flag = NAT_Flame_Resistance_Training
+			add_land_survival_bonus = 0.10
+			country_event = { id = NAT_Event.57  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Flame_Embrace
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Flame_Embrace_Tooltip
+			add_nationalism = 0.30
+			set_country_flag = NAT_Mavuika_s_Flame_Embrace
+			add_happiness = 0.20
+			country_event = { id = NAT_Event.58  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Elemental_Core_Research
+		icon = GFX_Goal_TEC_Research
+		cost = 8.00
+		x = 20  # 主干核心延伸（x=20）
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Elemental_Core_Research_Tooltip
+			add_research_speed_bonus = 0.15
+			set_country_flag = NAT_Flame_Elemental_Core_Research
+			add_nuclear_research = 10
+			country_event = { id = NAT_Event.59  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Unyielding_Flame_Will
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 14
+		completion_reward = {
+			custom_effect_tooltip = NAT_Unyielding_Flame_Will_Tooltip
+			add_political_power = 300
+			set_country_flag = NAT_Unyielding_Flame_Will
+			add_war_support = 0.45
+			country_event = { id = NAT_Event.60  days = 2 }
+		}
+	}
+
+	# 阶段7：炉心终极进化（根系底部左侧收敛，y=15-19）
+	focus = {
+		id = NAT_Furnace_Heart_Ascension
+		icon = GFX_Goal_ECON_Power_Plants
+		cost = 8.00
+		x = 2   # 左侧九级分支（x-18）
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Ascension_Tooltip
+			add_electricity_production_bonus = 40
+			set_country_flag = NAT_Furnace_Heart_Ascension
+			add_industrial_efficiency_bonus = 0.18
+			country_event = { id = NAT_Event.61  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Elemental_Furnace_Integration
+		icon = GFX_Goal_ECON_Industry
+		cost = 8.00
+		x = 4   # 左侧八级分支延伸（x-16）
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = NAT_Elemental_Furnace_Integration_Tooltip
+			add_civilian_industry = 20
+			set_country_flag = NAT_Elemental_Furnace_Integration
+			add_resource = { type = aluminum amount = 400 }
+			country_event = { id = NAT_Event.62  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Eternal_Flame_Initiative
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 6   # 左侧七级分支延伸（x-14）
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = NAT_Eternal_Flame_Initiative_Tooltip
+			add_nationalism = 0.35
+			set_country_flag = NAT_Eternal_Flame_Initiative
+			add_stability = 0.35
+			country_event = { id = NAT_Event.63  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Overdrive
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 8   # 左侧六级分支延伸（x-12）
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Overdrive_Tooltip
+			add_war_industry = 25
+			set_country_flag = NAT_Furnace_Heart_Overdrive
+			add_equipment_to_stockpile = { type = modern_tank_equipment_1  amount = 50 producer = NAT }
+			country_event = { id = NAT_Event.64  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Repel_Furnace_Invaders
+		icon = GFX_Goal_MIL_Fortifications
+		cost = 8.00
+		x = 10  # 左侧五级分支延伸（x-10）
+		y = 15
+		completion_reward = {
+			custom_effect_tooltip = NAT_Repel_Furnace_Invaders_Tooltip
+			add_land_defense_bonus = 0.22
+			set_country_flag = NAT_Repel_Furnace_Invaders
+			add_land_anti_tank_bonus = 0.15
+			country_event = { id = NAT_Event.65  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Enlightenment
+		icon = GFX_Goal_TEC_Research
+		cost = 8.00
+		x = 12  # 左侧四级分支延伸（x-8）
+		y = 16
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Enlightenment_Tooltip
+			add_research_speed_bonus = 0.20
+			set_country_flag = NAT_Furnace_Heart_Enlightenment
+			add_rocket_research = 15
+			country_event = { id = NAT_Event.66  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Forge_Mastery
+		icon = GFX_Goal_ECON_Construction
+		cost = 8.00
+		x = 14  # 左侧四级分支延伸（x-6）
+		y = 16
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Forge_Mastery_Tooltip
+			add_construction_speed_bonus = 0.25
+			set_country_flag = NAT_Flame_Forge_Mastery
+			build_naval_base = { province = NAT_Coastal_Province level = 2 }
+			country_event = { id = NAT_Event.67  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Synergy
+		icon = GFX_Goal_POL_Alliances
+		cost = 8.00
+		x = 16  # 左侧三级分支延伸（x-4）
+		y = 16
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Synergy_Tooltip
+			add_relations = { target = NAT_Allied_Tribes value = 40 }
+			set_country_flag = NAT_Furnace_Heart_Synergy
+			add_alliance_cohesion_bonus = 0.15
+			country_event = { id = NAT_Event.68  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Armor_Development
+		icon = GFX_Goal_MIL_Armor
+		cost = 8.00
+		x = 18  # 左侧二级分支延伸（x-2）
+		y = 16
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Armor_Development_Tooltip
+			add_land_armor_attack_bonus = 0.20
+			set_country_flag = NAT_Flame_Armor_Development
+			add_equipment_to_stockpile = { type = heavy_tank_equipment_1  amount = 25 producer = NAT }
+			country_event = { id = NAT_Event.69  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Transcend_Furnace_Limits
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 20  # 主干核心延伸（x=20）
+		y = 16
+		completion_reward = {
+			custom_effect_tooltip = NAT_Transcend_Furnace_Limits_Tooltip
+			add_political_power = 350
+			set_country_flag = NAT_Transcend_Furnace_Limits
+			add_government_authority_bonus = 25
+			country_event = { id = NAT_Event.70  days = 2 }
+		}
+	}
+
+	# 阶段8：燃烧的终章（根系底部右侧收敛，y=17-20）
+	focus = {
+		id = NAT_Teyvat_Flame_Alliance
+		icon = GFX_Goal_POL_Alliances
+		cost = 8.00
+		x = 22  # 右侧二级分支延伸（x+2）
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = NAT_Teyvat_Flame_Alliance_Tooltip
+			add_relations = { target = ALL_TEYVAT_COUNTRIES value = 35 }
+			set_country_flag = NAT_Teyvat_Flame_Alliance
+			add_diplomatic_weight_bonus = 15
+			country_event = { id = NAT_Event.71  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Ultimate_Duel
+		icon = GFX_Goal_MIL_Offensive
+		cost = 8.00
+		x = 24  # 右侧三级分支延伸（x+4）
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Ultimate_Duel_Tooltip
+			add_land_attack_bonus = 0.40
+			set_country_flag = NAT_Mavuika_s_Ultimate_Duel
+			add_war_support = 0.50
+			country_event = { id = NAT_Event.72  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Supremacy_In_Teyvat
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 26  # 右侧三级分支延伸（x+6）
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Supremacy_In_Teyvat_Tooltip
+			add_nationalism = 0.40
+			set_country_flag = NAT_Flame_Supremacy_In_Teyvat
+			add_cultural_influence = { target = WORLD value = 0.20 }
+			country_event = { id = NAT_Event.73  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Unify_All_Flame_Tribes
+		icon = GFX_Goal_POL_Political_Power
+		cost = 8.00
+		x = 28  # 右侧四级分支延伸（x+8）
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = NAT_Unify_All_Flame_Tribes_Tooltip
+			add_political_power = 400
+			set_country_flag = NAT_Unify_All_Flame_Tribes
+			add_manpower = 200000
+			country_event = { id = NAT_Event.74  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Army_Of_The_Eternal
+		icon = GFX_Goal_MIL_Recruitment
+		cost = 8.00
+		x = 30  # 右侧六级分支延伸（x+10）
+		y = 17
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Army_Of_The_Eternal_Tooltip
+			add_land_recruitment_speed_bonus = 0.30
+			set_country_flag = NAT_Flame_Army_Of_The_Eternal
+			add_land_army_size_bonus = 0.25
+			country_event = { id = NAT_Event.75  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Furnace_Heart_Of_Teyvat
+		icon = GFX_Goal_ECON_Power_Plants
+		cost = 8.00
+		x = 32  # 右侧五级分支延伸（x+12）
+		y = 18
+		completion_reward = {
+			custom_effect_tooltip = NAT_Furnace_Heart_Of_Teyvat_Tooltip
+			add_electricity_production_bonus = 60
+			set_country_flag = NAT_Furnace_Heart_Of_Teyvat
+			add_industrial_efficiency_bonus = 0.25
+			country_event = { id = NAT_Event.76  days = 2 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Diplomatic_Supremacy
+		icon = GFX_Goal_POL_Diplomacy
+		cost = 8.00
+		x = 34  # 右侧七级分支延伸（x+14）
+		y = 18
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Diplomatic_Supremacy_Tooltip
+			add_diplomatic_influence = { target = WORLD value = 15 }
+			set_country_flag = NAT_Flame_Diplomatic_Supremacy
+			add_diplomatic_weight_bonus = 20
+			country_event = { id = NAT_Event.77  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Mavuika_s_Blessing_Of_The_Flame
+		icon = GFX_Goal_MIL_War_Industry
+		cost = 8.00
+		x = 36  # 右侧九级分支延伸（x+16）
+		y = 18
+		completion_reward = {
+			custom_effect_tooltip = NAT_Mavuika_s_Blessing_Of_The_Flame_Tooltip
+			add_war_industry = 30
+			set_country_flag = NAT_Mavuika_s_Blessing_Of_The_Flame
+			add_equipment_to_stockpile = { type = rocket_equipment_2  amount = 40 producer = NAT }
+			country_event = { id = NAT_Event.78  days = 3 }
+		}
+	}
+
+	focus = {
+		id = NAT_Flame_Victory_Over_Adversity
+		icon = GFX_Goal_MIL_Fortifications
+		cost = 8.00
+		x = 38  # 右侧八级分支延伸（x+18）
+		y = 18
+		completion_reward = {
+			custom_effect_tooltip = NAT_Flame_Victory_Over_Adversity_Tooltip
+			add_land_defense_bonus = 0.30
+			set_country_flag = NAT_Flame_Victory_Over_Adversity
+			reduce_war_exhaustion = 0.25
+			country_event = { id = NAT_Event.79  days = 1 }
+		}
+	}
+
+	focus = {
+		id = NAT_Glory_Of_Natlan_The_Burning_Land
+		icon = GFX_Goal_ESP_Nationalism
+		cost = 8.00
+		x = 40  # 右侧十级分支延伸（x+20）
+		y = 18
+		completion_reward = {
+			custom_effect_tooltip = NAT_Glory_Of_Natlan_The_Burning_Land_Tooltip
+			add_stability = 0.50
+			set_country_flag = NAT_Glory_Of_Natlan_The_Burning_Land
+			add_happiness = 0.40
+			add_war_support = 0.60
+			country_event = { id = NAT_Event.80  days = 2 }
+		}
+	}
+
+#国策结束
+}

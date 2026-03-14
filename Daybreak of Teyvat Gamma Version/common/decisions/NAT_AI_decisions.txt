@@ -1,0 +1,554 @@
+
+
+NAT_Decisions = {
+
+    #### 基础部族类（1-10）
+    
+    # 1. 决议：凝聚火焰部族
+    NAT_decision_01 = {
+        icon = eng_install_government
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Flame_Tribe_Unity
+            add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = NAT }
+            add_political_power = 10
+        }
+    }
+
+    # 2. 决议：和解灰烬部族
+    NAT_decision_02 = {
+        icon = generic_decision_diplomatic
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Ash_Tribe_Reconciliation
+            add_equipment_to_stockpile = { type = support_equipment  amount = 300  producer = NAT }
+            add_political_power = 8
+            reduce_war_exhaustion = 0.05
+        }
+    }
+
+    # 3. 决议：强化部族同盟
+    NAT_decision_03 = {
+        icon = generic_decision_alliance
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Tribe_Alliance_Strength
+            add_diplomatic_weight = 5
+            add_political_power = 12
+            add_relations = { target = ALL  value = 5 }
+        }
+    }
+
+    # 4. 决议：确立部族议会权威
+    NAT_decision_04 = {
+        icon = generic_decision_political
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Tribal_Council_Authority
+            add_government_authority = 5
+            add_political_power = 15
+            set_national_stability = { value = 0.05  add = yes }
+        }
+    }
+
+    # 5. 决议：举办火焰庆典
+    NAT_decision_05 = {
+        icon = generic_decision_cultural
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Flame_Festival_Spirit
+            add_happiness = { target = all  value = 0.05 }
+            add_war_support = 0.08
+            add_political_power = 8
+        }
+    }
+
+    # 6. 决议：整合烬火工业
+    NAT_decision_06 = {
+        icon = generic_decision_industrial
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Cinder_Industry_Integration
+            add_civilian_factory = 3
+            add_equipment_to_stockpile = { type = steel  amount = 10000  producer = NAT }
+            add_industrial_capacity = 5
+        }
+    }
+
+    # 7. 决议：传承部族军事
+    NAT_decision_07 = {
+        icon = generic_decision_military
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Tribal_Military_Heritage
+            add_army_experience = 30
+            add_equipment_to_stockpile = { type = artillery_equipment  amount = 200  producer = NAT }
+            add_land_recruitment_speed = 0.05
+        }
+    }
+
+    # 8. 决议：平息边境争端
+    NAT_decision_08 = {
+        icon = generic_decision_peace
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Border_Dispute_Resolution
+            add_political_power = 10
+            reduce_war_exhaustion = 0.08
+            set_national_stability = { value = 0.08  add = yes }
+        }
+    }
+
+    # 9. 决议：树立酋长领导力
+    NAT_decision_09 = {
+        icon = generic_decision_leadership
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Flame_Chieftain_Leadership
+            add_government_authority = 8
+            add_political_power = 20
+            add_nationalism = 0.05
+        }
+    }
+
+    # 10. 决议：推行部族法典
+    NAT_decision_10 = {
+        icon = generic_decision_legal
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 5 }
+            add_ideas = NAT_Tribal_Code_Order
+            add_legal_efficiency = 0.05
+            add_political_power = 12
+            set_national_stability = { value = 0.06  add = yes }
+        }
+    }
+    
+
+    #### 炉心守护类（11-20）
+    
+    # 11. 决议：部署炉心守卫
+    NAT_decision_11 = {
+        icon = generic_decision_garrison
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Furnace_Heart_Guard
+            add_equipment_to_stockpile = { type = infantry_equipment  amount = 800  producer = NAT }
+            add_fort_level = { province = NAT_Furnace_Heart_Province  level = 1 }
+            add_garrison_efficiency = 0.05
+        }
+    }
+
+    # 12. 决议：加固炉心屏障
+    NAT_decision_12 = {
+        icon = generic_decision_construction
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Furnace_Heart_Barrier
+            add_construction_speed = 0.08
+            add_infrastructure = { province = NAT_Furnace_Heart_Province  level = 2 }
+            add_civilian_factory = 4
+        }
+    }
+
+    # 13. 决议：充能炉心能量
+    NAT_decision_13 = {
+        icon = generic_decision_energy
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Furnace_Heart_Charge
+            add_war_factory = 3
+            add_equipment_to_stockpile = { type = infantry_equipment  amount = 1000  producer = NAT }
+            add_electricity = 1000
+        }
+    }
+
+    # 14. 决议：监控炉心能量
+    NAT_decision_14 = {
+        icon = generic_decision_intelligence
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Furnace_Heart_Monitor
+            add_intelligence_agency_efficiency = 0.05
+            add_espionage_efficiency = 0.04
+            add_political_power = 15
+        }
+    }
+
+    # 15. 决议：践行玛薇卡的意志
+    NAT_decision_15 = {
+        icon = generic_decision_ideology
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Mavuika_s_Will
+            add_government_authority = 10
+            add_political_power = 25
+            add_war_support = 0.10
+        }
+    }
+
+    # 16. 决议：研习玛薇卡的决斗艺术
+    NAT_decision_16 = {
+        icon = generic_decision_offensive
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Mavuika_s_Duel_Art
+            add_army_experience = 50
+            add_land_breakthrough = 0.06
+            add_equipment_to_stockpile = { type = motorized_equipment  amount = 300  producer = NAT }
+        }
+    }
+
+    # 17. 决议：祈求玛薇卡的火焰祝福
+    NAT_decision_17 = {
+        icon = generic_decision_blessing
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Mavuika_s_Flame_Blessing
+            add_war_factory = 4
+            add_equipment_to_stockpile = { type = armor_equipment  amount = 200  producer = NAT }
+            add_industrial_efficiency = 0.06
+        }
+    }
+
+    # 18. 决议：开展提瓦特火焰外交
+    NAT_decision_18 = {
+        icon = generic_decision_foreign
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Teyvat_Flame_Diplomacy
+            add_diplomatic_influence = 6
+            add_trade_efficiency = 0.05
+            add_relations = { target = ALL  value = 8 }
+        }
+    }
+
+    # 19. 决议：举办火焰体育竞技
+    NAT_decision_19 = {
+        icon = generic_decision_sports
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Flame_Sports_Competition
+            add_happiness = { target = all  value = 0.08 }
+            add_war_support = 0.09
+            add_nationalism = 0.04
+        }
+    }
+
+    # 20. 决议：确立决斗法典
+    NAT_decision_20 = {
+        icon = generic_decision_rules
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 75  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 8 }
+            add_ideas = NAT_Duel_Code_Establishment
+            add_government_authority = 7
+            add_political_power = 18
+            add_army_attack_factor = 0.04
+        }
+    }
+    
+
+    #### 进阶/终极类（21-30）
+    
+    # 21. 决议：加持决斗竞技场
+    NAT_decision_21 = {
+        icon = generic_decision_monument
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Duel_Arena_Boost
+            add_construction_speed = 0.10
+            add_civilian_factory = 5
+            add_happiness = { target = all  value = 0.07 }
+        }
+    }
+
+    # 22. 决议：加冕决斗冠军荣耀
+    NAT_decision_22 = {
+        icon = generic_decision_victory
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Duel_Champion_Glory
+            add_army_experience = 80
+            add_land_breakthrough = 0.08
+            add_equipment_to_stockpile = { type = heavy_tank_equipment  amount = 150  producer = NAT }
+        }
+    }
+
+    # 23. 决议：研发火焰附魔工艺
+    NAT_decision_23 = {
+        icon = generic_decision_technology
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Flame_Enchantment_Craft
+            add_equipment_quality_factor = 0.06
+            add_war_factory = 5
+            add_army_attack_factor = 0.05
+        }
+    }
+
+    # 24. 决议：突破炼狱护盾技术
+    NAT_decision_24 = {
+        icon = generic_decision_defensive
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Inferno_Shield_Technology
+            add_army_defense_factor = 0.07
+            add_armor_value_factor = 0.06
+            add_fort_defense_factor = 0.05
+        }
+    }
+
+    # 25. 决议：攻坚火元素核心研究
+    NAT_decision_25 = {
+        icon = generic_decision_research
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Fire_Element_Core_Research
+            add_research_speed = 0.08
+            add_nuclear_research_speed = 0.06
+            add_laboratory = 3
+        }
+    }
+
+    # 26. 决议：实现炉心终极升华
+    NAT_decision_26 = {
+        icon = generic_decision_ascension
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 50  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 10 }
+            add_ideas = NAT_Furnace_Heart_Ultimate_Ascension
+            add_electricity = 2000
+            add_industrial_efficiency = 0.09
+            add_civilian_factory = 6
+        }
+    }
+
+    # 27. 决议：组建永恒火焰军团
+    NAT_decision_27 = {
+        icon = generic_decision_army
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 100  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 15 }
+            add_ideas = NAT_Eternal_Flame_Army
+            add_manpower = 50000
+            add_land_recruitment_speed = 0.10
+            add_army_size_factor = 0.07
+        }
+    }
+
+    # 28. 决议：确立提瓦特火焰至上
+    NAT_decision_28 = {
+        icon = generic_decision_supremacy
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 100  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 15 }
+            add_ideas = NAT_Teyvat_Flame_Supremacy
+            add_cultural_influence = 0.08
+            add_diplomatic_weight = 10
+            add_nationalism = 0.07
+        }
+    }
+
+    # 29. 决议：攻坚火焰装甲研发
+    NAT_decision_29 = {
+        icon = generic_decision_armor
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 100  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 15 }
+            add_ideas = NAT_Flame_Armor_Research
+            add_armor_attack_factor = 0.08
+            add_armor_defense_factor = 0.07
+            add_equipment_to_stockpile = { type = modern_tank_equipment  amount = 300  producer = NAT }
+        }
+    }
+
+    # 30. 决议：铸就燃烧之地的荣耀
+    NAT_decision_30 = {
+        icon = generic_decision_glory
+        available = { tag = NAT }
+        visible = { tag = NAT }
+        fire_only_once = yes
+        modifier = { }
+        ai_will_do = { factor = 1 }
+        cost = 100  days_remove = 30
+        complete_effect = {
+            add_to_variable = { var = dx value = 20 }
+            add_ideas = NAT_Glory_Of_The_Burning_Land
+            set_national_stability = 1.0
+            add_happiness = { target = all  value = 0.15 }
+            add_war_support = 0.20
+            add_civilian_factory = 8
+            add_war_factory = 6
+            add_army_attack_factor = 0.08
+        }
+    }
+}

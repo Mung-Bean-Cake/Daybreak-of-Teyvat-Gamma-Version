@@ -1,0 +1,382 @@
+ideas = { 
+	country = {
+
+		#### 基础部族类（1-10）
+		
+		# 1. 火焰部族团结
+		NAT_Flame_Tribe_Unity = {
+			picture = idea_nat_flame_unity
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				political_power_factor = 0.10
+				nationalism_factor = 0.08
+			}
+		}
+
+		# 2. 灰烬部族和解
+		NAT_Ash_Tribe_Reconciliation = {
+			picture = idea_nat_ash_reconcile
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				war_exhaustion_factor = -0.08
+				relations_factor = 0.09
+				stability_factor = 0.07
+			}
+		}
+
+		# 3. 部族同盟强化
+		NAT_Tribe_Alliance_Strength = {
+			picture = idea_nat_alliance_strength
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				diplomatic_weight = 0.12
+				alliance_cohesion_factor = 0.15
+				political_power_factor = 0.06
+			}
+		}
+
+		# 4. 部族议会权威
+		NAT_Tribal_Council_Authority = {
+			picture = idea_nat_council_authority
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				government_authority = 0.12
+				stability_factor = 0.11
+				political_power_factor = 0.09
+			}
+		}
+
+		# 5. 火焰庆典精神
+		NAT_Flame_Festival_Spirit = {
+			picture = idea_nat_festival_spirit
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				war_support_factor = 0.12
+				happiness_factor = 0.09
+				nationalism_factor = 0.07
+			}
+		}
+
+		# 6. 烬火工业整合
+		NAT_Cinder_Industry_Integration = {
+			picture = idea_nat_cinder_industry
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				civilian_factory_factor = 0.10
+				steel_production = 0.15
+				industrial_capacity_factor = 0.08
+			}
+		}
+
+		# 7. 部族军事传承
+		NAT_Tribal_Military_Heritage = {
+			picture = idea_nat_military_heritage
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				army_attack_factor = 0.10
+				army_defense_factor = 0.09
+				land_recruitment_speed = 0.08
+			}
+		}
+
+		# 8. 边境争端平息
+		NAT_Border_Dispute_Resolution = {
+			picture = idea_nat_border_resolution
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				stability_factor = 0.13
+				war_exhaustion_factor = -0.10
+				relations_factor = 0.08
+			}
+		}
+
+		# 9. 火焰酋长领导力
+		NAT_Flame_Chieftain_Leadership = {
+			picture = idea_nat_chieftain_leadership
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				political_power_factor = 0.12
+				government_authority = 0.11
+				nationalism_factor = 0.09
+			}
+		}
+
+		# 10. 部族法典秩序
+		NAT_Tribal_Code_Order = {
+			picture = idea_nat_tribal_code
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				stability_factor = 0.11
+				authoritarian_support = 0.08
+				legal_efficiency = 0.09
+			}
+		}
+		
+
+		#### 炉心守护类（11-20）
+		
+		# 11. 炉心守卫部署
+		NAT_Furnace_Heart_Guard = {
+			picture = idea_nat_furnace_guard
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				army_defense_factor = 0.12
+				fort_level_factor = 0.10
+				garrison_efficiency = 0.09
+			}
+		}
+
+		# 12. 炉心屏障加固
+		NAT_Furnace_Heart_Barrier = {
+			picture = idea_nat_furnace_barrier
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				infrastructure_factor = 0.11
+				construction_speed = 0.12
+				industrial_efficiency_factor = 0.08
+			}
+		}
+
+		# 13. 炉心能量充能
+		NAT_Furnace_Heart_Charge = {
+			picture = idea_nat_furnace_charge
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				war_factory_factor = 0.10
+				infantry_equipment_production = 0.14
+				industrial_capacity_factor = 0.09
+			}
+		}
+
+		# 14. 炉心能量监控
+		NAT_Furnace_Heart_Monitor = {
+			picture = idea_nat_furnace_monitor
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				intelligence_agency_efficiency = 0.09
+				espionage_efficiency = 0.08
+				political_power_factor = 0.07
+			}
+		}
+
+		# 15. 玛薇卡的意志
+		NAT_Mavuika_s_Will = {
+			picture = idea_nat_mavuika_will
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				political_power_factor = 0.15
+				government_authority = 0.13
+				war_support_factor = 0.11
+			}
+		}
+
+		# 16. 玛薇卡的决斗艺术
+		NAT_Mavuika_s_Duel_Art = {
+			picture = idea_nat_mavuika_duel
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				army_attack_factor = 0.13
+				land_breakthrough = 0.12
+				army_experience_gain = 0.10
+			}
+		}
+
+		# 17. 玛薇卡的火焰祝福
+		NAT_Mavuika_s_Flame_Blessing = {
+			picture = idea_nat_mavuika_blessing
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				war_factory_factor = 0.12
+				armor_equipment_production = 0.13
+				industrial_efficiency_factor = 0.10
+			}
+		}
+
+		# 18. 提瓦特火焰外交
+		NAT_Teyvat_Flame_Diplomacy = {
+			picture = idea_nat_teyvat_diplomacy
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				diplomatic_influence = 0.11
+				relations_factor = 0.09
+				trade_efficiency = 0.10
+			}
+		}
+
+		# 19. 火焰体育竞技
+		NAT_Flame_Sports_Competition = {
+			picture = idea_nat_sports_competition
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				happiness_factor = 0.12
+				war_support_factor = 0.10
+				nationalism_factor = 0.08
+			}
+		}
+
+		# 20. 决斗法典确立
+		NAT_Duel_Code_Establishment = {
+			picture = idea_nat_duel_code
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				stability_factor = 0.10
+				government_authority = 0.09
+				army_attack_factor = 0.08
+			}
+		}
+		
+
+		#### 进阶/终极类（21-30）
+		
+		# 21. 决斗竞技场加持
+		NAT_Duel_Arena_Boost = {
+			picture = idea_nat_duel_arena
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				construction_speed = 0.13
+				civilian_factory_factor = 0.11
+				happiness_factor = 0.09
+			}
+		}
+
+		# 22. 决斗冠军荣耀
+		NAT_Duel_Champion_Glory = {
+			picture = idea_nat_duel_champion
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				army_attack_factor = 0.15
+				land_breakthrough = 0.13
+				army_experience_gain = 0.11
+			}
+		}
+
+		# 23. 火焰附魔工艺
+		NAT_Flame_Enchantment_Craft = {
+			picture = idea_nat_flame_enchantment
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				equipment_quality_factor = 0.11
+				army_attack_factor = 0.10
+				war_factory_factor = 0.09
+			}
+		}
+
+		# 24. 炼狱护盾技术
+		NAT_Inferno_Shield_Technology = {
+			picture = idea_nat_inferno_shield
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				army_defense_factor = 0.14
+				armor_value_factor = 0.12
+				fort_defense_factor = 0.10
+			}
+		}
+
+		# 25. 火元素核心研究
+		NAT_Fire_Element_Core_Research = {
+			picture = idea_nat_fire_core_research
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				research_speed = 0.15
+				nuclear_research_speed = 0.12
+				laboratory_factor = 0.10
+			}
+		}
+
+		# 26. 炉心终极升华
+		NAT_Furnace_Heart_Ultimate_Ascension = {
+			picture = idea_nat_furnace_ascension
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				electricity_production = 0.20
+				industrial_efficiency_factor = 0.15
+				civilian_factory_factor = 0.12
+			}
+		}
+
+		# 27. 永恒火焰军团
+		NAT_Eternal_Flame_Army = {
+			picture = idea_nat_eternal_flame_army
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				land_recruitment_speed = 0.18
+				manpower_factor = 0.15
+				army_size_factor = 0.12
+			}
+		}
+
+		# 28. 提瓦特火焰至上
+		NAT_Teyvat_Flame_Supremacy = {
+			picture = idea_nat_teyvat_supremacy
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				cultural_influence = 0.15
+				diplomatic_weight = 0.13
+				nationalism_factor = 0.11
+			}
+		}
+
+		# 29. 火焰装甲研发
+		NAT_Flame_Armor_Research = {
+			picture = idea_nat_flame_armor
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				armor_attack_factor = 0.14
+				armor_defense_factor = 0.12
+				war_factory_factor = 0.10
+			}
+		}
+
+		# 30. 燃烧之地的荣耀
+		NAT_Glory_Of_The_Burning_Land = {
+			picture = idea_nat_burning_land_glory
+			allowed = { always = yes }
+			allowed_civil_war = { always = yes }
+			modifier = {
+				stability_factor = 0.20
+				happiness_factor = 0.18
+				war_support_factor = 0.15
+				civilian_factory_factor = 0.12
+				war_factory_factor = 0.10
+				army_attack_factor = 0.10
+			}
+		}
+	}
+}
+
+				
+
+
+				
+	        	
+						
