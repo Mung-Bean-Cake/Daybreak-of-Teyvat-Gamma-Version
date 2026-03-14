@@ -1,0 +1,1495 @@
+###########################
+#古恩希尔德家族会议
+###########################
+
+add_namespace = GUN_develop_economy
+add_namespace = GUN_develop_politics
+add_namespace = GUN_develop_culture
+
+#发展经济
+country_event = {
+	id = GUN_develop_economy.1
+	title = GUN_develop_economy.1.t
+	desc = GUN_develop_economy.1.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_economy.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_develop_economy.2
+	title = GUN_develop_economy.2.t
+	desc = GUN_develop_economy.2.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_economy.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+#发展政治
+country_event = {
+	id = GUN_develop_politics.1
+	title = GUN_develop_politics.1.t
+	desc = GUN_develop_politics.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_politics.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_develop_politics.2
+	title = GUN_develop_politics.2.t
+	desc = GUN_develop_politics.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_politics.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+#发展文化
+country_event = {
+	id = GUN_develop_culture.1
+	title = GUN_develop_culture.1.t
+	desc = GUN_develop_culture.1.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_culture.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_develop_culture.2
+	title = GUN_develop_culture.2.t
+	desc = GUN_develop_culture.2.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_develop_culture.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+###########################
+#古恩希尔德领派系斗争
+###########################
+
+add_namespace = GUN_support_Family
+add_namespace = GUN_support_Bennett
+add_namespace = GUN_support_Eula
+add_namespace = GUN_support_Barbara
+add_namespace = GUN_support_Diluc
+add_namespace = GUN_support_Albedo
+add_namespace = GUN_support_Diona
+
+#古恩希尔德
+country_event = {
+	id = GUN_support_Family.1
+	title = GUN_support_Family.1.t
+	desc = GUN_support_Family.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Family.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Family.2
+	title = GUN_support_Family.2.t
+	desc = GUN_support_Family.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Family.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持班尼特
+country_event = {
+	id = GUN_support_Bennett.1
+	title = GUN_support_Bennett.1.t
+	desc = GUN_support_Bennett.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Bennett.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Bennett.2
+	title = GUN_support_Bennett.2.t
+	desc = GUN_support_Bennett.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Bennett.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持优菈
+country_event = {
+	id = GUN_support_Eula.1
+	title = GUN_support_Eula.1.t
+	desc = GUN_support_Eula.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Eula.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Eula.2
+	title = GUN_support_Eula.2.t
+	desc = GUN_support_Eula.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Eula.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持芭芭拉
+country_event = {
+	id = GUN_support_Barbara.1
+	title = GUN_support_Barbara.1.t
+	desc = GUN_support_Barbara.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Barbara.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Barbara.2
+	title = GUN_support_Barbara.2.t
+	desc = GUN_support_Barbara.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Barbara.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持迪卢克
+country_event = {
+	id = GUN_support_Diluc.1
+	title = GUN_support_Diluc.1.t
+	desc = GUN_support_Diluc.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Diluc.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Diluc.2
+	title = GUN_support_Diluc.2.t
+	desc = GUN_support_Diluc.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Diluc.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持阿贝多
+country_event = {
+	id = GUN_support_Albedo.1
+	title = GUN_support_Albedo.1.t
+	desc = GUN_support_Albedo.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Albedo.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Albedo.2
+	title = GUN_support_Albedo.2.t
+	desc = GUN_support_Albedo.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Albedo.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#支持迪奥娜
+country_event = {
+	id = GUN_support_Diona.1
+	title = GUN_support_Diona.1.t
+	desc = GUN_support_Diona.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Diona.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+country_event = {
+	id = GUN_support_Diona.2
+	title = GUN_support_Diona.2.t
+	desc = GUN_support_Diona.2.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_support_Diona.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+
+
+###########################
+# GUN Events
+###########################
+
+add_namespace = GUN_Event
+
+#古恩希尔德家族会议
+country_event = {
+	id = GUN_Event.1
+	title = GUN_Event.1.t
+	desc = GUN_Event.1.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.1.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+		random_owned_controlled_state = {
+			add_building_construction = { 
+				type = arms_factory level = 1 instant_build = yes
+			}
+			add_building_construction = { 
+				type = industrial_complex level = 1 instant_build = yes
+			}
+			add_building_construction = {
+				type = bunker level = 2 instant_build = yes
+				province = { all_provinces = yes limit_to_victory_point > 1}
+			}
+		}
+	}
+}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.2
+	title = GUN_Event.2.t
+	desc = GUN_Event.2.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.2.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.3
+	title = GUN_Event.3.t
+	desc = GUN_Event.3.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.3.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.4
+	title = GUN_Event.4.t
+	desc = GUN_Event.4.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.4.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.5
+	title = GUN_Event.5.t
+	desc = GUN_Event.5.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.5.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.6
+	title = GUN_Event.6.t
+	desc = GUN_Event.6.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.6.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.7
+	title = GUN_Event.7.t
+	desc = GUN_Event.7.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.7.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.8
+	title = GUN_Event.8.t
+	desc = GUN_Event.8.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.8.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.9
+	title = GUN_Event.9.t
+	desc = GUN_Event.9.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.9.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.10
+	title = GUN_Event.10.t
+	desc = GUN_Event.10.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.10.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.11
+	title = GUN_Event.11.t
+	desc = GUN_Event.11.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.11.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.12
+	title = GUN_Event.12.t
+	desc = GUN_Event.12.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.12.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.13
+	title = GUN_Event.13.t
+	desc = GUN_Event.13.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.13.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.14
+	title = GUN_Event.14.t
+	desc = GUN_Event.14.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.14.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.15
+	title = GUN_Event.15.t
+	desc = GUN_Event.15.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.15.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			}
+	}
+
+#古恩希尔德：邀请迪奥娜
+country_event = {
+	id = GUN_Event.16
+	title = GUN_Event.16.t
+	desc = GUN_Event.16.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.16.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+			# recruit_character = GUN_Diona
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			SPI = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+#古恩希尔德 邀请班尼特
+country_event = {
+	id = GUN_Event.17
+	title = GUN_Event.17.t
+	desc = GUN_Event.17.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.17.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			ANR = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.18
+	title = GUN_Event.18.t
+	desc = GUN_Event.18.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.18.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德
+country_event = {
+	id = GUN_Event.19
+	title = GUN_Event.19.t
+	desc = GUN_Event.19.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.19.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+	}
+	}
+
+#古恩希尔德 邀请阿贝多
+country_event = {
+	id = GUN_Event.20
+	title = GUN_Event.20.t
+	desc = GUN_Event.20.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.20.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+			# recruit_character = GUN_Albedo
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			DRA = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+
+#古恩希尔德 邀请优菈
+country_event = {
+	id = GUN_Event.25
+	title = GUN_Event.25.t
+	desc = GUN_Event.25.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.25.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+			# recruit_character = GUN_Eula
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			LAW = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+
+#古恩希尔德 邀请芭芭拉
+country_event = {
+	id = GUN_Event.26
+	title = GUN_Event.26.t
+	desc = GUN_Event.26.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.26.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+			# recruit_character = GUN_Barbara
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			FAV = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+
+#古恩希尔德 邀请迪卢克
+country_event = {
+	id = GUN_Event.28
+	title = GUN_Event.28.t
+	desc = GUN_Event.28.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.28.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+			# recruit_character = GUN_Diluc
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+			RAG = { every_unit_leader = { set_nationality = GUN } }
+		}
+	}
+
+#古恩希尔德 风精灵
+country_event = {
+	id = GUN_Event.29
+	title = GUN_Event.29.t
+	desc = GUN_Event.29.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.29.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+		}
+	}
+
+#古恩希尔德 琴团长
+country_event = {
+	id = GUN_Event.30
+	title = GUN_Event.30.t
+	desc = GUN_Event.30.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.30.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+		}
+	}
+
+#古恩希尔德 法尔伽
+country_event = {
+	id = GUN_Event.31
+	title = GUN_Event.31.t
+	desc = GUN_Event.31.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes		
+	option = {
+		name = GUN_Event.31.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = LYY }
+		add_political_power = 10
+		}
+	}
+
+# 其他 古恩希尔德笑话
+# every_possible_country = { limit = { is_ai = no } }
+# country_event = { id = GUN_Event.32  days = 20 } # 32-40, 44
+
+country_event = {
+	id = GUN_Event.32
+	title = GUN_Event.32.t
+	desc = GUN_Event.32.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.32.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+			LAW = { add_stability = -0.02 }
+		}
+	}
+country_event = {
+	id = GUN_Event.33
+	title = GUN_Event.33.t
+	desc = GUN_Event.33.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.33.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		MOT = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.34
+	title = GUN_Event.34.t
+	desc = GUN_Event.34.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.34.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		MOT = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.35
+	title = GUN_Event.35.t
+	desc = GUN_Event.35.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.35.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		ANR = { add_stability = 0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.36
+	title = GUN_Event.36.t
+	desc = GUN_Event.36.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.36.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		DRA = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.37
+	title = GUN_Event.37.t
+	desc = GUN_Event.37.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.37.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		DRA = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.38
+	title = GUN_Event.38.t
+	desc = GUN_Event.38.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.38.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		MOT = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.39
+	title = GUN_Event.39.t
+	desc = GUN_Event.39.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.39.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		ANR = { add_stability = -0.02 }
+	}
+}
+
+country_event = {
+	id = GUN_Event.40
+	title = GUN_Event.40.t
+	desc = GUN_Event.40.d
+	picture = GFX_GUN_Event_04
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.40.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		FAV = { add_stability = -0.02 }
+	}
+}
+
+#其他
+#召唤英灵
+country_event = {
+	id = GUN_Event.41
+	title = DOT_Tech.3.t
+	desc = DOT_Tech.3.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	trigger = {
+		tag = GUN
+	}
+	option = {
+		 name = DOT_Tech.3.a
+		Ilyich_Amber_Division = yes
+		random_owned_controlled_state = {
+	limit = { ROOT = { has_full_control_of_state = PREV } }
+	create_unit = { 
+	division = "name = \"\" division_template = \"Amber\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
+	owner = ROOT  count = 1
+		}
+		}
+		}
+}
+#召唤英灵
+#country_event = {
+#	id = GUN_Event.42
+#	title = DOT_Tech.3.t
+#	desc = DOT_Tech.3.d
+#	picture = GFX_GUN_Event_05
+#	fire_only_once = yes
+#	trigger = {
+#		tag = DVA
+#	}
+#	option = {
+#		name = DOT_Tech.3.a
+#		DVA_Dvalin_Division = yes
+#		random_owned_controlled_state = {
+#	limit = { ROOT = { has_full_control_of_state = PREV } }
+#	create_unit = { 
+#	division = "name = \"\" division_template = \"Dvalin\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
+#	owner = ROOT  count = 1
+#		}
+#		}
+#		}
+#}
+
+#召唤英灵
+country_event = {
+	id = GUN_Event.43
+	title = DOT_Tech.3.t
+	desc = DOT_Tech.3.d
+	picture = GFX_GUN_Event_05
+	fire_only_once = yes
+	trigger = {
+		tag = FON
+	}
+	option = {
+		name = DOT_Tech.3.a
+		Ilyich_Furina_Division = yes
+		random_owned_controlled_state = {
+	limit = { ROOT = { has_full_control_of_state = PREV } }
+	create_unit = { 
+	division = "name = \"\" division_template = \"Furina\" start_experience_factor = 0.5 start_equipment_factor = 0.9" 
+	owner = ROOT  count = 1
+		}
+		}
+		}
+}
+# 其他 古恩希尔德笑话
+# every_possible_country = { limit = { is_ai = no } }
+# country_event = { id = GUN_Event.32  days = 20 }
+
+country_event = {
+	id = GUN_Event.44
+	title = GUN_Event.44.t
+	desc = GUN_Event.44.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.44.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		FAV = { add_stability = -0.02 }
+	}
+}
+country_event = {
+	id = GUN_Event.45
+	title = GUN_Event.45.t
+	desc = GUN_Event.45.d
+	picture = GFX_GUN_Event_01
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.45.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		FAV = { add_stability = -0.02 }
+	}
+}
+country_event = {
+	id = GUN_Event.46
+	title = GUN_Event.46.t
+	desc = GUN_Event.46.d
+	picture = GFX_GUN_Event_02
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.46.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		FAV = { add_stability = -0.02 }
+	}
+}
+country_event = {
+	id = GUN_Event.47
+	title = GUN_Event.47.t
+	desc = GUN_Event.47.d
+	picture = GFX_GUN_Event_03
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event.47.a
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+		add_equipment_to_stockpile = { type = infantry_equipment  amount = 500  producer = MOT }
+		add_political_power = 10
+		FAV = { add_stability = -0.02 }
+	}
+}
+
+###########################
+# GUN_News
+###########################
+
+add_namespace = GUN_News
+add_namespace = GUN_Event_Maison_Gardiennage
+
+#古恩希尔德家族会议
+
+#古恩希尔德：邀请迪奥娜
+news_event = {
+	id = GUN_News.16
+	title = GUN_News.16.t
+	desc = GUN_News.16.d
+	picture = GFX_GUN_News_01
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.16.a
+	}
+}
+#古恩希尔德 邀请班尼特
+news_event = {
+	id = GUN_News.17
+	title = GUN_News.17.t
+	desc = GUN_News.17.d
+	picture = GFX_GUN_News_02
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.17.a
+	}
+}
+#古恩希尔德
+news_event = {
+	id = GUN_News.18
+	title = GUN_News.18.t
+	desc = GUN_News.18.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.18.a
+	}
+}
+#古恩希尔德
+news_event = {
+	id = GUN_News.19
+	title = GUN_News.19.t
+	desc = GUN_News.19.d
+	picture = GFX_GUN_News_04
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.19.a
+	}
+}
+
+#古恩希尔德 邀请阿贝多
+news_event = {
+	id = GUN_News.20
+	title = GUN_News.20.t
+	desc = GUN_News.20.d
+	picture = GFX_GUN_News_05
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.20.a
+	}
+}
+
+#古恩希尔德 邀请优菈
+news_event = {
+	id = GUN_News.25
+	title = GUN_News.25.t
+	desc = GUN_News.25.d
+	picture = GFX_GUN_News_01
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.25.a
+	}
+}
+
+#古恩希尔德 邀请芭芭拉
+news_event = {
+	id = GUN_News.26
+	title = GUN_News.26.t
+	desc = GUN_News.26.d
+	picture = GFX_GUN_News_02
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.26.a
+	}
+}
+
+#古恩希尔德 邀请迪卢克
+news_event = {
+	id = GUN_News.28
+	title = GUN_News.28.t
+	desc = GUN_News.28.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.28.a
+	}
+}
+#古恩希尔德 风精灵
+news_event = {
+	id = GUN_News.29
+	title = GUN_News.29.t
+	desc = GUN_News.29.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.29.a
+	}
+}
+#古恩希尔德 琴团长
+news_event = {
+	id = GUN_News.30
+	title = GUN_News.30.t
+	desc = GUN_News.30.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.30.a
+	}
+}
+#古恩希尔德 法尔伽
+news_event = {
+	id = GUN_News.31
+	title = GUN_News.31.t
+	desc = GUN_News.31.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.31.a
+	}
+}
+# 古恩希尔德新闻
+# 蒲公英联盟的异见分子
+news_event = {
+	id = GUN_News.32
+	title = GUN_News.32.t
+	desc = GUN_News.32.d
+	picture = GFX_GUN_News_04
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.32.a
+	}
+}
+
+news_event = {
+	id = GUN_News.33
+	title = GUN_News.33.t
+	desc = GUN_News.33.d
+	picture = GFX_GUN_News_05
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.33.a
+	}
+}
+
+news_event = {
+	id = GUN_News.34
+	title = GUN_News.34.t
+	desc = GUN_News.34.d
+	picture = GFX_GUN_News_01
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.34.a
+	}
+}
+
+news_event = {
+	id = GUN_News.35
+	title = GUN_News.35.t
+	desc = GUN_News.35.d
+	picture = GFX_GUN_News_02
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.35.a
+	}
+}
+
+news_event = {
+	id = GUN_News.36
+	title = GUN_News.36.t
+	desc = GUN_News.36.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.36.a
+	}
+}
+
+news_event = {
+	id = GUN_News.37
+	title = GUN_News.37.t
+	desc = GUN_News.37.d
+	picture = GFX_GUN_News_04
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.37.a
+	}
+}
+
+news_event = {
+	id = GUN_News.38
+	title = GUN_News.38.t
+	desc = GUN_News.38.d
+	picture = GFX_GUN_News_05
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.38.a
+	}
+}
+
+news_event = {
+	id = GUN_News.39
+	title = GUN_News.39.t
+	desc = GUN_News.39.d
+	picture = GFX_GUN_News_01
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.39.a
+	}
+}
+
+news_event = {
+	id = GUN_News.40
+	title = GUN_News.40.t
+	desc = GUN_News.40.d
+	picture = GFX_GUN_News_02
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.40.a
+	}
+}
+
+news_event = {
+	id = GUN_News.41
+	title = GUN_News.41.t
+	desc = GUN_News.41.d
+	picture = GFX_GUN_News_03
+	major = yes
+	# trigger = { Is_MOT = yes }
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_News.41.a
+	}
+}
+#####################
+# 执律庭一日谈
+#####################
+news_event = {
+	id = GUN_Event_Maison_Gardiennage.1
+	title = GUN_Event_Maison_Gardiennage.1.t
+	desc = GUN_Event_Maison_Gardiennage.1.d
+	picture = GFX_GUN_News_07
+	major = yes
+	is_triggered_only = no
+	trigger = { 
+		date > 1937.1.30
+	}
+	fire_only_once = yes
+	option = {
+		name = GUN_Event_Maison_Gardiennage.1.a
+		news_event = { id = GUN_Event_Maison_Gardiennage.2 days = 90 }
+		FON = {add_stability = -0.02}
+		trigger = { original_tag = GUN }
+	}
+	option = {
+		name = GUN_Event_Maison_Gardiennage.1.a
+		trigger = {  NOT = { original_tag = GUN } }
+	}
+}
+news_event = {
+	id = GUN_Event_Maison_Gardiennage.2
+	title = GUN_Event_Maison_Gardiennage.2.t
+	desc = GUN_Event_Maison_Gardiennage.2.d
+	picture = GFX_GUN_News_07
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event_Maison_Gardiennage.2.a
+		# news_event = { id = GUN_Event_Maison_Gardiennage.3 days = 30 }
+		FON = {add_stability = -0.02}
+		trigger = { original_tag = GUN }
+	}
+	option = {
+		name = GUN_Event_Maison_Gardiennage.2.a
+		trigger = {  NOT = { original_tag = GUN } }
+	}
+}
+news_event = {
+	id = GUN_Event_Maison_Gardiennage.3
+	title = GUN_Event_Maison_Gardiennage.3.t
+	desc = GUN_Event_Maison_Gardiennage.3.d
+	picture = GFX_GUN_News_07
+	major = yes
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = {
+		name = GUN_Event_Maison_Gardiennage.3.a
+		# news_event = { id = GUN_Event_Maison_Gardiennage.4 days = 30 }
+		FON = {add_stability = -0.02}
+		trigger = { original_tag = GUN }
+	}
+	option = {
+		name = GUN_Event_Maison_Gardiennage.3.a
+		trigger = {  NOT = { original_tag = GUN } }
+	}
+}
+
+add_namespace = SNE_Congress_News
+
+###########################
+# SNE_Congress
+###########################
+
+news_event = {
+	id = SNE_Congress_News.1
+	title = SNE_Congress_News.1.t
+	desc = SNE_Congress_News.1.d
+	picture = GFX_SNE_News_P01
+	major = yes	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = SNE_Congress_News.1.a
+		SNE = { add_stability = 0.01 }
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+	}
+}
+news_event = {
+	id = SNE_Congress_News.2
+	title = SNE_Congress_News.2.t
+	desc = SNE_Congress_News.2.d
+	picture = GFX_SNE_News_P01
+	major = yes	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = SNE_Congress_News.1.a
+		SNE = { add_stability = 0.01 }
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+	}
+}
+news_event = {
+	id = SNE_Congress_News.3
+	title = SNE_Congress_News.3.t
+	desc = SNE_Congress_News.3.d
+	picture = GFX_SNE_News_P01
+	major = yes	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = SNE_Congress_News.1.a
+		SNE = { add_stability = 0.01 }
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+	}
+}
+news_event = {
+	id = SNE_Congress_News.4
+	title = SNE_Congress_News.4.t
+	desc = SNE_Congress_News.4.d
+	picture = GFX_SNE_News_P01
+	major = yes	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = SNE_Congress_News.1.a
+		SNE = { add_stability = 0.01 }
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+	}
+}
+news_event = {
+	id = SNE_Congress_News.5
+	title = SNE_Congress_News.5.t
+	desc = SNE_Congress_News.5.d
+	picture = GFX_SNE_News_P01
+	major = yes	
+	is_triggered_only = yes
+	fire_only_once = yes
+	option = { 
+		name = SNE_Congress_News.1.a
+		SNE = { add_stability = 0.01 }
+		custom_effect_tooltip = GUN_Effects_are_Hidden
+	}
+}
