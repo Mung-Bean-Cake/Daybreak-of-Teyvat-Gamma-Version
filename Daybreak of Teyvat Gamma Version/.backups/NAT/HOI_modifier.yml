@@ -327,7 +327,7 @@ navy_org	Navy Organization	Number with 1 decimal places
 navy_org_factor	Navy Organization			
 naval_morale	Ship Recovery Rate			
 naval_morale_factor	Ship Recovery Rate			
-naval_speed_factor	Naval Speed	Number with 0 decimal places			
+navy_fuel_consumption_factor = 0.3 # naval_speed_factor	Naval Speed	Number with 0 decimal places			
 navy_max_range	Naval max range
 navy_max_range_factor	Naval max range factor	Number with 2 decimal places			
 navy_fuel_consumption_factor	Navy Fuel Consumption			
@@ -465,7 +465,7 @@ encryption	Encryption
 encryption_factor	Encryption			
 decryption	Decryption			
 decryption_factor	Decryption			
-civilian_factory_use	Civilian Factory Use	Number with 0 decimal places			
+production_factory_efficiency_gain_factor = 0.15 # civilian_factory_use	Civilian Factory Use	Number with 0 decimal places			
 consumer_goods_factor	Consumer Goods Factories	Number with 2 decimal places			
 min_export	Resources to Market			
 trade_opinion_factor	Trade deal opinion factor	Number with 2 decimal places			
@@ -517,7 +517,7 @@ resistance_damage_to_garrison_on_our_occupied_states	Damage to Enemy Garrisons i
 legitimacy_daily	Daily Legitimacy Gain	Number with 2 decimal places			
 targeted_legitimacy_daily	Daily Legitimacy Gain	Number with 1 decimal places			
 legitimacy_gain_factor	Legitimacy Gain	Number with 0 decimal places			
-exile_manpower_factor	Daily Exile Manpower	Number with 2 decimal places			
+exile_line_change_production_efficiency_factor = 0.3 # manpower_factor	Daily Exile Manpower	Number with 2 decimal places			
 puppet_cost_factor	Puppet cost	Number with 1 decimal places			
 occupation_cost	Occupation Cost	Number with 2 decimal places			
 annex_cost_factor	Annex cost	Number with 1 decimal places			

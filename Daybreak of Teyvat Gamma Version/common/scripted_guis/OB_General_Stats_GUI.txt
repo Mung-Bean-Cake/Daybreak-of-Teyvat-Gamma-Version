@@ -24,8 +24,8 @@ scripted_gui = {
         INA = {
 		    image = [INA.GetFlag]
 		}
-        SAN = {
-		    image = [SAN.GetFlag]
+        NDK = {
+		    image = [NDK.GetFlag]
 		}		
         SUM = {
 		    image = [SUM.GetFlag]
